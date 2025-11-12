@@ -1,4 +1,4 @@
-🪷 PKI-DZEN — The Complete Collection of Jokes about Cryptography, DevOps, and Enlightenment
+🪷 PKI-ZEN — The Complete Collection of Jokes about Cryptography, DevOps, and Enlightenment
 
 ## Origin
 
@@ -30,4 +30,4 @@ Here lies prompt engineering — peacefully, with a smile.
 
 ## Translations
 
-- Russian edition: see `README_RUS.md`.
+- Russian edition: see [README_RUS.md](README_RUS.md).

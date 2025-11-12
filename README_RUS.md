@@ -26,7 +26,7 @@
 
 ## Полный текст
 
-- [PKI-ДЗЕН — Полное собрание (тома I–V)](PKI-DZEN_COMPLETE_RUS.txt)
+- [PKI-ДЗЕН — Полное собрание (тома I–V)](PKI-ZEN_COMPLETE_RUS.txt)
 
 ## English Version
 
