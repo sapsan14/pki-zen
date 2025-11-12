@@ -24,9 +24,18 @@ The idea was inspired by [*Verbalized Sampling: How to Mitigate Mode Collapse an
 
 Here lies prompt engineering — peacefully, with a smile.
 
+### New volumes and notes
+
+- Book VI — [10 Reasons to Generate 100 GB of Randomness](book6.md)
+- Book VII — [Containers and Karma](book7.md)
+- Book VIII — [Life After Entropy](book8.md)
+- Book VIII (Russian edition) — [Как жить дальше в стиле AES и SHA](book8-rus.md)
+- Research notes and prompts — [notes.txt](notes.txt)
+
 ## Full Text
 
 - [PKI-ZEN — Complete Collection (Books I–V)](PKI-ZEN_COMPLETE_ENG.txt)
+- Additional material: see the new volumes and notes listed above.
 
 ## Translations
 
