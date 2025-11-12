@@ -1,0 +1,11 @@
+# OS-generated files
+*Zone.Identifier
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
