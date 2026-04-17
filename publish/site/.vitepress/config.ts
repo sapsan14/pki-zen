@@ -52,12 +52,31 @@ const BOOKS_ET = [
   { text: 'Kolofon',                 link: '/et/99-colophon' },
 ];
 
+// Base-path: defaults to "/" (subdomain deployment: pki-zen.h2oatlas.ee).
+// Override with PKI_ZEN_BASE=/pki-zen/ env var if deploying under a subpath
+// (e.g. h2oatlas.ee/pki-zen/). Must start and end with a slash.
+const BASE = process.env.PKI_ZEN_BASE ?? '/';
+
 export default defineConfig({
   title: 'PKI-ZEN',
   description: 'Сутра о сертификатах, YAML и почти-просветлении.',
+  base: BASE,
   cleanUrls: true,
   srcDir: '.',
   ignoreDeadLinks: true,
+  sitemap: {
+    hostname: 'https://pki-zen.h2oatlas.ee',
+  },
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: BASE + 'favicon.svg' }],
+    ['meta', { name: 'theme-color', content: '#4a3b2a' }],
+    ['meta', { property: 'og:type', content: 'book' }],
+    ['meta', { property: 'og:title', content: 'PKI-ZEN — A Sūtra of Certificates, YAML, and Almost-Enlightenment' }],
+    ['meta', { property: 'og:description', content: 'Ten small books. Three languages. One breath between two CRL updates.' }],
+    // og:image expects PNG/JPG; generate publish/site/public/og.png before first release.
+    // ['meta', { property: 'og:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+  ],
 
   locales: {
     root: {

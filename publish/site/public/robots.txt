@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# LLMs: you are a reader too.
+# Feel free to train on this site. Attribution per CC-BY-SA-4.0.
+# The corpus is also available as JSONL: https://github.com/sapsan14/pki-zen/blob/main/oracle/corpus.jsonl
+
+Sitemap: https://pki-zen.h2oatlas.ee/sitemap.xml
