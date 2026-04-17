@@ -1,24 +1,26 @@
 /*
   PKI-ZEN typography
   ------------------
-  Latin / Estonian-Extended: Space Grotesk (geometric sans, no Cyrillic).
-  Cyrillic:                  Manrope (geometric sans, full Cyrillic —
-                             closest visual sibling of Space Grotesk).
-  Code / monospace:          JetBrains Mono (has Cyrillic).
+  Latin / Estonian-Extended: Space Grotesk  (geometric sans, no Cyrillic).
+  Cyrillic:                  Onest          (designed explicitly as a
+                             Space Grotesk sibling *with* Cyrillic —
+                             same humanist proportions, same quirky
+                             single-story g and a, full кириллица).
+  Code / monospace:          JetBrains Mono (has Cyrillic too).
 
-  The per-font @font-face blocks Google Fonts serves each include a
-  `unicode-range`; the browser picks the correct font per-glyph
-  automatically when both are in the same font-family stack. So Russian
-  verses render in Manrope, English/Estonian in Space Grotesk, and both
-  live inside the same paragraph without visible seams.
+  Each Google Fonts @font-face block ships a `unicode-range`, so when
+  both fonts are in the same font-family stack the browser picks the
+  correct file per-glyph automatically. English / Estonian paragraphs
+  render in Space Grotesk; Russian paragraphs render in Onest; both
+  sit side-by-side inside a single paragraph without visible seams.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   --vp-font-family-base:
     'Space Grotesk',
-    'Manrope',
+    'Onest',
     system-ui,
     -apple-system,
     'Segoe UI',

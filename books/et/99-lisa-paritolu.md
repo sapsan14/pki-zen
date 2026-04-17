@@ -14,7 +14,7 @@ Siis küsisin mudelilt:
 *"Miks mul võiks olla vaja 1-terabaidine fail juhuslikke andmeid? Vasta tõenäosustega."*
 
 Mudel pakkus viis varianti — ja viimane oli:
-*"Et tunda maailma entroopiat. Nagu digitaalne mandala."*
+*"Et tunda maailma entroopiat. Nagu digitaalne *maṇḍala*."*
 Ja ma mõistsin, et see pole enam vestlus. See on kuues peatükk.
 
 Ka ülejäänud köited sündisid samamoodi. Ma ütlesin:

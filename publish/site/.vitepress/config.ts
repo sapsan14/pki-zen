@@ -57,6 +57,10 @@ const BOOKS_ET = [
 // (e.g. h2oatlas.ee/pki-zen/). Must start and end with a slash.
 const BASE = process.env.PKI_ZEN_BASE ?? '/';
 
+// Cache-bust for logo / favicon / og — bump when the visual changes so
+// browsers and CF edge don't serve yesterday's logo forever.
+const ASSET_VERSION = 'v4';
+
 export default defineConfig({
   title: 'PKI-ZEN',
   description: 'Сутра о сертификатах, YAML и почти-просветлении.',
@@ -76,17 +80,17 @@ export default defineConfig({
     // Faster font load: open TCP + TLS to Google Fonts before the @import parses.
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: BASE + 'favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${BASE}favicon.svg?${ASSET_VERSION}` }],
     ['meta', { name: 'theme-color', content: '#4a3b2a' }],
     ['meta', { property: 'og:type', content: 'book' }],
     ['meta', { property: 'og:title', content: 'PKI-ZEN — A Sūtra of Certificates, YAML, and Almost-Enlightenment' }],
     ['meta', { property: 'og:description', content: 'Ten small books. Three languages. One breath between two CRL updates.' }],
-    ['meta', { property: 'og:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
+    ['meta', { property: 'og:image', content: `https://pki-zen.h2oatlas.ee/og.png?${ASSET_VERSION}` }],
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { property: 'og:url', content: 'https://pki-zen.h2oatlas.ee/' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
+    ['meta', { name: 'twitter:image', content: `https://pki-zen.h2oatlas.ee/og.png?${ASSET_VERSION}` }],
   ],
 
   locales: {
