@@ -73,6 +73,9 @@ export default defineConfig({
     math: true,
   },
   head: [
+    // Faster font load: open TCP + TLS to Google Fonts before the @import parses.
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: BASE + 'favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#4a3b2a' }],
     ['meta', { property: 'og:type', content: 'book' }],
