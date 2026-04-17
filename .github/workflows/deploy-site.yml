@@ -48,13 +48,19 @@ jobs:
       - name: Build site (VitePress)
         run: bash publish/build-site-only.sh
 
+      - name: Verify build output exists
+        run: |
+          ls -la publish/site/.vitepress/dist | head
+          test -f publish/site/.vitepress/dist/index.html
+
       - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 0ebf237b8b0470f2beea23f911712f01
-          # wrangler.jsonc at repo root points at publish/site/.vitepress/dist
-          command: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 0ebf237b8b0470f2beea23f911712f01
+        run: |
+          npx --yes wrangler@latest --version
+          npx --yes wrangler@latest whoami
+          npx --yes wrangler@latest deploy
 
       - name: Post-deploy summary
         run: |
