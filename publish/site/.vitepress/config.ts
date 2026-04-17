@@ -97,7 +97,7 @@ export default defineConfig({
     root: {
       label: 'Русский',
       lang: 'ru-RU',
-      link: '/ru/00-prolog',
+      link: '/',
       themeConfig: {
         sidebar: { '/ru/': [{ text: 'Тома', items: BOOKS_RU }] },
         nav: [
@@ -117,7 +117,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-GB',
-      link: '/en/00-prologue',
+      link: '/en/',
       themeConfig: {
         sidebar: { '/en/': [{ text: 'Books', items: BOOKS_EN }] },
         nav: [
@@ -130,7 +130,7 @@ export default defineConfig({
     et: {
       label: 'Eesti',
       lang: 'et-EE',
-      link: '/et/00-proloog',
+      link: '/et/',
       themeConfig: {
         sidebar: { '/et/': [{ text: 'Köited', items: BOOKS_ET }] },
         nav: [
@@ -150,7 +150,9 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logoLink: '/',
+    // Intentionally no global logoLink — each locale's `link` above
+    // controls where the PKI-ZEN logo navigates per language, so an
+    // English reader going "home" lands on /en/ not /.
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/sapsan14/pki-zen' }],
     footer: {
