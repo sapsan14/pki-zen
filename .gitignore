@@ -9,3 +9,16 @@ Thumbs.db
 *.swp
 *.swo
 
+# Build artifacts
+dist/
+publish/site/.vitepress/cache/
+publish/site/.vitepress/dist/
+node_modules/
+*.epub
+*.pdf
+!publish/covers/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
