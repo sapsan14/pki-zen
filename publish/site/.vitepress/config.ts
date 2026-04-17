@@ -97,7 +97,7 @@ export default defineConfig({
     root: {
       label: 'Русский',
       lang: 'ru-RU',
-      link: '/ru/',
+      link: '/ru/00-prolog',
       themeConfig: {
         sidebar: { '/ru/': [{ text: 'Тома', items: BOOKS_RU }] },
         nav: [
@@ -117,7 +117,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-GB',
-      link: '/en/',
+      link: '/en/00-prologue',
       themeConfig: {
         sidebar: { '/en/': [{ text: 'Books', items: BOOKS_EN }] },
         nav: [
@@ -130,7 +130,7 @@ export default defineConfig({
     et: {
       label: 'Eesti',
       lang: 'et-EE',
-      link: '/et/',
+      link: '/et/00-proloog',
       themeConfig: {
         sidebar: { '/et/': [{ text: 'Köited', items: BOOKS_ET }] },
         nav: [
