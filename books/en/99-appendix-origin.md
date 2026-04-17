@@ -14,7 +14,7 @@ So I asked the model:
 *"Why might I need a one-terabyte file of random data? Answer with probabilities."*
 
 The model replied with five options — and the last one was:
-*"To feel the entropy of the world. Like a digital mandala."*
+*"To feel the entropy of the world. Like a digital *maṇḍala*."*
 And I realized this was no longer a chat. This was Chapter Six.
 
 The other volumes were born the same way. I said:

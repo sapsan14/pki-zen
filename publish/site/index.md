@@ -5,8 +5,8 @@ hero:
   text: Сутра о сертификатах, YAML и почти-просветлении
   tagline: Десять маленьких книг. Три языка. Один вдох между двумя CRL-апдейтами.
   image:
-    src: /logo.svg
-    alt: PKI-ZEN — lotus + hex ring + infinity
+    src: /logo.svg?v4
+    alt: PKI-ZEN — lotus + hex rings + infinity
   actions:
     - theme: brand
       text: Читать по-русски
