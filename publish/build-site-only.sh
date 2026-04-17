@@ -10,10 +10,14 @@ echo "→ [1/3] Verify trilingual parallel structure"
 python3 scripts/verify-parallel.py
 
 echo "→ [2/3] Sync books into site tree"
-mkdir -p publish/site/ru publish/site/en publish/site/et
-rsync -a --delete books/ru/ publish/site/ru/
-rsync -a --delete books/en/ publish/site/en/
-rsync -a --delete books/et/ publish/site/et/
+# Use POSIX cp instead of rsync: the Cloudflare Workers Builds image
+# doesn't ship rsync, and we only need a straight copy — no rsync-specific
+# features like deltas or remote sync.
+for lang in ru en et; do
+  rm -rf "publish/site/$lang"
+  mkdir -p "publish/site/$lang"
+  cp -R "books/$lang/." "publish/site/$lang/"
+done
 
 echo "→ [3/3] Build VitePress"
 cd publish/site
