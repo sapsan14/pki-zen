@@ -2,6 +2,7 @@
   "name": "pki-zen-site",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "PKI-ZEN — trilingual sūtra as a static site.",
   "scripts": {
     "dev": "vitepress dev",
