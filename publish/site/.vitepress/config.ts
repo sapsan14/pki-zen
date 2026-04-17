@@ -150,6 +150,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    logoLink: '/',
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/sapsan14/pki-zen' }],
     footer: {
