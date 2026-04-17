@@ -6,10 +6,14 @@
 /en/prologue             /en/00-prologue               301
 /et/proloog              /et/00-proloog                301
 
-# Top-level shorthands
+# Top-level shorthands (both with and without trailing slash — VitePress
+# locale roots have no index.html, so bare /ru, /en, /et 404 otherwise)
 /ru                      /ru/00-prolog                 301
 /en                      /en/00-prologue               301
 /et                      /et/00-proloog                301
+/ru/                     /ru/00-prolog                 301
+/en/                     /en/00-prologue               301
+/et/                     /et/00-proloog                301
 
 # Classic "first-volume" link
 /book-1                  /en/01-way-of-the-engineer    302

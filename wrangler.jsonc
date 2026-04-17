@@ -1,14 +1,23 @@
 // Cloudflare Workers config for PKI-ZEN.
-// Serves the VitePress build output as static assets.
+// Serves the VitePress build output as static assets via a thin
+// Worker entry-point (src/worker.js) that delegates to ASSETS. The
+// entry-point exists so `wrangler tail` works — assets-only Workers
+// (no `main`) return CF error 100311 when tailed.
 // Used by `npx wrangler deploy` (the Deploy command in Workers Builds).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pki-zen",
+  "main": "./src/worker.js",
   "compatibility_date": "2024-11-01",
   "assets": {
     "directory": "./publish/site/.vitepress/dist",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
   },
+  "routes": [
+    { "pattern": "pki-zen.h2oatlas.ee", "custom_domain": true }
+  ],
+  "workers_dev": true,
   "observability": {
     "enabled": true
   }
