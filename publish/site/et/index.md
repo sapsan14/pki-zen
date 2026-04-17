@@ -9,13 +9,13 @@ hero:
     alt: PKI-ZEN — lootos, hex-rõngad, lõpmatus
   actions:
     - theme: brand
-      text: Alusta proloogist
+      text: Loe eesti keeles
       link: /et/00-proloog
     - theme: alt
-      text: Читать по-русски →
+      text: Читать по-русски
       link: /
     - theme: alt
-      text: Read in English →
+      text: Read in English
       link: /en/
 
 features:

@@ -13,9 +13,15 @@ echo "→ [2/3] Sync books into site tree"
 # Use POSIX cp instead of rsync: the Cloudflare Workers Builds image
 # doesn't ship rsync, and we only need a straight copy — no rsync-specific
 # features like deltas or remote sync.
+#
+# Preserve the per-locale landing (index.md) if present — it lives under
+# publish/site/<lang>/index.md and is NOT part of books/. Historically
+# this step did `rm -rf publish/site/<lang>` which silently wiped the
+# landing; that caused /en/ and /et/ to 404 in production.
 for lang in ru en et; do
-  rm -rf "publish/site/$lang"
   mkdir -p "publish/site/$lang"
+  # Remove only chapter files (NN-*.md). Keep index.md and anything else.
+  find "publish/site/$lang" -maxdepth 1 -type f -name '[0-9][0-9]-*.md' -delete
   cp -R "books/$lang/." "publish/site/$lang/"
 done
 

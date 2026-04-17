@@ -9,13 +9,13 @@ hero:
     alt: PKI-ZEN — lotus, hex rings, infinity
   actions:
     - theme: brand
-      text: Start with the prologue
+      text: Read in English
       link: /en/00-prologue
     - theme: alt
-      text: Читать по-русски →
+      text: Читать по-русски
       link: /
     - theme: alt
-      text: Loe eesti keeles →
+      text: Loe eesti keeles
       link: /et/
 
 features:
