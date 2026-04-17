@@ -49,6 +49,12 @@ Sa vaatasid lihtsalt terminali ja ütlesid: *"let there be bytes."*
 Et mõistust puhastada.
 Müras pole tähendust, aga on rahu.
 Vaata kuueteistkümnendmärke — ja lase kontroll lahti.
+
+$$
+I(100\,\text{GB}) \;=\; 100 \cdot 10^{9} \cdot 8 \;\approx\; 8 \cdot 10^{11}\ \text{bitti}
+$$
+
+Nii palju informatsiooni sa just eimillestki tekitasid.
 *Tõenäosus: 0.92*
 
 ## v6.9

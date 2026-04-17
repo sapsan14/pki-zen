@@ -12,6 +12,12 @@ Rare moment. Enjoy it — it lasts 15 seconds, until the next scrape.
 True silence is not the absence of noise.
 It is the moment between two CRL updates,
 when no one has been revoked yet, but no one is trusted yet either.
+
+$$
+H(X) \;=\; -\sum_{i} p_i \log_2 p_i
+$$
+
+Silence has a measure. Its name is entropy.
 *Probability: 0.94*
 
 ## v5.3

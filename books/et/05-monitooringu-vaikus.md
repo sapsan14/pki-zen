@@ -12,6 +12,12 @@ Harv hetk. Naudi seda — ta kestab 15 sekundit, järgmise scrape-ini.
 Tõeline vaikus ei ole müra puudumine.
 See on hetk kahe CRL-uuenduse vahel,
 kui keegi pole veel tühistatud, aga keegi pole veel usaldatudki.
+
+$$
+H(X) \;=\; -\sum_{i} p_i \log_2 p_i
+$$
+
+Vaikusel on mõõt. Tema nimi on entroopia.
 *Tõenäosus: 0.94*
 
 ## v5.3

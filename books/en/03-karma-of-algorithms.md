@@ -12,6 +12,11 @@ Fate has its own seed, and it was set before you.
 If you do not know where the private key is,
 it is already in superposition between "leaked" and "in backup".
 Observation collapses the state — usually toward the worse.
+
+$$
+\lvert\psi_{\text{key}}\rangle \;=\; \alpha\,\lvert\text{leaked}\rangle + \beta\,\lvert\text{in-backup}\rangle, \qquad |\alpha|^2 + |\beta|^2 = 1
+$$
+
 *Probability: 0.93*
 
 ## v3.3

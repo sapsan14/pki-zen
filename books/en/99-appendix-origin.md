@@ -29,7 +29,7 @@ and left through a philosophical treatise.
 At one point I asked:
 *"How to live on, and how to make a lot of money?"*
 That is how Book VIII was born — the only one with an equation:
-`wealth = (entropy + focus) × time`.
+$$ \text{wealth} \;=\; \bigl(\,\text{entropy} + \text{focus}\,\bigr) \,\times\, \text{time}. $$
 The equation does not work on short distances.
 On long distances, nothing else does.
 

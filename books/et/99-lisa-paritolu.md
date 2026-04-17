@@ -29,7 +29,7 @@ ja lahkus filosoofilise traktaadi kaudu.
 Ühel hetkel küsisin:
 *"Kuidas edasi elada ja palju raha teenida?"*
 Nii sündis VIII köide — ainus, milles on võrrand:
-`wealth = (entropy + focus) × time`.
+$$ \text{wealth} \;=\; \bigl(\,\text{entropy} + \text{focus}\,\bigr) \,\times\, \text{time}. $$
 Võrrand ei tööta lühikestel distantsidel.
 Pikkadel — ei tööta miski muu.
 
