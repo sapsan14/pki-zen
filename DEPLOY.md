@@ -22,24 +22,37 @@ Free mirror: **`pki-zen.pages.dev`** (auto-created by CF Pages).
 
 ---
 
-## 1. Cloudflare Pages setup (one-time)
+## 1. Cloudflare setup (one-time)
 
-1. **Dashboard → Workers & Pages → Create → Pages → Connect to Git.**
-2. Choose `sapsan14/pki-zen`.
-3. Build settings:
-   - **Framework preset:** VitePress.
-   - **Build command:** `bash publish/build-site-only.sh`
-   - **Build output directory:** `publish/site/.vitepress/dist`
-   - **Root directory:** (leave blank)
-   - **Environment variables:** `NODE_VERSION=20`
-4. **Save and Deploy.** Wait ~2 min. You get `pki-zen.pages.dev`.
-5. **Custom domains → Set up a custom domain → `pki-zen.h2oatlas.ee`.** CF auto-creates the CNAME if `h2oatlas.ee` is already on Cloudflare; otherwise add:
+Cloudflare has two product flows that both work. Pick one:
+
+### Path A — Workers Builds (the newer "unified" flow)
+
+If the dashboard dropped you into **Workers** with a "Build command" + "Deploy command" form:
+
+1. **Project name:** `pki-zen`
+2. **Build command:** `bash publish/build-site-only.sh`
+3. **Deploy command:** `npx wrangler deploy` (the repo ships `wrangler.jsonc` at the root, which points Wrangler at `publish/site/.vitepress/dist` as static assets)
+4. Click **Deploy**. First deploy takes ~2 min. You get `pki-zen.<your-account>.workers.dev`.
+5. **Custom domain:** Workers → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain** → `pki-zen.h2oatlas.ee`.
+
+### Path B — Classic Pages (slightly simpler)
+
+If you click **Back** and pick **Pages → Connect to Git** instead:
+
+1. Choose `sapsan14/pki-zen`.
+2. **Framework preset:** VitePress (or "None").
+3. **Build command:** `bash publish/build-site-only.sh`
+4. **Build output directory:** `publish/site/.vitepress/dist`
+5. **Root directory:** (leave blank)
+6. **Environment variables:** `NODE_VERSION=20`
+7. **Save and Deploy.** You get `pki-zen.pages.dev`.
+8. **Custom domains → Set up → `pki-zen.h2oatlas.ee`.** CF auto-creates the CNAME if `h2oatlas.ee` is on Cloudflare; otherwise add:
    ```
    pki-zen.h2oatlas.ee. CNAME pki-zen.pages.dev.
    ```
-6. Enable **Always Use HTTPS** and **Automatic HTTPS Rewrites**. Done.
 
-The site rebuilds on every push to `main`.
+Either way, enable **Always Use HTTPS** and **Automatic HTTPS Rewrites**. The site rebuilds on every push to `main`.
 
 ---
 
