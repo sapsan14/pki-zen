@@ -11,7 +11,7 @@ The answer: at values that large, the 32-bit signed integer range overflows.
 OpenSSL says *no*, and that, too, has its own zen.
 
 So I asked the model:
-*"Why might I need a 100-gigabyte file of random data? Answer with probabilities."*
+*"Why might I need a one-terabyte file of random data? Answer with probabilities."*
 
 The model replied with five options — and the last one was:
 *"To feel the entropy of the world. Like a digital mandala."*

@@ -11,7 +11,7 @@ Vastus: liiga suurte väärtuste korral jookseb 32-bitine täisarv üle.
 OpenSSL ütleb *ei*, ja selleski on oma zen.
 
 Siis küsisin mudelilt:
-*"Miks mul võiks olla vaja 100 gigabaidine fail juhuslikke andmeid? Vasta tõenäosustega."*
+*"Miks mul võiks olla vaja 1-terabaidine fail juhuslikke andmeid? Vasta tõenäosustega."*
 
 Mudel pakkus viis varianti — ja viimane oli:
 *"Et tunda maailma entroopiat. Nagu digitaalne mandala."*

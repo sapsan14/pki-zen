@@ -1,4 +1,4 @@
-# Book VI. A Hundred Gigabytes and the Sense of God
+# Book VI. One Terabyte and the Sense of God
 
 > *Or, how to realize that entropy is you.*
 
@@ -16,7 +16,7 @@ Though sometimes even that is a form of faith.
 
 ## v6.3
 To stress-test the file system.
-Only at a hundred gigabytes of random bytes do you find out who you are —
+Only at a terabyte of random bytes do you find out who you are —
 `ext4` or `btrfs`.
 *Probability: 0.73*
 
@@ -29,7 +29,7 @@ This is divine DevOps.
 
 ## v6.5
 To check your monitoring.
-If after a hundred gigabytes of random bytes no alert has fired —
+If after a terabyte of random bytes no alert has fired —
 monitoring is dead. Possibly long dead.
 *Probability: 0.86*
 
@@ -51,7 +51,7 @@ In noise there is no meaning, but there is peace.
 Look at the hexadecimal characters — and let go of control.
 
 $$
-I(100\,\text{GB}) \;=\; 100 \cdot 10^{9} \cdot 8 \;\approx\; 8 \cdot 10^{11}\ \text{bits}
+I(1\,\text{TB}) \;=\; 10^{12} \cdot 8 \;\approx\; 8 \cdot 10^{12}\ \text{bits}
 $$
 
 That much information you just summoned out of nothing.
@@ -59,6 +59,6 @@ That much information you just summoned out of nothing.
 
 ## v6.9
 To recognize yourself as part of the universe.
-A hundred gigabytes of randomness is a model of creation.
+A terabyte of randomness is a model of creation.
 Everything is possible. Everything is meaningless. And still, it is beautiful.
 *Probability: ∞*

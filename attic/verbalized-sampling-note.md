@@ -25,9 +25,13 @@ different jokes, each with a number the model has to defend.
 ## What happened to me
 
 I used this on 12 November 2025 to ask about `openssl rand -hex` behaviour.
-The sixth reply came back with *five* reasons I might want 100 GB of
+The sixth reply came back with *five* reasons I might want a terabyte of
 randomness, and the last reason was: *"to feel the entropy of the world —
 like a digital mandala."*
+
+*(The original chat actually asked about 100 GB — the published book
+rounded up to a terabyte for literary weight. The raw transcript is kept
+verbatim in `attic/origin-chat.md`.)*
 
 That probability (92%) was not a hallucination. It was the model telling me
 which of the five modes it believed in most. And I believed it too.

@@ -23,12 +23,17 @@
 /ask                     /oracle                       302
 
 # Legacy (from the old flat layout, if anyone linked there)
-/book6.md                /ru/06-sto-gigabaytov         301
+/book6.md                /ru/06-terabayt               301
 /book7.md                /ru/07-konteynery-i-karma     301
 /book8.md                /en/08-life-after-entropy     301
 /book8-rus.md            /ru/08-zhizn-posle-entropii   301
 /PKI-ZEN_COMPLETE_ENG    /en/01-way-of-the-engineer    301
 /PKI-ZEN_COMPLETE_RUS    /ru/01-put-inzhenera          301
+
+# Renamed: Book VI "100 GB" -> "1 TB" (keep old slugs linkable)
+/ru/06-sto-gigabaytov    /ru/06-terabayt               301
+/en/06-hundred-gigabytes /en/06-terabyte               301
+/et/06-sada-gigabaiti    /et/06-terabait               301
 
 # Direct EPUB / PDF downloads → GitHub Releases "latest"
 /download/ru.epub        https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-ru.epub     302

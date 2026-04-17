@@ -12,7 +12,7 @@ II. The Shadow of Trust and the HSM of the Soul.
 III. The Karma of Algorithms.
 IV. DevOps Saṃsāra.
 V. The Silence of Monitoring.
-VI. A Hundred Gigabytes and the Sense of God.
+VI. One Terabyte and the Sense of God.
 VII. Containers and Karma.
 VIII. How to Live After Entropy.
 IX. The Field of Trust.
