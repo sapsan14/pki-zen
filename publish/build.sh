@@ -19,6 +19,19 @@ python3 scripts/build-corpus.py
 mkdir -p "$DIST/oracle"
 cp oracle/system-prompt.md oracle/examples.md oracle/README.md oracle/corpus.jsonl "$DIST/oracle/"
 
+echo "→ [2.5/6] Rasterise cover SVG → PNG for EPUB readers"
+mkdir -p dist
+COVER_PNG="$DIST/cover.png"
+if command -v rsvg-convert >/dev/null 2>&1; then
+  rsvg-convert -w 800 publish/covers/cover.svg > "$COVER_PNG"
+elif command -v cairosvg >/dev/null 2>&1 || python3 -c "import cairosvg" 2>/dev/null; then
+  python3 -c "import cairosvg; cairosvg.svg2png(url='publish/covers/cover.svg', write_to='$COVER_PNG', output_width=800)"
+else
+  echo "   ! no SVG rasteriser found; falling back to SVG cover (some EPUB readers may skip it)"
+  COVER_PNG="publish/covers/cover.svg"
+fi
+echo "   ✓ $COVER_PNG"
+
 echo "→ [3/6] Build EPUBs (3 languages)"
 build_epub() {
   local lang="$1"; local meta="publish/pandoc/metadata.$lang.yaml"
@@ -26,7 +39,7 @@ build_epub() {
   pandoc \
     --metadata-file="$meta" \
     --css=publish/pandoc/epub.css \
-    --epub-cover-image=publish/covers/cover.svg \
+    --epub-cover-image="$COVER_PNG" \
     --toc --toc-depth=2 \
     -o "$out" \
     books/"$lang"/*.md

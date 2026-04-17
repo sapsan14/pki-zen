@@ -5,6 +5,9 @@ on:
     tags: ['v*']
   workflow_dispatch:
 
+permissions:
+  contents: write   # needed for softprops/action-gh-release to upload release assets
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,8 +18,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            pandoc texlive-xetex texlive-latex-extra texlive-fonts-extra \
-            fonts-eb-garamond fonts-jetbrains-mono fonts-noto-core \
+            pandoc \
+            texlive-xetex texlive-latex-extra texlive-fonts-extra \
+            texlive-lang-cyrillic texlive-lang-european \
+            fonts-noto-core fonts-dejavu \
             librsvg2-bin rsync
 
       - name: Install Python
