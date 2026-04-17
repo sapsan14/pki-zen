@@ -76,7 +76,7 @@
 | III · Карма алгоритмов | [03](books/ru/03-karma-algoritmov.md) | [03](books/en/03-karma-of-algorithms.md) | [03](books/et/03-algoritmide-karma.md) |
 | IV · DevOps-самсара | [04](books/ru/04-devops-samsara.md) | [04](books/en/04-devops-samsara.md) | [04](books/et/04-devops-samsara.md) |
 | V · Тишина мониторинга | [05](books/ru/05-tishina-monitoringa.md) | [05](books/en/05-silence-of-monitoring.md) | [05](books/et/05-monitooringu-vaikus.md) |
-| VI · Сто гигабайт | [06](books/ru/06-sto-gigabaytov.md) | [06](books/en/06-hundred-gigabytes.md) | [06](books/et/06-sada-gigabaiti.md) |
+| VI · Терабайт | [06](books/ru/06-terabayt.md) | [06](books/en/06-terabyte.md) | [06](books/et/06-terabait.md) |
 | VII · Контейнеры и карма | [07](books/ru/07-konteynery-i-karma.md) | [07](books/en/07-containers-and-karma.md) | [07](books/et/07-konteinerid-ja-karma.md) |
 | VIII · После энтропии | [08](books/ru/08-zhizn-posle-entropii.md) | [08](books/en/08-life-after-entropy.md) | [08](books/et/08-parast-entroopiat.md) |
 | IX · Поле доверия | [09](books/ru/09-pole-doveriya.md) | [09](books/en/09-field-of-trust.md) | [09](books/et/09-usalduse-vali.md) |

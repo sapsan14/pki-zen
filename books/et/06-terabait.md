@@ -1,4 +1,4 @@
-# VI köide. Sada gigabaiti ja jumala tunne
+# VI köide. Üks terabait ja jumala tunne
 
 > *Ehk kuidas mõista, et entroopia oled sina ise.*
 
@@ -16,7 +16,7 @@ Kuigi mõnikord on ka see usu vorm.
 
 ## v6.3
 Et panna failisüsteem proovile.
-Alles saja gigabaidi juhuslike baitide juures saad teada, kes sa oled —
+Alles ühe terabaidi juhuslike baitide juures saad teada, kes sa oled —
 `ext4` või `btrfs`.
 *Tõenäosus: 0.73*
 
@@ -29,7 +29,7 @@ See on jumalik DevOps.
 
 ## v6.5
 Et kontrollida monitooringut.
-Kui pärast saja gigabaidi genereerimist ei tule ühtki alert-i —
+Kui pärast ühe terabaidi genereerimist ei tule ühtki alert-i —
 monitooring on surnud. Võib-olla juba ammu.
 *Tõenäosus: 0.86*
 
@@ -51,7 +51,7 @@ Müras pole tähendust, aga on rahu.
 Vaata kuueteistkümnendmärke — ja lase kontroll lahti.
 
 $$
-I(100\,\text{GB}) \;=\; 100 \cdot 10^{9} \cdot 8 \;\approx\; 8 \cdot 10^{11}\ \text{bitti}
+I(1\,\text{TB}) \;=\; 10^{12} \cdot 8 \;\approx\; 8 \cdot 10^{12}\ \text{bitti}
 $$
 
 Nii palju informatsiooni sa just eimillestki tekitasid.
@@ -59,6 +59,6 @@ Nii palju informatsiooni sa just eimillestki tekitasid.
 
 ## v6.9
 Et tunda end universumi osana.
-Sada gigabaiti juhuslikkust on loomise mudel.
+Üks terabait juhuslikkust on loomise mudel.
 Kõik on võimalik. Kõik on mõttetu. Ja ikkagi — ilus.
 *Tõenäosus: ∞*
