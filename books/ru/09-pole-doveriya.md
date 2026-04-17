@@ -1,7 +1,7 @@
 # Том IX. Поле доверия
 
 > *Мы, в сущности, начали разрабатывать физику для социотехнических систем.*
-> — из [life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life)
+> — из [life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md)
 
 ## v9.1
 Доверие — это не ребро в графе.
@@ -34,7 +34,7 @@ $$
 *слово "выход" уже содержит границу, а граница — уже система.»*
 Поэтому настоящая свобода — не выход, а перефазировка.
 *Вероятность: 0.96*
-— [life/reflect/2026-04-13_three-questions-observer-trap.md](https://github.com/sapsan14/life)
+— [life/reflect/2026-04-13_three-questions-observer-trap.md](https://github.com/sapsan14/life/blob/main/reflect/2026-04-13_three-questions-observer-trap.md)
 
 ## v9.5
 Наблюдатель находится внутри системы, которую он пытается объяснить.

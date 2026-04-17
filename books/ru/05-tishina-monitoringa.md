@@ -49,7 +49,7 @@ Timestamp — это видеорегистратор для интеллект�
 Всё, что не подписано временем, — можно оспорить.
 Всё, что подписано, — тоже, но уже дороже.
 *Вероятность: 0.91*
-— *из record-book-a observer-a, [life/](https://github.com/sapsan14/life)*
+— *из record-book-a observer-a, [life/reflect/](https://github.com/sapsan14/life/tree/main/reflect)*
 
 ## v5.8
 Мониторинг — это любовь без ответа.

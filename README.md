@@ -159,7 +159,7 @@ Inspired by [*Verbalized Sampling: How to Mitigate Mode Collapse and Unlock
 LLM Diversity*](https://arxiv.org/abs/2510.01171), born in a ChatGPT chat on
 12 November 2025 with the prompt *«Generate 5 jokes with their probabilities»*.
 Philosophical gravity from the companion diary [github.com/sapsan14/life](https://github.com/sapsan14/life) — especially
-*trust-field-theory* and *three-questions-observer-trap*. Every verse carries
+[*trust-field-theory*](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md) and [*three-questions-observer-trap*](https://github.com/sapsan14/life/blob/main/reflect/2026-04-13_three-questions-observer-trap.md). Every verse carries
 a **probability signature** as a deliberate echo of its origin.
 
 ## Cite a verse
