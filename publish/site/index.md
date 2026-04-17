@@ -9,13 +9,13 @@ hero:
     alt: PKI-ZEN — лотос, хекс-кольца, бесконечность
   actions:
     - theme: brand
-      text: Читать с пролога
+      text: Читать по-русски
       link: /ru/00-prolog
     - theme: alt
-      text: Read in English →
+      text: Read in English
       link: /en/
     - theme: alt
-      text: Loe eesti keeles →
+      text: Loe eesti keeles
       link: /et/
 
 features:
