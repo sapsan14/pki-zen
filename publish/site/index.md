@@ -3,20 +3,20 @@ layout: home
 hero:
   name: PKI-ZEN
   text: Сутра о сертификатах, YAML и почти-просветлении
-  tagline: Десять маленьких книг. Три языка. Один вдох между двумя CRL-апдейтами.
+  tagline: Десять маленьких книг. Один вдох между двумя CRL-апдейтами.
   image:
     src: /logo.svg?v4
-    alt: PKI-ZEN — lotus + hex rings + infinity
+    alt: PKI-ZEN — лотос, хекс-кольца, бесконечность
   actions:
     - theme: brand
-      text: Читать по-русски
+      text: Читать с пролога
       link: /ru/00-prolog
     - theme: alt
-      text: Read in English
-      link: /en/00-prologue
+      text: Read in English →
+      link: /en/
     - theme: alt
-      text: Loe eesti keeles
-      link: /et/00-proloog
+      text: Loe eesti keeles →
+      link: /et/
 
 features:
   - title: Для инженеров, философов и их мам
@@ -35,13 +35,7 @@ $$
 
 Короткая, как «строка в YAML». Неполная, как любая хорошая мысль в три часа ночи. Подробнее — в [Томе VIII](/ru/08-zhizn-posle-entropii).
 
-## Все языки / All languages / Kõik keeled
-
-- [Русский — начните с пролога](/ru/00-prolog)
-- [English — start with the prologue](/en/00-prologue)
-- [Eesti — alusta proloogist](/et/00-proloog)
-
-## Исходник · Source · Lähtekood
+## Исходник
 
 [`github.com/sapsan14/pki-zen`](https://github.com/sapsan14/pki-zen) ·
 CC-BY-SA-4.0 текст, MIT код.

@@ -6,14 +6,14 @@
 /en/prologue             /en/00-prologue               301
 /et/proloog              /et/00-proloog                301
 
-# Top-level shorthands (both with and without trailing slash — VitePress
-# locale roots have no index.html, so bare /ru, /en, /et 404 otherwise)
-/ru                      /ru/00-prolog                 301
-/en                      /en/00-prologue               301
-/et                      /et/00-proloog                301
-/ru/                     /ru/00-prolog                 301
-/en/                     /en/00-prologue               301
-/et/                     /et/00-proloog                301
+# /en and /et now have their own locale-landing (index.md) — serve them
+# as pages; don't redirect to the prologue. /ru/ has no content of its
+# own (root / is already Russian), so /ru/ → / keeps Russian traffic
+# on one canonical landing.
+/ru                      /                             301
+/ru/                     /                             301
+/en                      /en/                          301
+/et                      /et/                          301
 
 # Classic "first-volume" link
 /book-1                  /en/01-way-of-the-engineer    302
