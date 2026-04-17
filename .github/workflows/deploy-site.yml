@@ -1,0 +1,63 @@
+# Build the VitePress site in a full Ubuntu environment and deploy it
+# to Cloudflare Workers via wrangler. This replaces the Cloudflare
+# Workers Builds pipeline — that one runs in a minimal image (no rsync,
+# no apt packages) and its logs live in the CF dashboard. This workflow
+# is stronger and its logs live right in the PR.
+#
+# Required repo secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  — "Edit Cloudflare Workers" scope, account-limited
+#
+# The account ID below is public (visible in the dashboard URL).
+
+name: Deploy site to Cloudflare
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'books/**'
+      - 'publish/**'
+      - 'scripts/**'
+      - 'wrangler.jsonc'
+      - '.github/workflows/deploy-site.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Python (for verify + corpus scripts)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify parallel structure
+        run: python3 scripts/verify-parallel.py
+
+      - name: Build site (VitePress)
+        run: bash publish/build-site-only.sh
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 0ebf237b8b0470f2beea23f911712f01
+          # wrangler.jsonc at repo root points at publish/site/.vitepress/dist
+          command: deploy
+
+      - name: Post-deploy summary
+        run: |
+          echo "### 🪷 Deployed" >> $GITHUB_STEP_SUMMARY
+          echo "Worker: **pki-zen** · https://pki-zen.sokolovmeister.workers.dev" >> $GITHUB_STEP_SUMMARY
+          echo "Custom domain (once set): https://pki-zen.h2oatlas.ee" >> $GITHUB_STEP_SUMMARY
