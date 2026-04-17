@@ -53,6 +53,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 0ebf237b8b0470f2beea23f911712f01
+          # v4 is required for assets-only Workers (no `main` entry-point).
+          wranglerVersion: '4'
           # wrangler.jsonc at repo root points at publish/site/.vitepress/dist
           command: deploy
 
