@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  PKI-ZEN mark (v2 — more bytes):
+  PKI-ZEN mark (v3 — full hex fill):
   - 16-petal lotus mandala (8 outer + 8 interleaved)
-  - two concentric hexadecimal rings (cryptography motif)
-  - micro hex "whispers" along the spine of each major petal
+  - SIX concentric hexadecimal rings packed between r=38 and r=86,
+    no circle outlines beneath them
   - infinity at the center — the probability signature of the book
 
   Palette matches publish/covers/cover.svg and the VitePress theme.
-  Render-size agnostic; works at 16×16 (favicon) and 512×512 (hero).
+  Render-size agnostic; mandala reads at favicon sizes; hex fills at ≥128 px.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
      width="256" height="256" role="img" aria-label="PKI-ZEN lotus mark">
   <defs>
-    <!-- outer hex ring (r = 82) -->
-    <path id="hex-ring-outer" d="M 128,128 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" fill="none"/>
-    <!-- inner hex ring (r = 50) -->
-    <path id="hex-ring-inner" d="M 128,128 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" fill="none"/>
-    <!-- a straight line for petal hex whisper; rendered once, rotated per petal -->
-    <path id="petal-spine" d="M 128,28 L 128,108" fill="none"/>
+    <!-- Six hex-ring paths. Alternating sweep directions (0 1 / 1 0)
+         flip the text so adjacent rings read in opposite angular directions,
+         which creates a more obvious "loops of data" feel. -->
+    <path id="ring-86" d="M 128,128 m -86,0 a 86,86 0 1,1 172,0 a 86,86 0 1,1 -172,0" fill="none"/>
+    <path id="ring-76" d="M 128,128 m -76,0 a 76,76 0 1,0 152,0 a 76,76 0 1,0 -152,0" fill="none"/>
+    <path id="ring-66" d="M 128,128 m -66,0 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" fill="none"/>
+    <path id="ring-56" d="M 128,128 m -56,0 a 56,56 0 1,0 112,0 a 56,56 0 1,0 -112,0" fill="none"/>
+    <path id="ring-47" d="M 128,128 m -47,0 a 47,47 0 1,1  94,0 a 47,47 0 1,1  -94,0" fill="none"/>
+    <path id="ring-39" d="M 128,128 m -39,0 a 39,39 0 1,0  78,0 a 39,39 0 1,0  -78,0" fill="none"/>
+
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
       <stop offset="0"   stop-color="#ffffff" stop-opacity="0"/>
       <stop offset="0.7" stop-color="#ffffff" stop-opacity="0"/>
@@ -45,56 +49,51 @@
     </g>
   </g>
 
-  <!-- hex whispers along each major petal spine (4 axes × 2 sides ≈ 8) -->
+  <!-- Six rings of hex. No circle strokes underneath. -->
   <g font-family="ui-monospace, 'JetBrains Mono', 'DejaVu Sans Mono', monospace"
-     font-size="7" fill="#6a5a3a" opacity="0.55" letter-spacing="1.2">
-    <!-- rotate groups of micro-text around centre -->
-    <g transform="rotate(0 128 128)">
-      <text x="124" y="48">a1</text><text x="124" y="64">3f</text>
-      <text x="124" y="80">9c</text><text x="124" y="96">d0</text>
-    </g>
-    <g transform="rotate(45 128 128)">
-      <text x="124" y="48">7e</text><text x="124" y="64">b2</text>
-      <text x="124" y="80">04</text><text x="124" y="96">cf</text>
-    </g>
-    <g transform="rotate(90 128 128)">
-      <text x="124" y="48">55</text><text x="124" y="64">8d</text>
-      <text x="124" y="80">2a</text><text x="124" y="96">e7</text>
-    </g>
-    <g transform="rotate(135 128 128)">
-      <text x="124" y="48">6b</text><text x="124" y="64">c1</text>
-      <text x="124" y="80">f0</text><text x="124" y="96">19</text>
-    </g>
+     fill="#6a5a3a" letter-spacing="1.4">
+    <text font-size="9"   opacity="0.82">
+      <textPath href="#ring-86" startOffset="0">
+        7f 3a d1 02 e4 c9 8b 5c 12 af 44 90 ee 6b 71 03 22 5d 9e 8f a0 14 67 bc 01 9d f3 2b 8e 71 4c ad
+      </textPath>
+    </text>
+    <text font-size="8.5" opacity="0.76">
+      <textPath href="#ring-76" startOffset="0">
+        c8 17 6f d5 91 4a 2e b0 38 e9 7d 11 06 bb 54 27 f2 83 0c 9a 65 d4 1b ae 70 3f e1 8c 25 49 ba 06
+      </textPath>
+    </text>
+    <text font-size="7.8" opacity="0.72">
+      <textPath href="#ring-66" startOffset="0">
+        ff 00 aa 55 3c c3 5a a5 69 96 1e e1 b7 48 24 db 0d f2 7c 83 4e b1 92 6d 18 e7 6a 95 ca 35 80 1f
+      </textPath>
+    </text>
+    <text font-size="7.2" opacity="0.68">
+      <textPath href="#ring-56" startOffset="0">
+        41 7d 8e b3 00 12 f5 9c 6b 2a d0 84 39 ee 5f c1 77 ab 26 dd 50 93 48 ef 19 a7 30 fc 82 5e b9 04
+      </textPath>
+    </text>
+    <text font-size="6.4" opacity="0.62">
+      <textPath href="#ring-47" startOffset="0">
+        1a 2b 3c 4d 5e 6f 70 81 92 a3 b4 c5 d6 e7 f8 09 0a 1b 2c 3d 4e 5f 60 71 82 93 a4 b5 c6
+      </textPath>
+    </text>
+    <text font-size="5.8" opacity="0.55">
+      <textPath href="#ring-39" startOffset="0">
+        de ad be ef ba be fa ce 13 37 c0 de 42 42 f0 0d ca fe 00 01 b1 e5 5e d0 7b ad
+      </textPath>
+    </text>
   </g>
 
-  <!-- outer hex ring (r=82) -->
-  <circle cx="128" cy="128" r="82" fill="none" stroke="#b4aa88" stroke-width="1" opacity="0.75"/>
-  <text font-family="ui-monospace, 'JetBrains Mono', 'DejaVu Sans Mono', monospace"
-        font-size="9" fill="#6a5a3a" letter-spacing="1.8" opacity="0.85">
-    <textPath href="#hex-ring-outer" startOffset="0">
-      7f 3a d1 02 e4 c9 8b 5c 12 af 44 90 ee 6b 71 03 22 5d 9e 8f a0 14 67 bc 01 9d f3 2b 8e 71 4c ad
-    </textPath>
-  </text>
-
-  <!-- inner hex ring (r=50) -->
-  <circle cx="128" cy="128" r="50" fill="none" stroke="#b4aa88" stroke-width="0.8" opacity="0.65"/>
-  <text font-family="ui-monospace, 'JetBrains Mono', 'DejaVu Sans Mono', monospace"
-        font-size="7.2" fill="#6a5a3a" letter-spacing="1.1" opacity="0.75">
-    <textPath href="#hex-ring-inner" startOffset="0">
-      fe dc ba 98 76 54 32 10  0f 1e 2d 3c 4b 5a 69 78  87 96 a5 b4 c3 d2 e1 f0
-    </textPath>
-  </text>
-
-  <!-- inner disc (to keep ∞ readable against the ring) -->
-  <circle cx="128" cy="128" r="34" fill="#faf8f1" stroke="#4a3b2a" stroke-width="1.4"/>
+  <!-- inner disc to keep ∞ readable above the busy rings -->
+  <circle cx="128" cy="128" r="28" fill="#faf8f1" stroke="#4a3b2a" stroke-width="1.3"/>
 
   <!-- infinity — probability signature -->
-  <g transform="translate(128,132)" stroke="#4a3b2a" stroke-width="5.5" fill="none"
+  <g transform="translate(128,131)" stroke="#4a3b2a" stroke-width="4.8" fill="none"
      stroke-linecap="round">
-    <path d="M -20,0
-             C -20,-14 -9,-14  0,0
-             C 9,14  20,14  20,0
-             C 20,-14 9,-14  0,0
-             C -9,14 -20,14  -20,0 Z"/>
+    <path d="M -17,0
+             C -17,-12 -8,-12  0,0
+             C 8,12  17,12  17,0
+             C 17,-12 8,-12  0,0
+             C -8,12 -17,12  -17,0 Z"/>
   </g>
 </svg>
