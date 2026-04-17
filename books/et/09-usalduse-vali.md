@@ -1,7 +1,7 @@
 # IX köide. Usalduse väli
 
 > *Me hakkasime sisuliselt välja arendama füüsikat sotsio-tehniliste süsteemide jaoks.*
-> — [life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life)
+> — [life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md)
 
 ## v9.1
 Usaldus ei ole serva graafis.
@@ -35,7 +35,7 @@ Sokolovi seadus №7:
 *ja piir on juba süsteem."*
 Nii et tõeline vabadus pole väljumine; see on faasi muutus.
 *Tõenäosus: 0.96*
-— [life/reflect/2026-04-13_three-questions-observer-trap.md](https://github.com/sapsan14/life)
+— [life/reflect/2026-04-13_three-questions-observer-trap.md](https://github.com/sapsan14/life/blob/main/reflect/2026-04-13_three-questions-observer-trap.md)
 
 ## v9.5
 Vaatleja istub süsteemi sees, mida ta üritab seletada.

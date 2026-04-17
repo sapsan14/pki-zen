@@ -35,7 +35,7 @@ recording the process is how we make it verifiable.
 **New material as Author:**
 - Book 0 (Prologue) — 9 verses framing the chat origin as sūtra.
 - Book IX (Field of Trust) — 9 verses drawn from
-  [trust-field-theory](https://github.com/sapsan14/life) reflection.
+  [trust-field-theory](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md) reflection.
 - Book X (Codex Zero) — 18 glossary-koans so Mom, Dad, and a 38-year-old
   brother who never opened a terminal can read the rest.
 - ~30 new verses expanding Books III, IV, V, VII, VIII to 9 verses each.
@@ -82,7 +82,7 @@ Estonian was the hardest. Technical words mostly stay as loans (`pod`,
   lookup by tag and language. Useful as a meditation timer.
 - Integration with Aletheia: each release of the book signs the corpus with
   a timestamped PQ certificate. (See
-  [reflect/2026-02-11_eatf-market-context.md](https://github.com/sapsan14/life).)
+  [reflect/2026-02-11_eatf-market-context.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-11_eatf-market-context.md).)
 - Parents' reading session. Record which verses land.
 
 — Tallinn, 17 April 2026
