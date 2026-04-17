@@ -67,6 +67,11 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://pki-zen.h2oatlas.ee',
   },
+  markdown: {
+    // Render $...$  and  $$...$$  via MathJax 3 (SVG output).
+    // Loaded from node_modules at build time; no runtime network.
+    math: true,
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: BASE + 'favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#4a3b2a' }],

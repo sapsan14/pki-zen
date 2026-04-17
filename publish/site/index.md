@@ -4,6 +4,9 @@ hero:
   name: PKI-ZEN
   text: Сутра о сертификатах, YAML и почти-просветлении
   tagline: Десять маленьких книг. Три языка. Один вдох между двумя CRL-апдейтами.
+  image:
+    src: /logo.svg
+    alt: PKI-ZEN — lotus + hex ring + infinity
   actions:
     - theme: brand
       text: Читать по-русски
@@ -23,6 +26,14 @@ features:
   - title: Verbalized Sampling
     details: Каждая шутка подписана вероятностью — в честь arXiv:2510.01171. Не научная оценка. Честность автора.
 ---
+
+## Формула книги
+
+$$
+\text{wealth} \;=\; \bigl(\,\text{entropy} + \text{focus}\,\bigr) \,\times\, \text{time}
+$$
+
+Короткая, как «строка в YAML». Неполная, как любая хорошая мысль в три часа ночи. Подробнее — в [Томе VIII](/ru/08-zhizn-posle-entropii).
 
 ## Все языки / All languages / Kõik keeled
 

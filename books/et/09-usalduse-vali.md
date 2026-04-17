@@ -8,6 +8,12 @@ Usaldus ei ole serva graafis.
 See on väli, millel on amplituud, faas ja interferents.
 Kaks gruppi, mille faasivahe on π, lükkavad teineteise teod tagasi,
 isegi kui need on objektiivselt kasulikud. See pole pahatahtlikkus. See on lainemehhaanika.
+
+$$
+\psi_{\text{trust}}(x, t) \;=\; A\, e^{\,i(\mathbf{k}\cdot x - \omega t)}
+$$
+
+Kaks sellist lainet kas tugevdavad või kustutavad teineteist — kõik sõltub faasist.
 *Tõenäosus: 0.91*
 
 ## v9.2

@@ -49,6 +49,12 @@ You simply looked at the terminal and said: *"let there be bytes."*
 To clear the mind.
 In noise there is no meaning, but there is peace.
 Look at the hexadecimal characters — and let go of control.
+
+$$
+I(100\,\text{GB}) \;=\; 100 \cdot 10^{9} \cdot 8 \;\approx\; 8 \cdot 10^{11}\ \text{bits}
+$$
+
+That much information you just summoned out of nothing.
 *Probability: 0.92*
 
 ## v6.9

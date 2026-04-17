@@ -8,6 +8,12 @@ Trust is not an edge in a graph.
 It is a field with amplitude, phase, and interference.
 Two groups with phase difference of π will reject each other's actions,
 even objectively useful ones. That is not malice. That is wave mechanics.
+
+$$
+\psi_{\text{trust}}(x, t) \;=\; A\, e^{\,i(\mathbf{k}\cdot x - \omega t)}
+$$
+
+Two such waves either amplify or cancel — all a matter of phase.
 *Probability: 0.91*
 
 ## v9.2
