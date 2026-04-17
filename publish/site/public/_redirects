@@ -1,0 +1,35 @@
+# Cloudflare Pages redirects for pki-zen.h2oatlas.ee
+# Convenience aliases so readers don't have to know the canonical slugs.
+
+# Language shortcuts
+/ru/prolog               /ru/00-prolog                 301
+/en/prologue             /en/00-prologue               301
+/et/proloog              /et/00-proloog                301
+
+# Top-level shorthands
+/ru                      /ru/00-prolog                 301
+/en                      /en/00-prologue               301
+/et                      /et/00-proloog                301
+
+# Classic "first-volume" link
+/book-1                  /en/01-way-of-the-engineer    302
+/том-1                   /ru/01-put-inzhenera          302
+
+# Oracle shortcut
+/ask                     /oracle                       302
+
+# Legacy (from the old flat layout, if anyone linked there)
+/book6.md                /ru/06-sto-gigabaytov         301
+/book7.md                /ru/07-konteynery-i-karma     301
+/book8.md                /en/08-life-after-entropy     301
+/book8-rus.md            /ru/08-zhizn-posle-entropii   301
+/PKI-ZEN_COMPLETE_ENG    /en/01-way-of-the-engineer    301
+/PKI-ZEN_COMPLETE_RUS    /ru/01-put-inzhenera          301
+
+# Direct EPUB / PDF downloads → GitHub Releases "latest"
+/download/ru.epub        https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-ru.epub     302
+/download/en.epub        https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-en.epub     302
+/download/et.epub        https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-et.epub     302
+/download/ru.pdf         https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-ru.pdf      302
+/download/en.pdf         https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-en.pdf      302
+/download/et.pdf         https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-et.pdf      302
