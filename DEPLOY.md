@@ -24,33 +24,42 @@ Free mirror: **`pki-zen.pages.dev`** (auto-created by CF Pages).
 
 ## 1. Cloudflare setup (one-time)
 
-Cloudflare has two product flows that both work. Pick one:
+Cloudflare has three product flows that all serve a static site. Pick one:
 
-### Path A — Workers Builds (the newer "unified" flow)
+### Path ⭐ — Deploy from GitHub Actions (recommended)
 
-If the dashboard dropped you into **Workers** with a "Build command" + "Deploy command" form:
+All the build happens in a full Ubuntu runner on GitHub (fat tooling, readable logs), then `wrangler` just uploads the bundle to Cloudflare Workers. CF becomes a dumb CDN.
+
+1. Go to https://dash.cloudflare.com/profile/api-tokens → **Create Token** → **Edit Cloudflare Workers** template → scope to your account → **Create**. Copy the token.
+2. GitHub: repo → **Settings → Secrets and variables → Actions → New repository secret**. Name: `CLOUDFLARE_API_TOKEN`. Value: paste the token.
+3. **Disable the CF Workers Builds pipeline** (otherwise it and the GH Action fight on every push). In CF dashboard → `pki-zen` → **Settings → Build → Disconnect** (or pause it). The empty Worker stays; GA deploys into it.
+4. Push anything to `main` (or trigger `.github/workflows/deploy-site.yml` manually from **Actions → Run workflow**). The job reads the secret, builds the site, runs `wrangler deploy` and publishes.
+5. Custom domain: CF dashboard → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.h2oatlas.ee`**. `h2oatlas.ee` should already be on Cloudflare DNS; if not, point a `CNAME` at the `*.workers.dev` URL.
+
+### Path A — Cloudflare Workers Builds (CF runs the build)
+
+If you keep the Workers Builds pipeline enabled instead of Path ⭐:
 
 1. **Project name:** `pki-zen`
 2. **Build command:** `bash publish/build-site-only.sh`
-3. **Deploy command:** `npx wrangler deploy` (the repo ships `wrangler.jsonc` at the root, which points Wrangler at `publish/site/.vitepress/dist` as static assets)
-4. Click **Deploy**. First deploy takes ~2 min. You get `pki-zen.<your-account>.workers.dev`.
-5. **Custom domain:** Workers → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain** → `pki-zen.h2oatlas.ee`.
+3. **Deploy command:** `npx wrangler deploy`
+4. Click **Deploy**. First deploy takes ~2 min. You get `pki-zen.<account>.workers.dev`.
+5. Custom domain: Workers → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.h2oatlas.ee`**.
 
-### Path B — Classic Pages (slightly simpler)
+The CF build image is minimal (no rsync, no apt). The repo is already adapted (`cp -R` instead of rsync), but any future tooling you add must also be build-image-safe. Prefer Path ⭐.
 
-If you click **Back** and pick **Pages → Connect to Git** instead:
+### Path B — Classic Pages
 
-1. Choose `sapsan14/pki-zen`.
-2. **Framework preset:** VitePress (or "None").
-3. **Build command:** `bash publish/build-site-only.sh`
-4. **Build output directory:** `publish/site/.vitepress/dist`
-5. **Root directory:** (leave blank)
-6. **Environment variables:** `NODE_VERSION=20`
-7. **Save and Deploy.** You get `pki-zen.pages.dev`.
-8. **Custom domains → Set up → `pki-zen.h2oatlas.ee`.** CF auto-creates the CNAME if `h2oatlas.ee` is on Cloudflare; otherwise add:
-   ```
-   pki-zen.h2oatlas.ee. CNAME pki-zen.pages.dev.
-   ```
+If you click **Back** from Workers and pick **Pages → Connect to Git**:
+
+1. Choose `sapsan14/pki-zen`. Preset: VitePress or None.
+2. **Build command:** `bash publish/build-site-only.sh`
+3. **Build output directory:** `publish/site/.vitepress/dist`
+4. **Environment variables:** `NODE_VERSION=20`
+5. **Save and Deploy.** You get `pki-zen.pages.dev`.
+6. Add custom domain `pki-zen.h2oatlas.ee` under **Custom domains**.
+
+Pages is friendly but slowly being folded into Workers. For a new project, Path ⭐ ages best.
 
 Either way, enable **Always Use HTTPS** and **Automatic HTTPS Rewrites**. The site rebuilds on every push to `main`.
 
