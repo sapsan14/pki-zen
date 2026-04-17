@@ -63,9 +63,23 @@
   letter-spacing: -0.02em;
 }
 
-/* Display math — give MathJax a tiny bit of breathing room */
+/* Display math — breathing room + horizontal scroll on narrow viewports.
+   A long display formula (e.g. the v3.2 superposition line) is wider
+   than a phone screen; without overflow-x it overflows silently and
+   gets cropped. Scroll keeps every glyph reachable. */
 mjx-container[jax="SVG"][display="true"] {
+  display: block;
   margin: 1.25em 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* subtle visual cue the element is horizontally scrollable on mobile */
+  scrollbar-width: thin;
+}
+/* Keep inline math from breaking the line height. */
+mjx-container[jax="SVG"]:not([display="true"]) {
+  vertical-align: -0.1em;
 }
 
 /* Verse probability line in italics — softer, smaller */
