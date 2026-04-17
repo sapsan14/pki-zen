@@ -1,0 +1,53 @@
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pandoc and TeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc texlive-xetex texlive-latex-extra texlive-fonts-extra \
+            fonts-eb-garamond fonts-jetbrains-mono fonts-noto-core \
+            librsvg2-bin rsync
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Install site deps
+        run: cd publish/site && npm ci || npm install
+
+      - name: Build everything
+        run: bash publish/build.sh
+
+      - name: Upload artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pki-zen-dist
+          path: dist/
+
+      - name: Attach to Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/pki-zen-ru.epub
+            dist/pki-zen-en.epub
+            dist/pki-zen-et.epub
+            dist/pki-zen-ru.pdf
+            dist/pki-zen-en.pdf
+            dist/pki-zen-et.pdf
+            dist/SHA256SUMS

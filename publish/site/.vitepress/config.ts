@@ -1,0 +1,109 @@
+import { defineConfig } from 'vitepress';
+
+// PKI-ZEN trilingual sūtra — one config, three locales. Sidebars are
+// generated from the fixed book order so adding a verse only requires
+// editing Markdown.
+
+const BOOKS_RU = [
+  { text: '0. Пролог',            link: '/ru/00-prolog' },
+  { text: 'I. Путь инженера',     link: '/ru/01-put-inzhenera' },
+  { text: 'II. Тень доверия',     link: '/ru/02-ten-doveriya' },
+  { text: 'III. Карма алгоритмов', link: '/ru/03-karma-algoritmov' },
+  { text: 'IV. DevOps-самсара',   link: '/ru/04-devops-samsara' },
+  { text: 'V. Тишина мониторинга', link: '/ru/05-tishina-monitoringa' },
+  { text: 'VI. Сто гигабайт',     link: '/ru/06-sto-gigabaytov' },
+  { text: 'VII. Контейнеры и карма', link: '/ru/07-konteynery-i-karma' },
+  { text: 'VIII. После энтропии', link: '/ru/08-zhizn-posle-entropii' },
+  { text: 'IX. Поле доверия',     link: '/ru/09-pole-doveriya' },
+  { text: 'X. Кодекс Нуля',       link: '/ru/10-kodeks-nolya' },
+  { text: 'Приложение',           link: '/ru/99-appendix-origin' },
+  { text: 'Колофон',              link: '/ru/99-colophon' },
+];
+
+const BOOKS_EN = [
+  { text: '0. Prologue',              link: '/en/00-prologue' },
+  { text: 'I. Way of the Engineer',   link: '/en/01-way-of-the-engineer' },
+  { text: 'II. Shadow of Trust',      link: '/en/02-shadow-of-trust' },
+  { text: 'III. Karma of Algorithms', link: '/en/03-karma-of-algorithms' },
+  { text: 'IV. DevOps Saṃsāra',       link: '/en/04-devops-samsara' },
+  { text: 'V. Silence of Monitoring', link: '/en/05-silence-of-monitoring' },
+  { text: 'VI. Hundred Gigabytes',    link: '/en/06-hundred-gigabytes' },
+  { text: 'VII. Containers and Karma',link: '/en/07-containers-and-karma' },
+  { text: 'VIII. After Entropy',      link: '/en/08-life-after-entropy' },
+  { text: 'IX. Field of Trust',       link: '/en/09-field-of-trust' },
+  { text: 'X. Codex Zero',            link: '/en/10-codex-zero' },
+  { text: 'Appendix',                 link: '/en/99-appendix-origin' },
+  { text: 'Colophon',                 link: '/en/99-colophon' },
+];
+
+const BOOKS_ET = [
+  { text: '0. Proloog',              link: '/et/00-proloog' },
+  { text: 'I. Inseneri tee',         link: '/et/01-inseneri-tee' },
+  { text: 'II. Usalduse vari',       link: '/et/02-usalduse-vari' },
+  { text: 'III. Algoritmide karma',  link: '/et/03-algoritmide-karma' },
+  { text: 'IV. DevOps-saṃsāra',      link: '/et/04-devops-samsara' },
+  { text: 'V. Monitooringu vaikus',  link: '/et/05-monitooringu-vaikus' },
+  { text: 'VI. Sada gigabaiti',      link: '/et/06-sada-gigabaiti' },
+  { text: 'VII. Konteinerid ja karma', link: '/et/07-konteinerid-ja-karma' },
+  { text: 'VIII. Pärast entroopiat', link: '/et/08-parast-entroopiat' },
+  { text: 'IX. Usalduse väli',       link: '/et/09-usalduse-vali' },
+  { text: 'X. Nullkoodeks',          link: '/et/10-nullkoodeks' },
+  { text: 'Lisa',                    link: '/et/99-lisa-pariolu' },
+  { text: 'Kolofon',                 link: '/et/99-colophon' },
+];
+
+export default defineConfig({
+  title: 'PKI-ZEN',
+  description: 'Сутра о сертификатах, YAML и почти-просветлении.',
+  cleanUrls: true,
+  srcDir: '.',
+  ignoreDeadLinks: true,
+
+  locales: {
+    root: {
+      label: 'Русский',
+      lang: 'ru-RU',
+      link: '/ru/',
+      themeConfig: {
+        sidebar: { '/ru/': [{ text: 'Тома', items: BOOKS_RU }] },
+        nav: [
+          { text: 'Оракул', link: '/oracle' },
+          { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
+        ],
+      },
+    },
+    en: {
+      label: 'English',
+      lang: 'en-GB',
+      link: '/en/',
+      themeConfig: {
+        sidebar: { '/en/': [{ text: 'Books', items: BOOKS_EN }] },
+        nav: [
+          { text: 'Oracle', link: '/oracle' },
+          { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
+        ],
+      },
+    },
+    et: {
+      label: 'Eesti',
+      lang: 'et-EE',
+      link: '/et/',
+      themeConfig: {
+        sidebar: { '/et/': [{ text: 'Köited', items: BOOKS_ET }] },
+        nav: [
+          { text: 'Oraakel', link: '/oracle' },
+          { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
+        ],
+      },
+    },
+  },
+
+  themeConfig: {
+    search: { provider: 'local' },
+    socialLinks: [{ icon: 'github', link: 'https://github.com/sapsan14/pki-zen' }],
+    footer: {
+      message: 'CC-BY-SA-4.0 · code under MIT',
+      copyright: '© 2025–2026 Anton Sokolov & co-scribes',
+    },
+  },
+});

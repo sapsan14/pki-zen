@@ -1,0 +1,24 @@
+---
+title: "PKI-ДЗЕН"
+subtitle: "Сутра о сертификатах, YAML и почти-просветлении"
+author: "Антон Соколов и языковые модели-соавторы"
+publisher: "Self-published, Tallinn"
+rights: "CC-BY-SA-4.0"
+lang: ru-RU
+date: "2026-04-17"
+identifier:
+  - scheme: "URL"
+    text: "https://github.com/sapsan14/pki-zen"
+cover-image: publish/covers/cover.svg
+mainfont: "EB Garamond"
+sansfont: "Noto Sans"
+monofont: "JetBrains Mono"
+mathfont: "Latin Modern Math"
+geometry:
+  - paperwidth=152mm
+  - paperheight=229mm
+  - margin=18mm
+documentclass: book
+toc: true
+toc-depth: 2
+...

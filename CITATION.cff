@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "PKI-ZEN: The Sūtra of Certificates, YAML, and Almost-Enlightenment"
+message: "If you quote a verse, please cite by verse ID (e.g. v2.3)."
+type: book
+authors:
+  - family-names: Sokolov
+    given-names: Anton
+    affiliation: "github.com/sapsan14"
+  - name: "Large language models, various (as co-scribes)"
+repository-code: "https://github.com/sapsan14/pki-zen"
+abstract: >
+  A trilingual (Russian, English, Estonian) collection of humorous,
+  Buddhist-cosmological aphorisms about cryptography, DevOps, and the
+  quiet life of an engineer. Ten volumes plus a prologue and a Codex
+  Zero glossary. Published simultaneously as web site, EPUB, PDF, and
+  LLM oracle.
+keywords:
+  - PKI
+  - cryptography
+  - DevOps
+  - philosophy
+  - koans
+  - Buddhism
+  - humor
+  - Estonian
+  - Russian
+license: CC-BY-SA-4.0
+version: "1.0.0"
+date-released: "2026-04-17"

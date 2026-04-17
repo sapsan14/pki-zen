@@ -1,0 +1,44 @@
+% PKI-ZEN XeLaTeX template — Cyrillic + Estonian diacritics safe.
+% Minimal override of Pandoc default book class with explicit font declarations.
+
+\documentclass[12pt,oneside]{book}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{$babel-lang$}
+\setotherlanguages{russian,estonian,english}
+
+% Fonts — must be installed on build machine.
+\setmainfont{EB Garamond}[Numbers={OldStyle}, Ligatures={TeX,Common}]
+\setsansfont{Noto Sans}
+\setmonofont{JetBrains Mono}[Scale=0.9]
+
+% Cyrillic fallback: if EB Garamond is missing Cyrillic, swap to Noto Serif.
+\newfontfamily\cyrillicfont{Noto Serif}[Script=Cyrillic]
+
+\usepackage{geometry}
+\geometry{paperwidth=152mm, paperheight=229mm, margin=18mm}
+
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black}
+
+\usepackage{amsmath}
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Chapter style — quiet, no page break for verse-level sections.
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {\fontsize{14pt}{16pt}\selectfont\textsc{\chaptertitlename\ \thechapter}}
+  {12pt}
+  {\fontsize{22pt}{26pt}\selectfont}
+\titlespacing*{\chapter}{0pt}{20pt}{32pt}
+
+% Italic probability signature rendered via standard Markdown emphasis.
+% No special macro needed — Pandoc handles *...*.
+
+\begin{document}
+$body$
+\end{document}
