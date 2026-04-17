@@ -10,9 +10,9 @@ identifier:
   - scheme: "URL"
     text: "https://github.com/sapsan14/pki-zen"
 cover-image: publish/covers/cover.svg
-mainfont: "EB Garamond"
+mainfont: "Noto Serif"
 sansfont: "Noto Sans"
-monofont: "JetBrains Mono"
+monofont: "DejaVu Sans Mono"
 mathfont: "Latin Modern Math"
 geometry:
   - paperwidth=152mm

@@ -80,7 +80,7 @@
 | VIII · После энтропии | [08](books/ru/08-zhizn-posle-entropii.md) | [08](books/en/08-life-after-entropy.md) | [08](books/et/08-parast-entroopiat.md) |
 | IX · Поле доверия | [09](books/ru/09-pole-doveriya.md) | [09](books/en/09-field-of-trust.md) | [09](books/et/09-usalduse-vali.md) |
 | X · Кодекс Нуля | [10](books/ru/10-kodeks-nolya.md) | [10](books/en/10-codex-zero.md) | [10](books/et/10-nullkoodeks.md) |
-| Приложение · Origin | [99](books/ru/99-appendix-origin.md) | [99](books/en/99-appendix-origin.md) | [99](books/et/99-lisa-pariolu.md) |
+| Приложение · Origin | [99](books/ru/99-appendix-origin.md) | [99](books/en/99-appendix-origin.md) | [99](books/et/99-lisa-paritolu.md) |
 | Colophon | [col](books/ru/99-colophon.md) | [col](books/en/99-colophon.md) | [col](books/et/99-colophon.md) |
 
 ## Форматы / Formats / Formaadid

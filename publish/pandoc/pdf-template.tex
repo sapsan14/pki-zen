@@ -1,5 +1,11 @@
-% PKI-ZEN XeLaTeX template — Cyrillic + Estonian diacritics safe.
-% Minimal override of Pandoc default book class with explicit font declarations.
+% PKI-ZEN XeLaTeX template.
+%
+% Fonts are chosen for CI reliability, not typographic elegance:
+% - Noto Serif has Latin, Cyrillic, and all Estonian diacritics (Š Ž Õ Ä Ö Ü).
+% - Noto Sans for headings.
+% - DejaVu Sans Mono is always available via fonts-dejavu on Ubuntu.
+%
+% If you prefer EB Garamond, install it and swap \setmainfont below.
 
 \documentclass[12pt,oneside]{book}
 
@@ -8,13 +14,9 @@
 \setdefaultlanguage{$babel-lang$}
 \setotherlanguages{russian,estonian,english}
 
-% Fonts — must be installed on build machine.
-\setmainfont{EB Garamond}[Numbers={OldStyle}, Ligatures={TeX,Common}]
+\setmainfont{Noto Serif}[Ligatures={TeX,Common}]
 \setsansfont{Noto Sans}
-\setmonofont{JetBrains Mono}[Scale=0.9]
-
-% Cyrillic fallback: if EB Garamond is missing Cyrillic, swap to Noto Serif.
-\newfontfamily\cyrillicfont{Noto Serif}[Script=Cyrillic]
+\setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
 \usepackage{geometry}
 \geometry{paperwidth=152mm, paperheight=229mm, margin=18mm}
@@ -27,7 +29,13 @@
 \usepackage{enumitem}
 \setlist{nosep}
 
-% Chapter style — quiet, no page break for verse-level sections.
+% Allow long URLs and command lines to break inside code blocks.
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small
+}
+
+% Quiet, book-like chapter titles.
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\filcenter}
@@ -36,9 +44,27 @@
   {\fontsize{22pt}{26pt}\selectfont}
 \titlespacing*{\chapter}{0pt}{20pt}{32pt}
 
-% Italic probability signature rendered via standard Markdown emphasis.
-% No special macro needed — Pandoc handles *...*.
+% Some metadata placeholders Pandoc may emit.
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
 
 \begin{document}
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+\tableofcontents
+\clearpage
+$endif$
+
 $body$
+
 \end{document}

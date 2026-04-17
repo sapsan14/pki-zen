@@ -48,7 +48,7 @@ const BOOKS_ET = [
   { text: 'VIII. Pärast entroopiat', link: '/et/08-parast-entroopiat' },
   { text: 'IX. Usalduse väli',       link: '/et/09-usalduse-vali' },
   { text: 'X. Nullkoodeks',          link: '/et/10-nullkoodeks' },
-  { text: 'Lisa',                    link: '/et/99-lisa-pariolu' },
+  { text: 'Lisa',                    link: '/et/99-lisa-paritolu' },
   { text: 'Kolofon',                 link: '/et/99-colophon' },
 ];
 
@@ -73,9 +73,12 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'book' }],
     ['meta', { property: 'og:title', content: 'PKI-ZEN — A Sūtra of Certificates, YAML, and Almost-Enlightenment' }],
     ['meta', { property: 'og:description', content: 'Ten small books. Three languages. One breath between two CRL updates.' }],
-    // og:image expects PNG/JPG; generate publish/site/public/og.png before first release.
-    // ['meta', { property: 'og:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { property: 'og:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:url', content: 'https://pki-zen.h2oatlas.ee/' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://pki-zen.h2oatlas.ee/og.png' }],
   ],
 
   locales: {

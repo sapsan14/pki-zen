@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Social preview card — 1200×630, same palette as cover.svg. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf8f1"/>
+      <stop offset="1" stop-color="#e8e3d1"/>
+    </linearGradient>
+    <pattern id="hex" x="0" y="0" width="180" height="24" patternUnits="userSpaceOnUse">
+      <text x="0" y="18" font-family="JetBrains Mono, monospace" font-size="14" fill="#b4aa88" opacity="0.35">7f 3a d1 02 e4 c9 8b 5c 12 af</text>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#hex)" opacity="0.6"/>
+
+  <!-- Lotus on the left -->
+  <g transform="translate(230,315)" stroke="#4a3b2a" stroke-width="2.2" fill="none" opacity="0.8">
+    <ellipse rx="36" ry="110" transform="rotate(0)"/>
+    <ellipse rx="36" ry="110" transform="rotate(45)"/>
+    <ellipse rx="36" ry="110" transform="rotate(90)"/>
+    <ellipse rx="36" ry="110" transform="rotate(135)"/>
+    <ellipse rx="36" ry="110" transform="rotate(22.5)"/>
+    <ellipse rx="36" ry="110" transform="rotate(67.5)"/>
+    <ellipse rx="36" ry="110" transform="rotate(112.5)"/>
+    <ellipse rx="36" ry="110" transform="rotate(157.5)"/>
+    <circle r="26" fill="#4a3b2a" stroke="none"/>
+  </g>
+
+  <!-- Title + trilingual subtitle on the right -->
+  <text x="470" y="235" font-family="EB Garamond, Georgia, serif"
+        font-size="96" font-weight="600" fill="#1a1a1a" letter-spacing="5">PKI-ZEN</text>
+
+  <text x="470" y="295" font-family="EB Garamond, Georgia, serif"
+        font-size="24" font-style="italic" fill="#3a2a18">
+    A Sūtra of Certificates, YAML, and Almost-Enlightenment
+  </text>
+  <text x="470" y="335" font-family="EB Garamond, Georgia, serif"
+        font-size="22" font-style="italic" fill="#3a2a18" opacity="0.88">
+    Сутра о сертификатах, YAML и почти-просветлении
+  </text>
+  <text x="470" y="372" font-family="EB Garamond, Georgia, serif"
+        font-size="22" font-style="italic" fill="#3a2a18" opacity="0.88">
+    Sertifikaatide, YAML-i ja peaaegu-valgustumise suutra
+  </text>
+
+  <!-- Stats strip -->
+  <line x1="470" y1="420" x2="1120" y2="420" stroke="#b4aa88" stroke-width="1"/>
+  <text x="470" y="465" font-family="EB Garamond, Georgia, serif" font-size="20" fill="#4a3b2a">
+    108 verses × 3 languages &#x00B7; 11 volumes &#x00B7; CC-BY-SA-4.0
+  </text>
+  <text x="470" y="498" font-family="JetBrains Mono, monospace" font-size="18" fill="#6a5a3a">
+    $ openssl rand -hex 32
+  </text>
+
+  <!-- Domain strip -->
+  <text x="470" y="560" font-family="JetBrains Mono, monospace" font-size="22" font-weight="600" fill="#2a2a2a">
+    pki-zen.h2oatlas.ee
+  </text>
+</svg>
