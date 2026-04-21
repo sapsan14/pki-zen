@@ -18,6 +18,27 @@ node_modules/
 *.pdf
 !publish/covers/*.pdf
 
+# Chapter files copied into publish/site/<lang>/ by publish/build-site-only.sh
+# at build time. The canonical source is in books/<lang>/; keeping these
+# in the tree creates a phantom "untracked files" block that blocks
+# `git checkout` after a local build. Keep per-locale index.md (it IS
+# canonical — the landing page) by excluding it from the ignore.
+publish/site/ru/
+publish/site/en/[0-9]*-*.md
+publish/site/et/[0-9]*-*.md
+publish/site/en/99-*.md
+publish/site/et/99-*.md
+
+# npm lockfile lives in publish/site/ — track if desired for reproducible
+# builds; untracked today.
+publish/site/package-lock.json
+
+# Cloudflare Wrangler state — local dev only.
+.wrangler/
+
+# Claude Code session state — never commit.
+.claude/
+
 # Python
 __pycache__/
 *.pyc
