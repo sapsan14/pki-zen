@@ -19,6 +19,35 @@ python3 scripts/build-corpus.py
 mkdir -p "$DIST/oracle"
 cp oracle/system-prompt.md oracle/examples.md oracle/README.md oracle/corpus.jsonl "$DIST/oracle/"
 
+echo "→ [2.3/6] Compute canonical Russian SHA-256 and inject into colophons"
+# The colophon carries a 'trust receipt' — the SHA-256 of the concatenated
+# Russian canonical text. Substitute the placeholder in each locale's
+# colophon with the real fingerprint (zero-leading-zero safe).
+RU_SHA=$(find books/ru -name '*.md' -print0 | sort -z | xargs -0 cat | sha256sum | awk '{print $1}')
+echo "   canonical RU sha256: $RU_SHA"
+# Work on COPIES under the dist tree so the source .md stays unchanged
+# (and verify-parallel stays deterministic).
+mkdir -p "$DIST/books-stamped"
+for lang in ru en et; do
+  mkdir -p "$DIST/books-stamped/$lang"
+  cp -a books/"$lang"/. "$DIST/books-stamped/$lang/"
+done
+# Replace the placeholder line (anything between the code-fence that
+# starts with <computed|вычисляется|arvutatakse) with the fingerprint.
+for f in "$DIST/books-stamped"/*/99-colophon.md; do
+  python3 - "$f" "$RU_SHA" <<'PY'
+import re, sys
+path, sha = sys.argv[1:]
+src = open(path, encoding='utf-8').read()
+out = re.sub(
+    r'```\n<(?:computed|вычисляется|arvutatakse)[^>]*>\n```',
+    f'```\n{sha}\n```',
+    src,
+)
+open(path, 'w', encoding='utf-8').write(out)
+PY
+done
+
 echo "→ [2.5/6] Rasterise cover SVG → PNG for EPUB readers"
 mkdir -p dist
 COVER_PNG="$DIST/cover.png"
@@ -47,7 +76,7 @@ build_epub() {
     --webtex=https://latex.codecogs.com/svg.image? \
     --toc --toc-depth=2 \
     -o "$out" \
-    books/"$lang"/*.md
+    "$DIST/books-stamped/$lang"/*.md
   echo "   ✓ $out"
 }
 build_epub ru
@@ -71,7 +100,7 @@ build_pdf() {
     --no-highlight \
     --toc --toc-depth=2 \
     -o "$out" \
-    books/"$lang"/*.md
+    "$DIST/books-stamped/$lang"/*.md
   echo "   ✓ $out"
 }
 build_pdf ru russian

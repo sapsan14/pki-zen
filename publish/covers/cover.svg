@@ -1,51 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<!--
+  PKI-ZEN — front cover, 6×9 inch print trim (1800×2700 @ 300 DPI).
+  Paper-ready; also used as the EPUB cover image.
+  Palette: warm-brown #4a3b2a on cream #faf8f1, same as the logo.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2700"
+     width="1800" height="2700" role="img"
+     aria-label="PKI-ZEN — A Sūtra of Certificates, YAML, and Almost-Enlightenment">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#faf8f1"/>
-      <stop offset="1" stop-color="#e8e3d1"/>
+      <stop offset="0"   stop-color="#faf8f1"/>
+      <stop offset="1"   stop-color="#efe8d1"/>
     </linearGradient>
-    <pattern id="hex" x="0" y="0" width="90" height="22" patternUnits="userSpaceOnUse">
-      <text x="0" y="16" font-family="JetBrains Mono, monospace" font-size="14" fill="#b4aa88" opacity="0.35">7f 3a d1 02 e4 c9</text>
+    <pattern id="hexwhisper" x="0" y="0" width="360" height="54" patternUnits="userSpaceOnUse">
+      <text x="0" y="40" font-family="ui-monospace, 'JetBrains Mono', monospace"
+            font-size="18" fill="#b4aa88" opacity="0.22" letter-spacing="2">
+        7f 3a d1 02  e4 c9 8b 5c  12 af 44 90  ee 6b 71 03
+      </text>
     </pattern>
+    <path id="hex-ring-big" d="M 900,1090 m -430,0 a 430,430 0 1,1 860,0 a 430,430 0 1,1 -860,0" fill="none"/>
   </defs>
 
-  <rect width="600" height="900" fill="url(#bg)"/>
-  <rect x="0" y="0" width="600" height="900" fill="url(#hex)" opacity="0.7"/>
+  <!-- paper -->
+  <rect width="1800" height="2700" fill="url(#bg)"/>
+  <rect width="1800" height="2700" fill="url(#hexwhisper)" opacity="0.55"/>
 
-  <!-- Lotus (stylised, 8 petals) -->
-  <g transform="translate(300,480)" stroke="#4a3b2a" stroke-width="2" fill="none" opacity="0.75">
-    <ellipse rx="40" ry="110" transform="rotate(0)"/>
-    <ellipse rx="40" ry="110" transform="rotate(45)"/>
-    <ellipse rx="40" ry="110" transform="rotate(90)"/>
-    <ellipse rx="40" ry="110" transform="rotate(135)"/>
-    <ellipse rx="40" ry="110" transform="rotate(22.5)"/>
-    <ellipse rx="40" ry="110" transform="rotate(67.5)"/>
-    <ellipse rx="40" ry="110" transform="rotate(112.5)"/>
-    <ellipse rx="40" ry="110" transform="rotate(157.5)"/>
-    <circle r="28" fill="#4a3b2a" stroke="none"/>
+  <!-- thin ornamental frame -->
+  <rect x="90" y="90" width="1620" height="2520" fill="none"
+        stroke="#4a3b2a" stroke-width="1.5" opacity="0.45"/>
+  <rect x="110" y="110" width="1580" height="2480" fill="none"
+        stroke="#4a3b2a" stroke-width="0.8" opacity="0.35"/>
+
+  <!-- top monogram -->
+  <g transform="translate(900,250)" fill="none" stroke="#4a3b2a"
+     stroke-width="1.5" opacity="0.85">
+    <circle r="56"/>
+    <text x="0" y="16" text-anchor="middle"
+          font-family="EB Garamond, Georgia, serif"
+          font-size="56" fill="#4a3b2a" stroke="none">∞</text>
+  </g>
+  <text x="900" y="370" text-anchor="middle"
+        font-family="ui-monospace, 'JetBrains Mono', monospace"
+        font-size="24" letter-spacing="6" fill="#6a5a3a" opacity="0.85">
+    openssl rand -hex 32
+  </text>
+
+  <!-- central 16-petal lotus -->
+  <g transform="translate(900,1090)" stroke="#4a3b2a" fill="none"
+     stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="5" opacity="0.9">
+      <ellipse rx="80" ry="400" transform="rotate(0)"/>
+      <ellipse rx="80" ry="400" transform="rotate(45)"/>
+      <ellipse rx="80" ry="400" transform="rotate(90)"/>
+      <ellipse rx="80" ry="400" transform="rotate(135)"/>
+    </g>
+    <g stroke-width="3" opacity="0.55">
+      <ellipse rx="48" ry="360" transform="rotate(22.5)"/>
+      <ellipse rx="48" ry="360" transform="rotate(67.5)"/>
+      <ellipse rx="48" ry="360" transform="rotate(112.5)"/>
+      <ellipse rx="48" ry="360" transform="rotate(157.5)"/>
+    </g>
   </g>
 
-  <!-- Title -->
-  <text x="300" y="180" text-anchor="middle" font-family="EB Garamond, Georgia, serif"
-        font-size="72" font-weight="600" fill="#1a1a1a" letter-spacing="4">PKI-ZEN</text>
-  <text x="300" y="230" text-anchor="middle" font-family="EB Garamond, Georgia, serif"
-        font-size="22" font-style="italic" fill="#3a2a18">
+  <!-- hex ring inscribed around the lotus -->
+  <text font-family="ui-monospace, 'JetBrains Mono', monospace"
+        font-size="26" fill="#6a5a3a" letter-spacing="3" opacity="0.78">
+    <textPath href="#hex-ring-big" startOffset="0">
+      7f 3a d1 02 e4 c9 8b 5c 12 af 44 90 ee 6b 71 03 22 5d 9e 8f a0 14 67 bc 01 9d f3 2b 8e 71 4c ad 55 cc 7a 0b
+    </textPath>
+  </text>
+
+  <!-- inner disc with ∞ -->
+  <circle cx="900" cy="1090" r="130" fill="#faf8f1" stroke="#4a3b2a" stroke-width="4"/>
+  <text x="900" y="1145" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-size="170"
+        fill="#4a3b2a">∞</text>
+
+  <!-- title block -->
+  <text x="900" y="1780" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-weight="700"
+        font-size="180" letter-spacing="18" fill="#1a1a1a">PKI&#8239;–&#8239;ZEN</text>
+
+  <text x="900" y="1880" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-style="italic"
+        font-size="52" fill="#3a2a18">
     A Sūtra of Certificates, YAML, and Almost-Enlightenment
   </text>
 
-  <!-- Russian line -->
-  <text x="300" y="710" text-anchor="middle" font-family="EB Garamond, Georgia, serif"
-        font-size="20" font-style="italic" fill="#3a2a18">
+  <!-- trilingual subtitles -->
+  <text x="900" y="1975" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-style="italic"
+        font-size="40" fill="#4a3b2a" opacity="0.85">
     Сутра о сертификатах, YAML и почти-просветлении
   </text>
-  <text x="300" y="738" text-anchor="middle" font-family="EB Garamond, Georgia, serif"
-        font-size="20" font-style="italic" fill="#3a2a18">
+  <text x="900" y="2030" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-style="italic"
+        font-size="40" fill="#4a3b2a" opacity="0.85">
     Sertifikaatide, YAML-i ja peaaegu-valgustumise suutra
   </text>
 
-  <text x="300" y="820" text-anchor="middle" font-family="JetBrains Mono, monospace"
-        font-size="14" fill="#6a5a3a">$ openssl rand -hex 32</text>
-  <text x="300" y="850" text-anchor="middle" font-family="EB Garamond, Georgia, serif"
-        font-size="14" fill="#6a5a3a">Anton Sokolov &#x00B7; 2026</text>
+  <!-- thin divider -->
+  <line x1="650" y1="2160" x2="1150" y2="2160"
+        stroke="#b4aa88" stroke-width="1.5"/>
+
+  <!-- author -->
+  <text x="900" y="2235" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-size="54"
+        letter-spacing="6" fill="#1a1a1a">ANTON SOKOLOV</text>
+  <text x="900" y="2290" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-style="italic"
+        font-size="30" fill="#6a5a3a">
+    and the language models who agreed to be co-scribes
+  </text>
+
+  <!-- edition marker at bottom -->
+  <text x="900" y="2440" text-anchor="middle"
+        font-family="ui-monospace, 'JetBrains Mono', monospace"
+        font-size="28" letter-spacing="10" fill="#4a3b2a">
+    TRILINGUAL EDITION · RU · EN · ET
+  </text>
+  <text x="900" y="2490" text-anchor="middle"
+        font-family="ui-monospace, 'JetBrains Mono', monospace"
+        font-size="22" letter-spacing="6" fill="#6a5a3a" opacity="0.75">
+    108 verses · 3 languages · 1 breath between two CRL updates
+  </text>
 </svg>
