@@ -1,5 +1,4 @@
 ---
-destination: sapsan14/life → reflect/2026-04-17_verbalized-sampling-pki-zen.md
 category: pki-zen / research note
 date: 2026-04-17
 ---

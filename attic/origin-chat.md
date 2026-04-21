@@ -1,5 +1,4 @@
 ---
-destination: sapsan14/life → reflect/2025-11-12_pki-zen-origin-chat.md
 category: pki-zen / primary source
 date: 2025-11-12
 ---

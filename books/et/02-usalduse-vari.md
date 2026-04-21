@@ -1,7 +1,6 @@
 # II köide. Usalduse vari ja hinge HSM
 
 > *Usaldus on arhitektuur, mitte tunne.*
-> — vaatleja märkmikust ([life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md))
 
 ## v2.1 — Juur­tühistus
 Elu on nagu PKI:

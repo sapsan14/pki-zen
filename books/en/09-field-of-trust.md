@@ -1,7 +1,6 @@
 # Book IX. The Field of Trust
 
 > *We essentially began developing physics for socio-technical systems.*
-> — from [life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md)
 
 ## v9.1 — The Wave of Trust
 Trust is not an edge in a graph.
@@ -35,7 +34,6 @@ Sokolov's Law №7:
 *and a boundary is already a system."*
 So true freedom is not an exit; it is a rephasing.
 *Probability: 0.96*
-— [life/reflect/2026-04-13_three-questions-observer-trap.md](https://github.com/sapsan14/life/blob/main/reflect/2026-04-13_three-questions-observer-trap.md)
 
 ## v9.5 — Observer Inside
 The observer sits inside the system they try to explain.

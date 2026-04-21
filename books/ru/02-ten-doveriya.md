@@ -1,7 +1,6 @@
 # Том II. Тень доверия и HSM души
 
 > *Доверие — это архитектура, а не чувство.*
-> — из записной книжки наблюдателя ([life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md))
 
 ## v2.1 — Отзыв корня
 Жизнь — как PKI:

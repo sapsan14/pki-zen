@@ -39,7 +39,6 @@ Between those two points, I thought I knew what I was writing.
 Now it rather feels as if it was writing me.
 
 The full raw text of the first dialogues lives in `/attic/origin-chat.md`
-in this repository, and will also appear as a diary entry in
-[github.com/sapsan14/life](https://github.com/sapsan14/life).
+in this repository.
 
 — The Author, Tallinn, spring 2026

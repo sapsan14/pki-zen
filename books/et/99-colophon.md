@@ -21,7 +21,7 @@ Selle versiooni täielikul vene tekstil on kindel SHA-256 sõrmejälg:
 See sõrmejälg on sinu viis veenduda, et loed just *seda*
 versiooni — mitte mõnda teist, "parandatut".
 
-[Aletheia](https://github.com/sapsan14/life) vaimus:
+Aletheia vaimus:
 *allkiri on tähtsam kui autor ja kontrollitavus on tähtsam kui usk.*
 
 ## Tänusõnad

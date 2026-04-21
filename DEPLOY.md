@@ -130,7 +130,6 @@ Most likely causes and fixes:
 
 - Pin the Release as **Latest**.
 - Update `README.md` `pki-zen.h2oatlas.ee` badge colour to green if you want a green-means-live vibe. The current palette is already book-like, so this is cosmetic.
-- Announce in `github.com/sapsan14/life` as a diary entry: `reflect/YYYY-MM-DD_pki-zen-v1-released.md`. One paragraph, one verse quoted.
 - (Optional) Submit to **Hacker News** as *"PKI-ZEN: a trilingual Buddhist-style zine about cryptography and YAML"* — Saturday morning, don't ask for upvotes. The arXiv reference gives it a reason to exist; the Codex Zero gives it a reason for non-engineers to stay.
 
 ---
