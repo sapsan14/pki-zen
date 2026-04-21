@@ -54,11 +54,16 @@ build_pdf() {
   local lang="$1"; local babel="$2"
   local meta="publish/pandoc/metadata.$lang.yaml"
   local out="$DIST/pki-zen-$lang.pdf"
+  # --no-highlight: skip Pandoc's LaTeX syntax-highlighting macros
+  # entirely. The book has a handful of inline code spans; they're
+  # readable as plain monospace and this sidesteps the whole
+  # Shaded/Tok/framed cascade that kept breaking the PDF build.
   pandoc \
     --metadata-file="$meta" \
     --metadata=babel-lang:"$babel" \
     --pdf-engine=xelatex \
     --template=publish/pandoc/pdf-template.tex \
+    --no-highlight \
     --toc --toc-depth=2 \
     -o "$out" \
     books/"$lang"/*.md
