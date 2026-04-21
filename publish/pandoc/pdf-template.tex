@@ -44,6 +44,15 @@
 \definecolor{shadecolor}{gray}{0.95}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 
+% Pandoc also generates per-token commands (\NormalTok, \ExtensionTok,
+% \KeywordTok, \StringTok, \CommentTok, …) based on --highlight-style.
+% Those definitions land in $highlighting-macros$. Without this placeholder
+% the PDF build fails with "Undefined control sequence" on the first
+% highlighted code block.
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
 % Quiet, book-like chapter titles.
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
