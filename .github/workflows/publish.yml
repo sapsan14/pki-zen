@@ -44,10 +44,15 @@ jobs:
       - name: Install Pandoc and TeX
         run: |
           sudo apt-get update
+          # texlive-fonts-extra was pulling 629 MB of fonts we do not
+          # use (EB Garamond, Comic Neue, GFS Didot, …). We set fonts
+          # explicitly in pdf-template.tex: Noto Serif, Noto Sans,
+          # DejaVu Sans Mono — all covered by fonts-noto-core +
+          # fonts-dejavu. Drop the extra to save ~5 min download.
           sudo apt-get install -y --no-install-recommends \
             pandoc \
             texlive-xetex texlive-latex-extra \
-            texlive-fonts-recommended texlive-fonts-extra \
+            texlive-fonts-recommended \
             texlive-lang-cyrillic texlive-lang-european \
             fonts-noto-core fonts-dejavu \
             librsvg2-bin rsync
