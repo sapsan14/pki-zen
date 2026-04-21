@@ -2,7 +2,21 @@ name: Publish
 
 on:
   push:
+    branches: [main]
     tags: ['v*']
+    paths-ignore:
+      - 'README.md'
+      - 'DEPLOY.md'
+      - 'attic/**'
+      - '.github/workflows/deploy-site.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'books/**'
+      - 'publish/pandoc/**'
+      - 'publish/build.sh'
+      - 'scripts/**'
+      - '.github/workflows/publish.yml'
   workflow_dispatch:
 
 permissions:
