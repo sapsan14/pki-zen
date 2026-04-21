@@ -48,18 +48,26 @@ open(path, 'w', encoding='utf-8').write(out)
 PY
 done
 
-echo "→ [2.5/6] Rasterise cover SVG → PNG for EPUB readers"
-mkdir -p dist
+echo "→ [2.5/6] Rasterise cover SVG → PNG for EPUB, PDF for XeLaTeX"
+mkdir -p "$DIST"
 COVER_PNG="$DIST/cover.png"
+COVER_PDF="$DIST/cover.pdf"
+BACK_COVER_PDF="$DIST/back-cover.pdf"
 if command -v rsvg-convert >/dev/null 2>&1; then
-  rsvg-convert -w 800 publish/covers/cover.svg > "$COVER_PNG"
+  rsvg-convert -w 1200                 publish/covers/cover.svg       > "$COVER_PNG"
+  rsvg-convert -f pdf                  publish/covers/cover.svg       > "$COVER_PDF"
+  rsvg-convert -f pdf                  publish/covers/back-cover.svg  > "$BACK_COVER_PDF"
 elif command -v cairosvg >/dev/null 2>&1 || python3 -c "import cairosvg" 2>/dev/null; then
-  python3 -c "import cairosvg; cairosvg.svg2png(url='publish/covers/cover.svg', write_to='$COVER_PNG', output_width=800)"
+  python3 -c "import cairosvg; cairosvg.svg2png(url='publish/covers/cover.svg', write_to='$COVER_PNG', output_width=1200)"
+  python3 -c "import cairosvg; cairosvg.svg2pdf(url='publish/covers/cover.svg',      write_to='$COVER_PDF')"
+  python3 -c "import cairosvg; cairosvg.svg2pdf(url='publish/covers/back-cover.svg', write_to='$BACK_COVER_PDF')"
 else
-  echo "   ! no SVG rasteriser found; falling back to SVG cover (some EPUB readers may skip it)"
+  echo "   ! no SVG rasteriser found; PDFs will have no embedded covers"
   COVER_PNG="publish/covers/cover.svg"
+  COVER_PDF=""
+  BACK_COVER_PDF=""
 fi
-echo "   ✓ $COVER_PNG"
+echo "   ✓ $COVER_PNG  $COVER_PDF  $BACK_COVER_PDF"
 
 echo "→ [3/6] Build EPUBs (3 languages)"
 build_epub() {
@@ -74,6 +82,7 @@ build_epub() {
     --css=publish/pandoc/epub.css \
     --epub-cover-image="$COVER_PNG" \
     --webtex=https://latex.codecogs.com/svg.image? \
+    --section-divs \
     --toc --toc-depth=2 \
     -o "$out" \
     "$DIST/books-stamped/$lang"/*.md
@@ -95,6 +104,8 @@ build_pdf() {
   pandoc \
     --metadata-file="$meta" \
     --metadata=babel-lang:"$babel" \
+    --metadata=cover-pdf:"$COVER_PDF" \
+    --metadata=back-cover-pdf:"$BACK_COVER_PDF" \
     --pdf-engine=xelatex \
     --template=publish/pandoc/pdf-template.tex \
     --no-highlight \

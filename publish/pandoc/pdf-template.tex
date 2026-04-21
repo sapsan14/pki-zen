@@ -109,10 +109,26 @@
 \usepackage{needspace}
 \pretocmd{\subsection}{\Needspace*{6\baselineskip}}{}{}
 
-% Italic-emphasized "Probability: …" lines that close each verse: give
-% them a touch more air so they read as a signature, not a tail.
-% (They're already on their own line in the source; the blank line
-% below is enforced by a sweep of the book files.)
+% ----- Multi-page Table of Contents ------------------------------------
+% Put each chapter's TOC subsections on their own TOC page, so the
+% reader sees one spread per book volume instead of a 3-column wall.
+% Skip the break before the first chapter so the TOC itself still
+% opens on a fresh page cleanly.
+\newif\iftocfirstchap\tocfirstchaptrue
+\pretocmd{\chapter}{%
+  \iftocfirstchap
+    \tocfirstchapfalse
+  \else
+    \addtocontents{toc}{\protect\newpage}%
+  \fi
+}{}{}
+
+% ----- Include SVG cover and back cover as PDF pages -------------------
+% If dist/cover.pdf and dist/back-cover.pdf exist (the build script
+% rasterises publish/covers/*.svg to PDF via rsvg-convert), they get
+% included as first and last pages so the PDF is a "book with covers"
+% out of the box.
+\usepackage{pdfpages}
 
 % Some metadata placeholders Pandoc may emit.
 $if(title)$
@@ -126,6 +142,13 @@ $if(date)$
 $endif$
 
 \begin{document}
+
+% Front cover. First thing in the PDF, no page number.
+$if(cover-pdf)$
+\thispagestyle{empty}
+\includepdf[pages=1,fitpaper=true]{$cover-pdf$}
+$endif$
+
 $if(title)$
 \maketitle
 $endif$
@@ -136,5 +159,12 @@ $if(toc)$
 $endif$
 
 $body$
+
+% Back cover. Last thing in the PDF.
+$if(back-cover-pdf)$
+\thispagestyle{empty}
+\clearpage
+\includepdf[pages=1,fitpaper=true]{$back-cover-pdf$}
+$endif$
 
 \end{document}

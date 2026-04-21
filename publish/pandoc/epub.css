@@ -25,21 +25,29 @@ h2 { font-size: 1.3em; margin-top: 2em; }
 h3 { font-size: 1.1em; }
 
 /* Keep a heading glued to the following paragraph; never break the
-   page between an h2 and its first line of body text. */
+   page between a heading and its first line of body text. */
 h1, h2, h3 {
   page-break-after: avoid;
   break-after: avoid;
 }
 
-/* A verse is a conceptual unit — avoid breaking it across pages. */
-h2 + p, h2 + p + p, h2 + p + p + p {
+/* Each verse is a <section class="level2"> when pandoc is called with
+   --section-divs. Keep the whole verse unit together across pages
+   (works in Apple Books, Calibre, most modern EPUB readers). */
+section.level2,
+section.level3 {
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
 /* Math blocks rendered by --webtex become <img> wrapped in <p>. Do not
    break a formula across pages. */
-p img { page-break-inside: avoid; break-inside: avoid; }
+p img {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  max-width: 100%;
+  height: auto;
+}
 
 blockquote {
   font-style: italic;
