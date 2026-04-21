@@ -49,7 +49,6 @@ Ajatempel on intellekti pardakaamera.
 Kõik, mis pole aja poolt allkirjastatud, on vaidlustatav.
 Kõik, mis on allkirjastatud, on samuti — ainult kallimalt.
 *Tõenäosus: 0.91*
-— *vaatleja märkmikust, [life/reflect/](https://github.com/sapsan14/life/tree/main/reflect)*
 
 ## v5.8 — Vastuseta armastus
 Monitooring on vastuseta armastus.

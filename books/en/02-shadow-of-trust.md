@@ -1,7 +1,6 @@
 # Book II. The Shadow of Trust and the HSM of the Soul
 
 > *Trust is architecture, not feeling.*
-> — from an observer's notebook ([life/reflect/2026-02-18_trust-field-theory.md](https://github.com/sapsan14/life/blob/main/reflect/2026-02-18_trust-field-theory.md))
 
 ## v2.1 — Revoking the Root
 Life is like PKI:

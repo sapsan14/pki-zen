@@ -49,7 +49,6 @@ A timestamp is a dashcam for the intellect.
 Anything unsigned by time can be disputed.
 Anything signed — can also be disputed, but more expensively.
 *Probability: 0.91*
-— *from an observer's notebook, [life/reflect/](https://github.com/sapsan14/life/tree/main/reflect)*
 
 ## v5.8 — Love Without Reply
 Monitoring is unrequited love.

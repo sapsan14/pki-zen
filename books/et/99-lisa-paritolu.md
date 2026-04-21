@@ -38,7 +38,6 @@ ja ühe aprilli toimetamiseks.
 Nende kahe punkti vahel tundus mulle, et tean, mida kirjutan.
 Nüüd tundub pigem, et see kirjutas mind.
 
-Esimeste dialoogide täielik toortekst on `/attic/origin-chat.md`-is
-ja ilmub ka päeviku sissekandena [github.com/sapsan14/life](https://github.com/sapsan14/life)-is.
+Esimeste dialoogide täielik toortekst on `/attic/origin-chat.md`-is.
 
 — Autor, Tallinn, kevad 2026
