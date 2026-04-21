@@ -4,8 +4,6 @@
 % - Noto Serif has Latin, Cyrillic, and all Estonian diacritics (Š Ž Õ Ä Ö Ü).
 % - Noto Sans for headings.
 % - DejaVu Sans Mono is always available via fonts-dejavu on Ubuntu.
-%
-% If you prefer EB Garamond, install it and swap \setmainfont below.
 
 \documentclass[12pt,oneside]{book}
 
@@ -19,7 +17,8 @@
 \setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
 \usepackage{geometry}
-\geometry{paperwidth=152mm, paperheight=229mm, margin=18mm}
+\geometry{paperwidth=152mm, paperheight=229mm, margin=18mm,
+          headheight=15pt, footskip=24pt}
 
 \usepackage{microtype}
 \usepackage{hyperref}
@@ -29,27 +28,62 @@
 \usepackage{enumitem}
 \setlist{nosep}
 
-% Allow long URLs and command lines to break inside code blocks.
+% ----- Paragraph rhythm ------------------------------------------------
+% The book reads better with flush-left paragraphs (no first-line
+% indent) and a small skip between them. Matches the EPUB rendering.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip plus 0.1\baselineskip}
+
+% Never orphan the first line of a paragraph at the bottom of a page,
+% never widow the last line at the top of the next page.
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+
+% ----- Code blocks -----------------------------------------------------
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
   breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small
 }
 
-% We build PDFs with --no-highlight (see publish/build.sh), so Pandoc
-% does not emit Shaded / Tok macros. Code blocks render in plain
-% monospace via the Highlighting Verbatim env above.
+% PDFs build with --no-highlight, so Pandoc does not emit Shaded / Tok
+% macros. The Highlighting Verbatim env above handles plain mono code.
 
-% Pandoc emits a handful of command-name "providers" the default
-% template normally defines; our custom template must supply them
-% too, otherwise LaTeX dies on undefined control sequences.
-% Using \providecommand so that any future Pandoc version that
-% starts defining them itself wins cleanly.
+% Pandoc-injected helper commands our custom template must define.
+% \providecommand so any future Pandoc that starts defining them wins.
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \providecommand{\passthrough}[1]{#1}
 \providecommand{\pandocbounded}[1]{#1}
 
-% Quiet, book-like chapter titles.
+% ----- Page headers and footers ----------------------------------------
+% Default LaTeX book class shows page numbers in inconsistent spots
+% (top-right on some, nothing on others). Override with fancyhdr so
+% every page has the chapter title centered at the top (auto-wrapping
+% to two lines if long) and the page number centered at the bottom.
+\usepackage{fancyhdr}
+\usepackage{etoolbox}          % for \pretocmd on sectioning commands
+
+\pagestyle{fancy}
+\fancyhf{}                     % clear everything
+\fancyhead[C]{\small\scshape\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 'plain' pagestyle (used by \chapter) should match: centered page
+% number at the bottom, no header.
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Allow a long chapter title to break across two lines in the header.
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% ----- Chapter titles --------------------------------------------------
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\filcenter}
@@ -57,6 +91,19 @@
   {12pt}
   {\fontsize{22pt}{26pt}\selectfont}
 \titlespacing*{\chapter}{0pt}{20pt}{32pt}
+
+% ----- Keep verses together --------------------------------------------
+% Each ## v-heading becomes \subsection. Request that at least five
+% lines are available below the heading; if not, start a new page.
+% This prevents a verse title on one page and its body on the next,
+% and similarly stops a body spilling with just one trailing line.
+\usepackage{needspace}
+\pretocmd{\subsection}{\Needspace*{6\baselineskip}}{}{}
+
+% Italic-emphasized "Probability: …" lines that close each verse: give
+% them a touch more air so they read as a signature, not a tail.
+% (They're already on their own line in the source; the blank line
+% below is enforced by a sweep of the book files.)
 
 % Some metadata placeholders Pandoc may emit.
 $if(title)$

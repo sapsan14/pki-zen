@@ -36,10 +36,15 @@ echo "→ [3/6] Build EPUBs (3 languages)"
 build_epub() {
   local lang="$1"; local meta="publish/pandoc/metadata.$lang.yaml"
   local out="$DIST/pki-zen-$lang.epub"
+  # --webtex: render LaTeX math as external PNG images so readers
+  # without MathML support (iPhone Books, older Android e-readers)
+  # still see formulas correctly. MathML default leaves \lvert\rangle
+  # etc. as unstyled unicode that many fonts show as .notdef boxes.
   pandoc \
     --metadata-file="$meta" \
     --css=publish/pandoc/epub.css \
     --epub-cover-image="$COVER_PNG" \
+    --webtex=https://latex.codecogs.com/svg.image? \
     --toc --toc-depth=2 \
     -o "$out" \
     books/"$lang"/*.md
