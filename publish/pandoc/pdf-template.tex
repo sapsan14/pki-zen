@@ -35,19 +35,19 @@
   breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small
 }
 
-% Pandoc handles the Shaded environment + per-token command definitions
-% (\NormalTok, \ExtensionTok, \KeywordTok, …) itself, via the
-% $highlighting-macros$ placeholder below. It expects 'framed' + 'xcolor'
-% + shadecolor to exist for the default snugshade background; provide
-% those but DO NOT redefine \Shaded ourselves or LaTeX errors with
-% "Command \Shaded already defined".
-\usepackage{framed}
-\usepackage{xcolor}
-\definecolor{shadecolor}{gray}{0.95}
+% We build PDFs with --no-highlight (see publish/build.sh), so Pandoc
+% does not emit Shaded / Tok macros. Code blocks render in plain
+% monospace via the Highlighting Verbatim env above.
 
-$if(highlighting-macros)$
-$highlighting-macros$
-$endif$
+% Pandoc emits a handful of command-name "providers" the default
+% template normally defines; our custom template must supply them
+% too, otherwise LaTeX dies on undefined control sequences.
+% Using \providecommand so that any future Pandoc version that
+% starts defining them itself wins cleanly.
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\pandocbounded}[1]{#1}
 
 % Quiet, book-like chapter titles.
 \usepackage{titlesec}
