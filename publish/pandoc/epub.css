@@ -21,8 +21,25 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 1.8em; margin-top: 2.5em; letter-spacing: 0.02em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; margin-top: 2em; }
 h3 { font-size: 1.1em; }
+
+/* Keep a heading glued to the following paragraph; never break the
+   page between an h2 and its first line of body text. */
+h1, h2, h3 {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+/* A verse is a conceptual unit — avoid breaking it across pages. */
+h2 + p, h2 + p + p, h2 + p + p + p {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Math blocks rendered by --webtex become <img> wrapped in <p>. Do not
+   break a formula across pages. */
+p img { page-break-inside: avoid; break-inside: avoid; }
 
 blockquote {
   font-style: italic;

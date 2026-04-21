@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PKI-ZEN — back cover, 6×9 inch print trim (1800×2700 @ 300 DPI).
+  For print layout; not used in the EPUB (which only has a front cover).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2700"
+     width="1800" height="2700" role="img" aria-label="PKI-ZEN back cover">
+  <defs>
+    <linearGradient id="bgBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf8f1"/>
+      <stop offset="1" stop-color="#efe8d1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1800" height="2700" fill="url(#bgBack)"/>
+
+  <!-- thin ornamental frame (matches front) -->
+  <rect x="90" y="90" width="1620" height="2520" fill="none"
+        stroke="#4a3b2a" stroke-width="1.5" opacity="0.45"/>
+  <rect x="110" y="110" width="1580" height="2480" fill="none"
+        stroke="#4a3b2a" stroke-width="0.8" opacity="0.35"/>
+
+  <!-- top pull-quote (from v2.3) -->
+  <text x="900" y="420" text-anchor="middle"
+        font-family="EB Garamond, Georgia, serif" font-weight="600"
+        font-size="30" letter-spacing="5" fill="#6a5a3a">v2.3 — HSM ДУШИ</text>
+
+  <g font-family="EB Garamond, Georgia, serif" font-style="italic"
+     font-size="52" fill="#1a1a1a" text-anchor="middle">
+    <text x="900" y="520">«Настоящее доверие —</text>
+    <text x="900" y="590">это не то, что можно импортировать.</text>
+    <text x="900" y="660">Оно создаётся вручную</text>
+    <text x="900" y="730">и хранится в HSM души.»</text>
+  </g>
+
+  <!-- ornament -->
+  <g transform="translate(900,820)" fill="none" stroke="#4a3b2a"
+     stroke-width="1.4" opacity="0.7">
+    <line x1="-140" y1="0" x2="140" y2="0"/>
+    <circle cx="0" cy="0" r="6" fill="#4a3b2a" stroke="none"/>
+  </g>
+
+  <!-- trilingual tagline -->
+  <g font-family="EB Garamond, Georgia, serif" font-size="38"
+     fill="#3a2a18" text-anchor="middle">
+    <text x="900" y="960">Десять маленьких книг. Три языка.</text>
+    <text x="900" y="1010">Один вдох между двумя CRL-апдейтами.</text>
+    <text x="900" y="1090" font-style="italic">Ten small books. Three languages.</text>
+    <text x="900" y="1140" font-style="italic">One breath between two CRL updates.</text>
+    <text x="900" y="1220">Kümme väikest raamatut. Kolm keelt.</text>
+    <text x="900" y="1270">Üks hingetõmme kahe CRL-uuenduse vahel.</text>
+  </g>
+
+  <!-- blurb -->
+  <g font-family="EB Garamond, Georgia, serif" font-size="30"
+     fill="#2a2a2a" text-anchor="middle">
+    <text x="900" y="1400">Написано в 3 часа ночи между двумя инцидентами.</text>
+    <text x="900" y="1450">Каждая шутка подписана вероятностью —</text>
+    <text x="900" y="1500">в честь статьи <tspan font-style="italic">Verbalized Sampling</tspan> (arXiv:2510.01171).</text>
+    <text x="900" y="1580">Для инженеров, философов и их мам.</text>
+  </g>
+
+  <!-- small centred lotus mark -->
+  <g transform="translate(900,1770)" stroke="#4a3b2a" fill="none"
+     stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <g stroke-width="3">
+      <ellipse rx="16" ry="80" transform="rotate(0)"/>
+      <ellipse rx="16" ry="80" transform="rotate(45)"/>
+      <ellipse rx="16" ry="80" transform="rotate(90)"/>
+      <ellipse rx="16" ry="80" transform="rotate(135)"/>
+    </g>
+    <circle cx="0" cy="0" r="22" fill="#faf8f1" stroke="#4a3b2a" stroke-width="1.5"/>
+    <text x="0" y="12" text-anchor="middle"
+          font-family="EB Garamond, Georgia, serif" font-size="30"
+          fill="#4a3b2a" stroke="none">∞</text>
+  </g>
+
+  <!-- final small blocks: site, ISBN, license -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace"
+     font-size="26" letter-spacing="2" fill="#4a3b2a" text-anchor="middle">
+    <text x="900" y="2180">pki&#8209;zen.h2oatlas.ee</text>
+  </g>
+
+  <!-- left footer: license + format -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace"
+     font-size="20" fill="#6a5a3a" letter-spacing="1">
+    <text x="180" y="2460">Text · CC-BY-SA-4.0</text>
+    <text x="180" y="2495">Code · MIT</text>
+    <text x="180" y="2530">Trilingual: ru · en · et</text>
+    <text x="180" y="2565">108 verses × 3 languages</text>
+  </g>
+
+  <!-- right footer: ISBN placeholder + barcode box -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace"
+     font-size="20" fill="#6a5a3a" letter-spacing="1"
+     text-anchor="end">
+    <text x="1620" y="2460">ISBN: 978-9949-00-0000-0</text>
+    <text x="1620" y="2495">Tallinn · 2026</text>
+    <text x="1620" y="2530">First edition</text>
+  </g>
+  <!-- barcode placeholder block (print cover will have a real EAN-13) -->
+  <g transform="translate(1290,2540)">
+    <rect width="330" height="90" fill="#ffffff" stroke="#4a3b2a" stroke-width="1"/>
+    <g fill="#1a1a1a">
+      <rect x="12"  y="8" width="2"  height="62"/>
+      <rect x="18"  y="8" width="1"  height="62"/>
+      <rect x="22"  y="8" width="3"  height="62"/>
+      <rect x="30"  y="8" width="2"  height="62"/>
+      <rect x="35"  y="8" width="1"  height="62"/>
+      <rect x="40"  y="8" width="2"  height="62"/>
+      <rect x="46"  y="8" width="3"  height="62"/>
+      <rect x="55"  y="8" width="2"  height="62"/>
+      <rect x="61"  y="8" width="1"  height="62"/>
+      <rect x="66"  y="8" width="2"  height="62"/>
+      <rect x="72"  y="8" width="2"  height="62"/>
+      <rect x="78"  y="8" width="3"  height="62"/>
+      <rect x="86"  y="8" width="1"  height="62"/>
+      <rect x="92"  y="8" width="2"  height="62"/>
+      <rect x="98"  y="8" width="2"  height="62"/>
+      <rect x="106" y="8" width="1"  height="62"/>
+      <rect x="112" y="8" width="3"  height="62"/>
+      <rect x="120" y="8" width="2"  height="62"/>
+      <rect x="126" y="8" width="1"  height="62"/>
+      <rect x="132" y="8" width="2"  height="62"/>
+      <rect x="139" y="8" width="2"  height="62"/>
+      <rect x="146" y="8" width="3"  height="62"/>
+      <rect x="156" y="8" width="1"  height="62"/>
+      <rect x="161" y="8" width="2"  height="62"/>
+      <rect x="167" y="8" width="2"  height="62"/>
+      <rect x="174" y="8" width="1"  height="62"/>
+      <rect x="181" y="8" width="3"  height="62"/>
+      <rect x="188" y="8" width="2"  height="62"/>
+      <rect x="196" y="8" width="1"  height="62"/>
+      <rect x="201" y="8" width="2"  height="62"/>
+      <rect x="208" y="8" width="2"  height="62"/>
+      <rect x="214" y="8" width="3"  height="62"/>
+      <rect x="222" y="8" width="1"  height="62"/>
+      <rect x="228" y="8" width="2"  height="62"/>
+      <rect x="234" y="8" width="2"  height="62"/>
+      <rect x="241" y="8" width="1"  height="62"/>
+      <rect x="247" y="8" width="3"  height="62"/>
+      <rect x="256" y="8" width="2"  height="62"/>
+      <rect x="262" y="8" width="1"  height="62"/>
+      <rect x="268" y="8" width="2"  height="62"/>
+    </g>
+    <text x="165" y="82" text-anchor="middle"
+          font-family="ui-monospace, monospace" font-size="11"
+          fill="#4a3b2a">9 789949 000000</text>
+  </g>
+</svg>

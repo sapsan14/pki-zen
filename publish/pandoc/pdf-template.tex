@@ -16,6 +16,15 @@
 \setsansfont{Noto Sans}
 \setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
+% Noto Serif does not contain every Unicode glyph — in particular ∞
+% (U+221E), which we use as the "closing verse" probability marker. Map
+% it (and a handful of other glyphs we occasionally hit) to explicit
+% math-mode commands that always render.
+\usepackage{newunicodechar}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+
 \usepackage{geometry}
 \geometry{paperwidth=152mm, paperheight=229mm, margin=18mm,
           headheight=15pt, footskip=24pt}
