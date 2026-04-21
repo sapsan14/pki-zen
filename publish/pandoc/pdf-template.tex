@@ -35,6 +35,15 @@
   breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small
 }
 
+% Pandoc emits \begin{Shaded}...\end{Shaded} around syntax-highlighted
+% code blocks. The default Pandoc LaTeX template defines this via the
+% framed package; since we use a custom template, we have to define it
+% ourselves or the PDF build fails with "Environment Shaded undefined".
+\usepackage{framed}
+\usepackage{xcolor}
+\definecolor{shadecolor}{gray}{0.95}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+
 % Quiet, book-like chapter titles.
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
