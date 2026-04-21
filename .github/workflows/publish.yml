@@ -28,6 +28,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache apt packages
+        uses: actions/cache@v4
+        id: apt-cache
+        with:
+          path: |
+            /var/cache/apt/archives/*.deb
+            /var/cache/apt/archives/partial/*.deb
+          # Cache key is the hash of the apt install line, so any
+          # edit to the package list auto-busts the cache.
+          key: apt-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            apt-${{ runner.os }}-
+
       - name: Install Pandoc and TeX
         run: |
           sudo apt-get update

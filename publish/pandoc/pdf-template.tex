@@ -35,20 +35,16 @@
   breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small
 }
 
-% Pandoc emits \begin{Shaded}...\end{Shaded} around syntax-highlighted
-% code blocks. The default Pandoc LaTeX template defines this via the
-% framed package; since we use a custom template, we have to define it
-% ourselves or the PDF build fails with "Environment Shaded undefined".
+% Pandoc handles the Shaded environment + per-token command definitions
+% (\NormalTok, \ExtensionTok, \KeywordTok, …) itself, via the
+% $highlighting-macros$ placeholder below. It expects 'framed' + 'xcolor'
+% + shadecolor to exist for the default snugshade background; provide
+% those but DO NOT redefine \Shaded ourselves or LaTeX errors with
+% "Command \Shaded already defined".
 \usepackage{framed}
 \usepackage{xcolor}
 \definecolor{shadecolor}{gray}{0.95}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 
-% Pandoc also generates per-token commands (\NormalTok, \ExtensionTok,
-% \KeywordTok, \StringTok, \CommentTok, …) based on --highlight-style.
-% Those definitions land in $highlighting-macros$. Without this placeholder
-% the PDF build fails with "Undefined control sequence" on the first
-% highlighted code block.
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
