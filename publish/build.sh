@@ -54,11 +54,17 @@ build_pdf() {
   local lang="$1"; local babel="$2"
   local meta="publish/pandoc/metadata.$lang.yaml"
   local out="$DIST/pki-zen-$lang.pdf"
+  # --no-highlight: skip Pandoc's LaTeX syntax-highlighting macros
+  # entirely. The book has a handful of inline `openssl rand -hex 32`
+  # spans — they're more readable as plain monospace than with a
+  # colour palette, and disabling the feature removes the whole fragile
+  # Shaded/Tok/framed stack that kept breaking the PDF build.
   pandoc \
     --metadata-file="$meta" \
     --metadata=babel-lang:"$babel" \
     --pdf-engine=xelatex \
     --template=publish/pandoc/pdf-template.tex \
+    --no-highlight \
     --toc --toc-depth=2 \
     -o "$out" \
     books/"$lang"/*.md
