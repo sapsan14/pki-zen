@@ -1,47 +1,74 @@
-/* PKI-ZEN EPUB stylesheet: quiet, book-like, koan-friendly. */
+/* PKI-ZEN EPUB stylesheet: quiet, book-like, koan-friendly.
+   Typography mirrors the web edition:
+     - Latin / Estonian-Extended: Space Grotesk
+     - Cyrillic:                  Onest
+     - Code:                      JetBrains Mono
+   Fonts are loaded from Google Fonts — readers with internet will
+   fetch on first open; offline readers fall through to the fallback
+   stack in each font-family. */
 
 @namespace epub "http://www.idpf.org/2007/ops";
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 body {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: "Space Grotesk", "Onest", system-ui, -apple-system,
+               "Segoe UI", Roboto, sans-serif;
   font-size: 1em;
   line-height: 1.55;
-  text-align: justify;
+  text-align: left;          /* left-align instead of justify: calmer in narrow columns */
   hyphens: auto;
   color: #1a1a1a;
   background: #fafaf7;
   margin: 1em;
 }
 
-h1, h2, h3 {
-  font-family: "EB Garamond", Georgia, serif;
-  font-weight: 600;
-  line-height: 1.2;
-  page-break-after: avoid;
+/* No first-line indent. Paragraphs separated by a gap, matching the
+   PDF and web editions. */
+p {
+  text-indent: 0;
+  margin: 0 0 0.8em 0;
 }
 
-h1 { font-size: 1.8em; margin-top: 2.5em; letter-spacing: 0.02em; }
-h2 { font-size: 1.3em; margin-top: 2em; }
-h3 { font-size: 1.1em; }
-
-/* Keep a heading glued to the following paragraph; never break the
-   page between a heading and its first line of body text. */
 h1, h2, h3 {
+  font-family: "Space Grotesk", "Onest", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   page-break-after: avoid;
   break-after: avoid;
 }
 
-/* Each verse is a <section class="level2"> when pandoc is called with
-   --section-divs. Keep the whole verse unit together across pages
-   (works in Apple Books, Calibre, most modern EPUB readers). */
+h1 { font-size: 1.8em;  margin-top: 2.5em; letter-spacing: 0.02em; }
+h2 { font-size: 1.25em; margin-top: 2em; }
+h3 { font-size: 1.1em;  margin-top: 1.5em; }
+
+/* Each verse is a <section class="level2"> (pandoc --section-divs).
+   Keep the whole verse unit together where the reader honours
+   CSS pagination (Apple Books, Calibre, most modern EPUB readers). */
 section.level2,
 section.level3 {
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
-/* Math blocks rendered by --webtex become <img> wrapped in <p>. Do not
-   break a formula across pages. */
+/* Math: pandoc default for EPUB is MathML (inline <math>…</math>).
+   Readers render it with their own math font. Size + alignment
+   friendly on narrow screens; never let a formula split a page. */
+math {
+  font-size: 1.05em;
+  display: inline-block;
+  max-width: 100%;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+math[display="block"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+/* If a reader still ends up serving a <img> fallback (rare), keep
+   the picture contained. */
 p img {
   page-break-inside: avoid;
   break-inside: avoid;
@@ -59,8 +86,9 @@ blockquote {
 
 em { font-style: italic; }
 
-code, pre, tt {
-  font-family: "JetBrains Mono", "Courier New", monospace;
+code, pre, tt, kbd, samp {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Mono",
+               Menlo, Consolas, monospace;
   font-size: 0.92em;
 }
 
@@ -69,22 +97,23 @@ pre {
   padding: 0.6em 0.8em;
   border-radius: 3px;
   overflow-x: auto;
+  line-height: 1.4;
 }
 
 /* Probability signature — italic, small caps, quiet. */
 p em:last-child {
   display: block;
   text-align: right;
-  margin-top: 0.2em;
+  margin-top: 0.4em;
   font-size: 0.9em;
   color: #888;
   letter-spacing: 0.04em;
 }
 
-/* Verse spacing */
-h2 + p { margin-top: 0.4em; }
+/* Verse spacing: give the first paragraph some air below the title. */
+h2 + p { margin-top: 0.6em; }
 
-/* Colophon spacing */
+/* Colophon decorative rule */
 hr {
   border: 0;
   height: 1px;

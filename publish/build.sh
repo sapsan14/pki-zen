@@ -73,15 +73,18 @@ echo "→ [3/6] Build EPUBs (3 languages)"
 build_epub() {
   local lang="$1"; local meta="publish/pandoc/metadata.$lang.yaml"
   local out="$DIST/pki-zen-$lang.epub"
-  # --webtex: render LaTeX math as external PNG images so readers
-  # without MathML support (iPhone Books, older Android e-readers)
-  # still see formulas correctly. MathML default leaves \lvert\rangle
-  # etc. as unstyled unicode that many fonts show as .notdef boxes.
+  # --mathml: native math in EPUB3 (pandoc default). Offline-safe;
+  # modern readers (Apple Books, Calibre, Kobo, Android readers)
+  # render it with their built-in math font. The previous --webtex
+  # approach depended on codecogs.com being reachable at reader-open
+  # time, which is brittle on planes, metros, and libraries.
+  # --section-divs: wraps each verse in <section class="level2"> so
+  # the EPUB CSS can keep a verse whole across page breaks.
   pandoc \
     --metadata-file="$meta" \
     --css=publish/pandoc/epub.css \
     --epub-cover-image="$COVER_PNG" \
-    --webtex=https://latex.codecogs.com/svg.image? \
+    --mathml \
     --section-divs \
     --toc --toc-depth=2 \
     -o "$out" \
