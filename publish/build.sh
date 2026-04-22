@@ -96,6 +96,30 @@ build_epub en
 build_epub et
 
 echo "→ [4/6] Build PDFs (3 languages) via XeLaTeX"
+# Inject a PDF-only \newpage before the 'At one point I asked' paragraph
+# in each appendix so Book VIII's origin story opens on its own page.
+# The raw \newpage stays out of the shared Markdown source because
+# VitePress would render it literally on the web; we sed it into the
+# stamped copy right before the PDF build (after EPUB has already read
+# the same tree without the break).
+python3 <<'PY'
+import pathlib, re
+MARKERS = [
+    ('ru', r'(?m)^(В какой-то момент я спросил:)$'),
+    ('en', r'(?m)^(At one point I asked:)$'),
+    ('et', r'(?m)^(Ühel hetkel küsisin:)$'),
+]
+DIST = pathlib.Path('dist/books-stamped')
+for lang, pat in MARKERS:
+    for md in sorted(DIST.joinpath(lang).glob('99-*origin*.md')) + \
+              sorted(DIST.joinpath(lang).glob('99-*paritolu*.md')):
+        src = md.read_text(encoding='utf-8')
+        out = re.sub(pat, r'\\newpage\n\n\1', src, count=1)
+        if out != src:
+            md.write_text(out, encoding='utf-8')
+            print(f'   ✓ injected \\newpage → {md.relative_to(DIST.parent.parent)}')
+PY
+
 build_pdf() {
   local lang="$1"; local babel="$2"
   local meta="publish/pandoc/metadata.$lang.yaml"

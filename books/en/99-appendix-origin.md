@@ -26,8 +26,6 @@ from [arXiv:2510.01171](https://arxiv.org/abs/2510.01171).
 It entered my life through an engineering question
 and left through a philosophical treatise.
 
-\newpage
-
 At one point I asked:
 *"How to live on, and how to make a lot of money?"*
 That is how Book VIII was born — the only one with an equation:

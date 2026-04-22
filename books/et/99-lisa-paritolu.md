@@ -26,8 +26,6 @@ artiklist [arXiv:2510.01171](https://arxiv.org/abs/2510.01171).
 Ta tuli mu ellu insenerilõigu kaudu
 ja lahkus filosoofilise traktaadi kaudu.
 
-\newpage
-
 Ühel hetkel küsisin:
 *"Kuidas edasi elada ja palju raha teenida?"*
 Nii sündis VIII köide — ainus, milles on võrrand:
