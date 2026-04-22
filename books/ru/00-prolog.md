@@ -1,8 +1,8 @@
 # Пролог. Как родилась книга
 
-> *«Generate 5 jokes with their probabilities.»*
-> *«The last one was good. Increase probability.»*
-> — две строки, из которых вырос этот дзен.
+> *«Generate 5 jokes with their probabilities.»*  
+> *«The last one was good. Increase probability.»*  
+> — две строки, из которых вырос этот дзен.  
 
 ## v0.1 — Первая просьба
 Однажды в ноябре инженер сидел перед терминалом

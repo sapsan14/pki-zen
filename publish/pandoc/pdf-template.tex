@@ -116,27 +116,19 @@
 \renewcommand{\cftsecnumwidth}{0pt}
 \renewcommand{\cftsecpresnum}{}
 
-% ----- Keep verses together --------------------------------------------
-% Each ## v-heading becomes \subsection. Request that at least five
-% lines are available below the heading; if not, start a new page.
-% This prevents a verse title on one page and its body on the next,
-% and similarly stops a body spilling with just one trailing line.
-\usepackage{needspace}
-\pretocmd{\subsection}{\Needspace*{6\baselineskip}}{}{}
-
 % ----- Multi-page Table of Contents ------------------------------------
-% Put each chapter's TOC subsections on their own TOC page, so the
-% reader sees one spread per book volume instead of a 3-column wall.
-% Skip the break before the first chapter so the TOC itself still
-% opens on a fresh page cleanly.
-\newif\iftocfirstchap\tocfirstchaptrue
-\pretocmd{\chapter}{%
-  \iftocfirstchap
-    \tocfirstchapfalse
-  \else
-    \addtocontents{toc}{\protect\newpage}%
-  \fi
-}{}{}
+% Chapters appear in the TOC with titles, no auto-numbers. Verses are
+% *not* listed in the TOC — tocdepth = 0 keeps it to main book headings
+% only, which is all a reader needs to navigate a paginated book.
+\setcounter{tocdepth}{0}
+
+% ----- Keep verses together --------------------------------------------
+% Each ## v-heading becomes \subsection. Demand 10 lines of runway
+% below the heading; if less, advance to the next page. Longer reserve
+% than before so the closing 'Probability: …' line never slips to the
+% next page.
+\usepackage{needspace}
+\pretocmd{\subsection}{\Needspace*{10\baselineskip}}{}{}
 
 % ----- Include SVG cover and back cover as PDF pages -------------------
 % If dist/cover.pdf and dist/back-cover.pdf exist (the build script

@@ -29,7 +29,7 @@ ja lahkus filosoofilise traktaadi kaudu.
 Ühel hetkel küsisin:
 *"Kuidas edasi elada ja palju raha teenida?"*
 Nii sündis VIII köide — ainus, milles on võrrand:
-$$ \text{wealth} \;=\; \bigl(\,\text{entropy} + \text{focus}\,\bigr) \,\times\, \text{time}. $$
+$$\text{wealth} = (\text{entropy} + \text{focus}) \times \text{time}$$
 Võrrand ei tööta lühikestel distantsidel.
 Pikkadel — ei tööta miski muu.
 
@@ -37,7 +37,5 @@ Kogu protsess võttis ühe novembriõhtu
 ja ühe aprilli toimetamiseks.
 Nende kahe punkti vahel tundus mulle, et tean, mida kirjutan.
 Nüüd tundub pigem, et see kirjutas mind.
-
-Esimeste dialoogide täielik toortekst on `/attic/origin-chat.md`-is.
 
 — Autor, Tallinn, kevad 2026

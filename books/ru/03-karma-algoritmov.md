@@ -15,7 +15,7 @@
 Наблюдение коллапсирует состояние, но в худшую сторону.
 
 $$
-\lvert\psi_{\text{key}}\rangle \;=\; \alpha\,\lvert\text{leaked}\rangle + \beta\,\lvert\text{in-backup}\rangle, \qquad |\alpha|^2 + |\beta|^2 = 1
+\lvert\psi_{\text{key}}\rangle = \alpha\,\lvert\text{leaked}\rangle + \beta\,\lvert\text{in-backup}\rangle,\; |\alpha|^2 + |\beta|^2 = 1
 $$
 
 *Вероятность: 0.93*

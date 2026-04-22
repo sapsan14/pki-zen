@@ -15,7 +15,7 @@ it is already in superposition between "leaked" and "in backup".
 Observation collapses the state — usually toward the worse.
 
 $$
-\lvert\psi_{\text{key}}\rangle \;=\; \alpha\,\lvert\text{leaked}\rangle + \beta\,\lvert\text{in-backup}\rangle, \qquad |\alpha|^2 + |\beta|^2 = 1
+\lvert\psi_{\text{key}}\rangle = \alpha\,\lvert\text{leaked}\rangle + \beta\,\lvert\text{in-backup}\rangle,\; |\alpha|^2 + |\beta|^2 = 1
 $$
 
 *Probability: 0.93*

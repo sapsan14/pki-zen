@@ -1,8 +1,8 @@
 # Proloog. Kuidas raamat sündis
 
-> *"Generate 5 jokes with their probabilities."*
-> *"The last one was good. Increase probability."*
-> — kaks rida, millest kasvas välja see zen.
+> *"Generate 5 jokes with their probabilities."*  
+> *"The last one was good. Increase probability."*  
+> — kaks rida, millest kasvas välja see zen.  
 
 ## v0.1 — Esimene palve
 Ühel novembriõhtul istus insener terminali taga
