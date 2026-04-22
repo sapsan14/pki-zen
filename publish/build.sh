@@ -25,9 +25,10 @@ echo "→ [2.3/6] Compute canonical Russian SHA-256 and inject into colophons"
 # colophon with the real fingerprint (zero-leading-zero safe).
 RU_SHA=$(find books/ru -name '*.md' -print0 | sort -z | xargs -0 cat | sha256sum | awk '{print $1}')
 echo "   canonical RU sha256: $RU_SHA"
-# Break the 64-char hash into 4 space-separated 16-char groups so it
-# fits within the 6-inch page width without overflowing the column.
-RU_SHA_FORMATTED="${RU_SHA:0:16} ${RU_SHA:16:16} ${RU_SHA:32:16} ${RU_SHA:48:16}"
+# Break the 64-char hash into two lines of two space-separated 16-char
+# groups. Even at \small the single-line form (64+3 chars) overflows the
+# 6-inch column; two 33-char lines fit comfortably.
+RU_SHA_FORMATTED="${RU_SHA:0:16} ${RU_SHA:16:16}"$'\n'"${RU_SHA:32:16} ${RU_SHA:48:16}"
 # Work on COPIES under the dist tree so the source .md stays unchanged
 # (and verify-parallel stays deterministic).
 mkdir -p "$DIST/books-stamped"
@@ -129,16 +130,24 @@ for lang, pat in MARKERS:
             md.write_text(out, encoding='utf-8')
             print(f'   ✓ \\newpage → {md.relative_to(DIST.parent.parent)}')
 
-# --- 2. Glue probability line to previous paragraph ---
+# --- 2. Glue probability line to previous paragraph, render smaller ---
 # Pattern: any line, blank line, '*Probability|Вероятность|Tõenäosus: X*'
 # Replace: previous line keeps trailing two spaces (markdown hard break),
-#          blank line removed, probability now in the same paragraph.
+#          blank line removed, probability now in the same paragraph and
+#          wrapped in raw LaTeX so it renders one size smaller than the
+#          verse body.
 prob_re = re.compile(
-    r'([^\n]+)\n\n(\*(?:Probability|Вероятность|Tõenäosus):[^\n*]+\*)',
+    r'([^\n]+)\n\n\*((?:Probability|Вероятность|Tõenäosus):[^\n*]+)\*',
 )
+def _prob_sub(m):
+    body = m.group(1).rstrip()
+    inner = m.group(2).strip()
+    # {\small \emph{...}} — raw LaTeX passes through pandoc's raw_tex
+    # extension and renders as small italic inside the verse paragraph.
+    return f'{body}  \n{{\\small \\emph{{{inner}}}}}'
 for md in sorted(DIST.glob('*/*.md')):
     src = md.read_text(encoding='utf-8')
-    out = prob_re.sub(lambda m: f'{m.group(1).rstrip()}  \n{m.group(2)}', src)
+    out = prob_re.sub(_prob_sub, src)
     if out != src:
         md.write_text(out, encoding='utf-8')
 PY
