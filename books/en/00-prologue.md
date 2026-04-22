@@ -1,8 +1,8 @@
 # Prologue. How the Book Was Born
 
-> *"Generate 5 jokes with their probabilities."*
-> *"The last one was good. Increase probability."*
-> — two lines from which this zen grew.
+> *"Generate 5 jokes with their probabilities."*  
+> *"The last one was good. Increase probability."*  
+> — two lines from which this zen grew.  
 
 ## v0.1 — The First Request
 One November evening an engineer sat in front of a terminal

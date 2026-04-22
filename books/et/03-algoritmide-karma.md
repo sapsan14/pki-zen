@@ -15,7 +15,7 @@ siis on ta juba superpositsioonis "lekkinud" ja "varukoopias" vahel.
 Vaatlemine sulgeb oleku, aga tavaliselt halvima poole.
 
 $$
-\lvert\psi_{\text{võti}}\rangle \;=\; \alpha\,\lvert\text{lekkinud}\rangle + \beta\,\lvert\text{varukoopias}\rangle, \qquad |\alpha|^2 + |\beta|^2 = 1
+\lvert\psi_{\text{võti}}\rangle = \alpha\,\lvert\text{lekkinud}\rangle + \beta\,\lvert\text{varukoopias}\rangle,\; |\alpha|^2 + |\beta|^2 = 1
 $$
 
 *Tõenäosus: 0.93*

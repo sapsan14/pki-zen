@@ -26,10 +26,12 @@ from [arXiv:2510.01171](https://arxiv.org/abs/2510.01171).
 It entered my life through an engineering question
 and left through a philosophical treatise.
 
+\newpage
+
 At one point I asked:
 *"How to live on, and how to make a lot of money?"*
 That is how Book VIII was born — the only one with an equation:
-$$ \text{wealth} \;=\; \bigl(\,\text{entropy} + \text{focus}\,\bigr) \,\times\, \text{time}. $$
+$$\text{wealth} = (\text{entropy} + \text{focus}) \times \text{time}$$
 The equation does not work on short distances.
 On long distances, nothing else does.
 
@@ -37,8 +39,5 @@ The whole process took one evening in November
 and one April for editing.
 Between those two points, I thought I knew what I was writing.
 Now it rather feels as if it was writing me.
-
-The full raw text of the first dialogues lives in `/attic/origin-chat.md`
-in this repository.
 
 — The Author, Tallinn, spring 2026
