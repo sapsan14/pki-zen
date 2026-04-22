@@ -25,6 +25,9 @@ echo "→ [2.3/6] Compute canonical Russian SHA-256 and inject into colophons"
 # colophon with the real fingerprint (zero-leading-zero safe).
 RU_SHA=$(find books/ru -name '*.md' -print0 | sort -z | xargs -0 cat | sha256sum | awk '{print $1}')
 echo "   canonical RU sha256: $RU_SHA"
+# Break the 64-char hash into 4 space-separated 16-char groups so it
+# fits within the 6-inch page width without overflowing the column.
+RU_SHA_FORMATTED="${RU_SHA:0:16} ${RU_SHA:16:16} ${RU_SHA:32:16} ${RU_SHA:48:16}"
 # Work on COPIES under the dist tree so the source .md stays unchanged
 # (and verify-parallel stays deterministic).
 mkdir -p "$DIST/books-stamped"
@@ -35,7 +38,7 @@ done
 # Replace the placeholder line (anything between the code-fence that
 # starts with <computed|вычисляется|arvutatakse) with the fingerprint.
 for f in "$DIST/books-stamped"/*/99-colophon.md; do
-  python3 - "$f" "$RU_SHA" <<'PY'
+  python3 - "$f" "$RU_SHA_FORMATTED" <<'PY'
 import re, sys
 path, sha = sys.argv[1:]
 src = open(path, encoding='utf-8').read()
@@ -84,7 +87,7 @@ build_epub() {
     --metadata-file="$meta" \
     --css=publish/pandoc/epub.css \
     --epub-cover-image="$COVER_PNG" \
-    --mathml \
+    --webtex=https://latex.codecogs.com/svg.image? \
     --section-divs \
     --toc --toc-depth=2 \
     -o "$out" \
@@ -96,20 +99,27 @@ build_epub en
 build_epub et
 
 echo "→ [4/6] Build PDFs (3 languages) via XeLaTeX"
-# Inject a PDF-only \newpage before the 'At one point I asked' paragraph
-# in each appendix so Book VIII's origin story opens on its own page.
-# The raw \newpage stays out of the shared Markdown source because
-# VitePress would render it literally on the web; we sed it into the
-# stamped copy right before the PDF build (after EPUB has already read
-# the same tree without the break).
+# Post-process the stamped tree for PDF-only rendering tweaks:
+#   1. Inject \newpage before the 'At one point I asked' paragraph
+#      so Book VIII's origin opens on its own spread.
+#   2. Glue the '*Probability: X*' closing line into the preceding
+#      verse body as a hard-break-within-paragraph. That way LaTeX's
+#      widow penalty (=10000) keeps the probability stuck to the
+#      verse body — no more orphan probabilities on the next page.
+# Both edits land ONLY in the stamped tree, right before the PDF
+# build, so EPUB / web (which already rendered the same tree) see
+# the clean Markdown.
 python3 <<'PY'
 import pathlib, re
+
+DIST = pathlib.Path('dist/books-stamped')
+
+# --- 1. \newpage before "At one point I asked" (appendix) ---
 MARKERS = [
     ('ru', r'(?m)^(В какой-то момент я спросил:)$'),
     ('en', r'(?m)^(At one point I asked:)$'),
     ('et', r'(?m)^(Ühel hetkel küsisin:)$'),
 ]
-DIST = pathlib.Path('dist/books-stamped')
 for lang, pat in MARKERS:
     for md in sorted(DIST.joinpath(lang).glob('99-*origin*.md')) + \
               sorted(DIST.joinpath(lang).glob('99-*paritolu*.md')):
@@ -117,7 +127,20 @@ for lang, pat in MARKERS:
         out = re.sub(pat, r'\\newpage\n\n\1', src, count=1)
         if out != src:
             md.write_text(out, encoding='utf-8')
-            print(f'   ✓ injected \\newpage → {md.relative_to(DIST.parent.parent)}')
+            print(f'   ✓ \\newpage → {md.relative_to(DIST.parent.parent)}')
+
+# --- 2. Glue probability line to previous paragraph ---
+# Pattern: any line, blank line, '*Probability|Вероятность|Tõenäosus: X*'
+# Replace: previous line keeps trailing two spaces (markdown hard break),
+#          blank line removed, probability now in the same paragraph.
+prob_re = re.compile(
+    r'([^\n]+)\n\n(\*(?:Probability|Вероятность|Tõenäosus):[^\n*]+\*)',
+)
+for md in sorted(DIST.glob('*/*.md')):
+    src = md.read_text(encoding='utf-8')
+    out = prob_re.sub(lambda m: f'{m.group(1).rstrip()}  \n{m.group(2)}', src)
+    if out != src:
+        md.write_text(out, encoding='utf-8')
 PY
 
 build_pdf() {
