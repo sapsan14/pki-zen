@@ -73,4 +73,4 @@ Eraldi nimeruum, et erinevad asjad omavahel ei seguneks.
 
 ## v10.18 — `openssl rand -hex 32`
 Käsk, mis annab 32 juhuslikku baiti kuueteistkümnendtekstina.
-*See on *sūtra* sümboolne lõpp — uue epohhi hingetõmme. Proovi terminalis. Siis pane tuli kustu.*
+*See on sūtra sümboolne lõpp — uue epohhi hingetõmme. Proovi terminalis. Siis pane tuli kustu.*

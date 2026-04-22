@@ -24,6 +24,8 @@
 \newunicodechar{∞}{\ensuremath{\infty}}
 \newunicodechar{⟨}{\ensuremath{\langle}}
 \newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
 
 \usepackage{geometry}
 \geometry{paperwidth=152mm, paperheight=229mm, margin=18mm,
@@ -144,7 +146,7 @@
 % rewrites those in the stamped Markdown tree to \prob{...} so they
 % pass cleanly through Pandoc's raw_tex extension (bare {...} groups
 % are not recognised and would leak literal braces into the PDF).
-\newcommand{\prob}[1]{{\small\itshape #1}}
+\newcommand{\prob}[1]{{\footnotesize\itshape #1}}
 
 % ----- Include SVG cover and back cover as PDF pages -------------------
 % If dist/cover.pdf and dist/back-cover.pdf exist (the build script
