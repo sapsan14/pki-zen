@@ -124,12 +124,20 @@
 \setcounter{tocdepth}{0}
 
 % ----- Keep verses together --------------------------------------------
-% Each ## v-heading becomes \subsection. Demand 14 lines of runway
-% below the heading; if less, advance to the next page. Covers the
-% longest verses in the book (v4.6, v8.6 around 10–12 lines with
-% their probability signature) so the whole verse stays on one page.
+% Each ## v-heading becomes \section (documentclass=book maps # to
+% \chapter, ## to \section). Demand 18 lines of runway below the
+% heading; if less, advance to the next page. Covers the longest
+% verses in the book (v9.1, v8.1 around 10–14 visual lines with their
+% probability signature) so the whole verse stays on one page.
 \usepackage{needspace}
-\pretocmd{\subsection}{\Needspace*{14\baselineskip}}{}{}
+\pretocmd{\section}{\Needspace*{18\baselineskip}}{}{}
+
+% ----- Make verbatim blocks narrower -----------------------------------
+% The colophon carries a 64-char SHA-256 fingerprint inside a fenced
+% code block. At the default 12pt monospace size it overflows the 6-in
+% text column. Render all verbatim blocks in \small so long fingerprints
+% and commands fit within the page.
+\AtBeginEnvironment{verbatim}{\small}
 
 % ----- Include SVG cover and back cover as PDF pages -------------------
 % If dist/cover.pdf and dist/back-cover.pdf exist (the build script
