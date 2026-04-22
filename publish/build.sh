@@ -142,9 +142,11 @@ prob_re = re.compile(
 def _prob_sub(m):
     body = m.group(1).rstrip()
     inner = m.group(2).strip()
-    # {\small \emph{...}} — raw LaTeX passes through pandoc's raw_tex
-    # extension and renders as small italic inside the verse paragraph.
-    return f'{body}  \n{{\\small \\emph{{{inner}}}}}'
+    # \prob{...} is defined in pdf-template.tex as {\small\itshape #1}.
+    # Pandoc's raw_tex extension only passes through TeX commands that
+    # take braced arguments; a bare {\small …} group leaks literal braces
+    # into the PDF. Wrapping in a named command avoids that.
+    return f'{body}  \n\\prob{{{inner}}}'
 for md in sorted(DIST.glob('*/*.md')):
     src = md.read_text(encoding='utf-8')
     out = prob_re.sub(_prob_sub, src)
