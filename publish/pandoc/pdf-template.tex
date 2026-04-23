@@ -12,14 +12,19 @@
 \setdefaultlanguage{$babel-lang$}
 \setotherlanguages{russian,estonian,english}
 
-% Match the web/EPUB edition's typography: a humanist sans for body
-% and headings. Noto Sans covers Latin, Cyrillic, and the Estonian
+% Match the web/EPUB edition's typography: a neo-grotesque sans for
+% body and headings. Inter covers Latin, Cyrillic, and the Estonian
 % extended set in a single family, which lets us avoid font-substitution
-% shimmer between scripts. DejaVu Sans Mono stays as the code face —
-% it's installed in the build image by default and reads cleanly next
-% to Noto Sans.
-\setmainfont{Noto Sans}[Ligatures={TeX,Common}]
-\setsansfont{Noto Sans}
+% shimmer between scripts. Fall back to Noto Sans if fonts-inter is not
+% installed, so the build never fails on a missing font. DejaVu Sans
+% Mono stays as the code face — already in the build image.
+\IfFontExistsTF{Inter}{%
+  \setmainfont{Inter}[Ligatures={TeX,Common}]%
+  \setsansfont{Inter}%
+}{%
+  \setmainfont{Noto Sans}[Ligatures={TeX,Common}]%
+  \setsansfont{Noto Sans}%
+}
 \setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
 % Noto Serif does not contain every Unicode glyph — in particular ∞
@@ -48,21 +53,25 @@
 % ----- Paragraph rhythm ------------------------------------------------
 % The book reads better with flush-left paragraphs (no first-line
 % indent) and a small skip between them. Matches the EPUB rendering.
-% The generous `plus 1\baselineskip` stretch lets \flushbottom (below)
-% distribute extra glue *between* verses on partially-filled pages,
-% so the body block ends up vertically balanced on the page instead of
-% collapsing to the top with a yawning gap underneath.
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.5\baselineskip plus 1\baselineskip}
+\setlength{\parskip}{0.5\baselineskip plus 0.1\baselineskip}
 
 % Never orphan the first line of a paragraph at the bottom of a page,
 % never widow the last line at the top of the next page.
 \clubpenalty=10000
 \widowpenalty=10000
-% \flushbottom keeps the body text vertically balanced on every page
-% by stretching the parskip glue between verses, instead of leaving a
-% large empty band at the bottom of partially-filled pages.
-\flushbottom
+
+% ----- Vertically centred body on every page ---------------------------
+% With plain \raggedbottom TeX appends ~0.0001fil of trailing glue,
+% which leaves the body block hugging the top of the page and a large
+% empty band below. Match that trailing fil at the *top* via \@texttop,
+% so the leftover whitespace splits evenly above and below the body —
+% every page reads as a centred column of verses rather than top-loaded.
+\raggedbottom
+\makeatletter
+\def\@textbottom{\vskip \z@ \@plus .0001fil}%
+\def\@texttop{\vskip \z@ \@plus .0001fil}%
+\makeatother
 
 % ----- Code blocks -----------------------------------------------------
 \usepackage{fvextra}
