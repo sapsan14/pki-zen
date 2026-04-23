@@ -21,6 +21,14 @@ function Pandoc(doc)
       -- Render the blockquote's inner blocks to LaTeX so inline markdown
       -- (italic, inline code, hard breaks) converts correctly.
       local inner = pandoc.write(pandoc.Pandoc(next_b.content), 'latex')
+      -- Pandoc's LaTeX writer turns Unicode em/en-dashes into --- and --.
+      -- That round-trip is normally transparent because fontspec's
+      -- Mapping=tex-text converts them back at input time, but inside
+      -- our \begin{epigraph}…\end{epigraph} raw block the mapping does
+      -- not always fire and the reader ends up seeing the literal
+      -- hyphens. Put the Unicode characters back so XeLaTeX draws the
+      -- real glyphs straight from the font.
+      inner = inner:gsub('%-%-%-', '—'):gsub('%-%-', '–')
       table.insert(out, pandoc.RawBlock('latex',
         '\\begin{epigraph}\n' .. inner .. '\\end{epigraph}\n\\clearpage'))
       i = i + 2
