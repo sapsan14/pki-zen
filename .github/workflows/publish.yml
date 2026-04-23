@@ -54,7 +54,7 @@ jobs:
             texlive-xetex texlive-latex-extra \
             texlive-fonts-recommended \
             texlive-lang-cyrillic texlive-lang-european \
-            fonts-noto-core fonts-dejavu fonts-inter \
+            fonts-noto-core fonts-dejavu fonts-linuxlibertine \
             librsvg2-bin rsync
           # Refresh fontconfig so XeLaTeX/fontspec sees newly installed
           # fonts (notably fonts-inter) — dpkg triggers usually handle

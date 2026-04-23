@@ -169,6 +169,7 @@ build_pdf() {
     --metadata=back-cover-pdf:"$BACK_COVER_PDF" \
     --pdf-engine=xelatex \
     --template=publish/pandoc/pdf-template.tex \
+    --lua-filter=publish/pandoc/chapter-epigraph.lua \
     --no-highlight \
     --toc --toc-depth=2 \
     -o "$out" \
