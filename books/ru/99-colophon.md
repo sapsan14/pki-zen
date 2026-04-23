@@ -6,7 +6,7 @@
 - **Версия:** 1.0.0
 - **Дата релиза:** 2026-04-17
 - **Языки:** русский (канонический), английский, эстонский.
-- **Шрифты:** EB Garamond, JetBrains Mono, Noto Sans.
+- **Шрифты:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Формат:** Markdown → EPUB / PDF / HTML через Pandoc; веб — VitePress.
 - **Лицензия текста:** CC-BY-SA-4.0. Код — MIT.
 - **Всего стихов:** 9 × 10 = 90, плюс пролог на 9, плюс 18 коанов Кодекса.

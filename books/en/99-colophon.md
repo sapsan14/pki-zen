@@ -6,7 +6,7 @@ by the fact that you read it this far.
 - **Version:** 1.0.0
 - **Release date:** 2026-04-17
 - **Languages:** Russian (canonical), English, Estonian.
-- **Fonts:** EB Garamond, JetBrains Mono, Noto Sans.
+- **Fonts:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Format:** Markdown → EPUB / PDF / HTML via Pandoc; web — VitePress.
 - **Text license:** CC-BY-SA-4.0. Code snippets — MIT.
 - **Verse count:** 9 × 10 = 90, plus a 9-verse prologue, plus 18 Codex koans.
