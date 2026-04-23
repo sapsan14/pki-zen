@@ -43,72 +43,90 @@
 /download/en.pdf         https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-en.pdf      302
 /download/et.pdf         https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-et.pdf      302
 
-# Language switcher catch-all. VitePress's default LangSwitch rewrites
-# /ru/01-put-inzhenera  →  /en/01-put-inzhenera — but English uses a
-# different slug (01-way-of-the-engineer). Map every foreign slug
-# inside a locale to the same book's canonical slug in that locale, so
-# readers who click 'English' on any verse page land on the same verse
-# in English instead of a 404.
-/en/00-prolog                 /en/00-prologue               301
-/en/00-proloog                /en/00-prologue               301
-/en/01-inseneri-tee           /en/01-way-of-the-engineer    301
-/en/01-put-inzhenera          /en/01-way-of-the-engineer    301
-/en/02-ten-doveriya           /en/02-shadow-of-trust        301
-/en/02-usalduse-vari          /en/02-shadow-of-trust        301
-/en/03-algoritmide-karma      /en/03-karma-of-algorithms    301
-/en/03-karma-algoritmov       /en/03-karma-of-algorithms    301
-/en/05-monitooringu-vaikus    /en/05-silence-of-monitoring  301
-/en/05-tishina-monitoringa    /en/05-silence-of-monitoring  301
-/en/06-terabait               /en/06-terabyte               301
-/en/06-terabayt               /en/06-terabyte               301
-/en/07-konteinerid-ja-karma   /en/07-containers-and-karma   301
-/en/07-konteynery-i-karma     /en/07-containers-and-karma   301
-/en/08-parast-entroopiat      /en/08-life-after-entropy     301
-/en/08-zhizn-posle-entropii   /en/08-life-after-entropy     301
-/en/09-pole-doveriya          /en/09-field-of-trust         301
-/en/09-usalduse-vali          /en/09-field-of-trust         301
-/en/10-kodeks-nolya           /en/10-codex-zero             301
-/en/10-nullkoodeks            /en/10-codex-zero             301
-/en/99-lisa-paritolu          /en/99-appendix-origin        301
-/et/00-prolog                 /et/00-proloog                301
-/et/00-prologue               /et/00-proloog                301
-/et/01-put-inzhenera          /et/01-inseneri-tee           301
-/et/01-way-of-the-engineer    /et/01-inseneri-tee           301
-/et/02-shadow-of-trust        /et/02-usalduse-vari          301
-/et/02-ten-doveriya           /et/02-usalduse-vari          301
-/et/03-karma-algoritmov       /et/03-algoritmide-karma      301
-/et/03-karma-of-algorithms    /et/03-algoritmide-karma      301
-/et/05-silence-of-monitoring  /et/05-monitooringu-vaikus    301
-/et/05-tishina-monitoringa    /et/05-monitooringu-vaikus    301
-/et/06-terabayt               /et/06-terabait               301
-/et/06-terabyte               /et/06-terabait               301
-/et/07-containers-and-karma   /et/07-konteinerid-ja-karma   301
-/et/07-konteynery-i-karma     /et/07-konteinerid-ja-karma   301
-/et/08-life-after-entropy     /et/08-parast-entroopiat      301
-/et/08-zhizn-posle-entropii   /et/08-parast-entroopiat      301
-/et/09-field-of-trust         /et/09-usalduse-vali          301
-/et/09-pole-doveriya          /et/09-usalduse-vali          301
-/et/10-codex-zero             /et/10-nullkoodeks            301
-/et/10-kodeks-nolya           /et/10-nullkoodeks            301
-/et/99-appendix-origin        /et/99-lisa-paritolu          301
-/ru/00-prologue               /ru/00-prolog                 301
-/ru/00-proloog                /ru/00-prolog                 301
-/ru/01-inseneri-tee           /ru/01-put-inzhenera          301
-/ru/01-way-of-the-engineer    /ru/01-put-inzhenera          301
-/ru/02-shadow-of-trust        /ru/02-ten-doveriya           301
-/ru/02-usalduse-vari          /ru/02-ten-doveriya           301
-/ru/03-algoritmide-karma      /ru/03-karma-algoritmov       301
-/ru/03-karma-of-algorithms    /ru/03-karma-algoritmov       301
-/ru/05-monitooringu-vaikus    /ru/05-tishina-monitoringa    301
-/ru/05-silence-of-monitoring  /ru/05-tishina-monitoringa    301
-/ru/06-terabait               /ru/06-terabayt               301
-/ru/06-terabyte               /ru/06-terabayt               301
-/ru/07-containers-and-karma   /ru/07-konteynery-i-karma     301
-/ru/07-konteinerid-ja-karma   /ru/07-konteynery-i-karma     301
-/ru/08-life-after-entropy     /ru/08-zhizn-posle-entropii   301
-/ru/08-parast-entroopiat      /ru/08-zhizn-posle-entropii   301
-/ru/09-field-of-trust         /ru/09-pole-doveriya          301
-/ru/09-usalduse-vali          /ru/09-pole-doveriya          301
-/ru/10-codex-zero             /ru/10-kodeks-nolya           301
-/ru/10-nullkoodeks            /ru/10-kodeks-nolya           301
-/ru/99-lisa-paritolu          /ru/99-appendix-origin        301
+# Language switcher 404 fix. VitePress's LangSwitch does *not* strip
+# the source locale before prepending the target locale, so clicking
+# another language on any verse page produces a broken URL. Mapping
+# observed (source page → target URL that needs to resolve):
+#
+#   /ru/<ru-slug>            + English  →  /en/ru/<ru-slug>
+#   /ru/<ru-slug>            + Eesti    →  /et/ru/<ru-slug>
+#   /en/<en-slug>            + Русский  →  /<en-slug>
+#   /en/<en-slug>            + Eesti    →  /et/<en-slug>
+#   /et/<et-slug>            + Русский  →  /<et-slug>
+#   /et/<et-slug>            + English  →  /en/<et-slug>
+#
+# Rewrite each of those to the same book's canonical page in the
+# target locale, so readers land on the same verse instead of a 404.
+# (Book IV 'devops-samsara' and the colophon share a slug across all
+# three locales — no rule needed for those.)
+
+# From /ru/<slug> → English or Estonian (double-prefix pattern)
+/en/ru/00-prolog                /en/00-prologue                301
+/en/ru/01-put-inzhenera         /en/01-way-of-the-engineer     301
+/en/ru/02-ten-doveriya          /en/02-shadow-of-trust         301
+/en/ru/03-karma-algoritmov      /en/03-karma-of-algorithms     301
+/en/ru/05-tishina-monitoringa   /en/05-silence-of-monitoring   301
+/en/ru/06-terabayt              /en/06-terabyte                301
+/en/ru/07-konteynery-i-karma    /en/07-containers-and-karma    301
+/en/ru/08-zhizn-posle-entropii  /en/08-life-after-entropy      301
+/en/ru/09-pole-doveriya         /en/09-field-of-trust          301
+/en/ru/10-kodeks-nolya          /en/10-codex-zero              301
+/et/ru/00-prolog                /et/00-proloog                 301
+/et/ru/01-put-inzhenera         /et/01-inseneri-tee            301
+/et/ru/02-ten-doveriya          /et/02-usalduse-vari           301
+/et/ru/03-karma-algoritmov      /et/03-algoritmide-karma       301
+/et/ru/05-tishina-monitoringa   /et/05-monitooringu-vaikus     301
+/et/ru/06-terabayt              /et/06-terabait                301
+/et/ru/07-konteynery-i-karma    /et/07-konteinerid-ja-karma    301
+/et/ru/08-zhizn-posle-entropii  /et/08-parast-entroopiat       301
+/et/ru/09-pole-doveriya         /et/09-usalduse-vali           301
+/et/ru/10-kodeks-nolya          /et/10-nullkoodeks             301
+/et/ru/99-appendix-origin       /et/99-lisa-paritolu           301
+
+# From /en/<slug> or /et/<slug> → Russian (no-prefix pattern, since
+# root locale's link is '/')
+/00-prologue                    /ru/00-prolog                  301
+/00-proloog                     /ru/00-prolog                  301
+/01-inseneri-tee                /ru/01-put-inzhenera           301
+/01-way-of-the-engineer         /ru/01-put-inzhenera           301
+/02-shadow-of-trust             /ru/02-ten-doveriya            301
+/02-usalduse-vari               /ru/02-ten-doveriya            301
+/03-algoritmide-karma           /ru/03-karma-algoritmov        301
+/03-karma-of-algorithms         /ru/03-karma-algoritmov        301
+/05-monitooringu-vaikus         /ru/05-tishina-monitoringa     301
+/05-silence-of-monitoring       /ru/05-tishina-monitoringa     301
+/06-terabait                    /ru/06-terabayt                301
+/06-terabyte                    /ru/06-terabayt                301
+/07-containers-and-karma        /ru/07-konteynery-i-karma      301
+/07-konteinerid-ja-karma        /ru/07-konteynery-i-karma      301
+/08-life-after-entropy          /ru/08-zhizn-posle-entropii    301
+/08-parast-entroopiat           /ru/08-zhizn-posle-entropii    301
+/09-field-of-trust              /ru/09-pole-doveriya           301
+/09-usalduse-vali               /ru/09-pole-doveriya           301
+/10-codex-zero                  /ru/10-kodeks-nolya            301
+/10-nullkoodeks                 /ru/10-kodeks-nolya            301
+/99-lisa-paritolu               /ru/99-appendix-origin         301
+
+# Between /en/ and /et/ (single-prefix with foreign slug)
+/en/00-proloog                  /en/00-prologue                301
+/en/01-inseneri-tee             /en/01-way-of-the-engineer     301
+/en/02-usalduse-vari            /en/02-shadow-of-trust         301
+/en/03-algoritmide-karma        /en/03-karma-of-algorithms     301
+/en/05-monitooringu-vaikus      /en/05-silence-of-monitoring   301
+/en/06-terabait                 /en/06-terabyte                301
+/en/07-konteinerid-ja-karma     /en/07-containers-and-karma    301
+/en/08-parast-entroopiat        /en/08-life-after-entropy      301
+/en/09-usalduse-vali            /en/09-field-of-trust          301
+/en/10-nullkoodeks              /en/10-codex-zero              301
+/en/99-lisa-paritolu            /en/99-appendix-origin         301
+/et/00-prologue                 /et/00-proloog                 301
+/et/01-way-of-the-engineer      /et/01-inseneri-tee            301
+/et/02-shadow-of-trust          /et/02-usalduse-vari           301
+/et/03-karma-of-algorithms      /et/03-algoritmide-karma       301
+/et/05-silence-of-monitoring    /et/05-monitooringu-vaikus     301
+/et/06-terabyte                 /et/06-terabait                301
+/et/07-containers-and-karma     /et/07-konteinerid-ja-karma    301
+/et/08-life-after-entropy       /et/08-parast-entroopiat       301
+/et/09-field-of-trust           /et/09-usalduse-vali           301
+/et/10-codex-zero               /et/10-nullkoodeks             301
+/et/99-appendix-origin          /et/99-lisa-paritolu           301
