@@ -29,7 +29,7 @@
 
 \usepackage{geometry}
 \geometry{paperwidth=152mm, paperheight=229mm, margin=18mm,
-          headheight=15pt, footskip=24pt}
+          headheight=15pt, headsep=10mm, footskip=24pt}
 
 \usepackage{microtype}
 \usepackage{hyperref}
@@ -119,11 +119,25 @@
 \patchcmd{\@chapter}{\protect\numberline{\thechapter}#1}{#1}{}{}
 \makeatother
 
-% ----- Multi-page Table of Contents ------------------------------------
+% ----- Single-page Table of Contents -----------------------------------
 % Chapters appear in the TOC with titles, no auto-numbers. Verses are
 % *not* listed in the TOC — tocdepth = 0 keeps it to main book headings
 % only, which is all a reader needs to navigate a paginated book.
 \setcounter{tocdepth}{0}
+
+% The global \parskip (0.5 baselineskip) inflates TOC lines enough to
+% push the 13th entry onto a second page. Use tocloft to collapse the
+% inter-chapter gap, and zero \parskip locally inside \tableofcontents,
+% so the whole TOC fits on one page harmoniously.
+\usepackage{tocloft}
+\setlength{\cftbeforechapskip}{2pt}
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{%
+  \begingroup
+    \setlength{\parskip}{0pt}%
+    \oldtableofcontents
+  \endgroup
+}
 
 % ----- Keep verses together --------------------------------------------
 % Each ## v-heading becomes \section (documentclass=book maps # to
