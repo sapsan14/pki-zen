@@ -35,6 +35,15 @@ $$
 
 Lühike nagu YAML-i rida. Mittetäielik nagu iga hea mõte kell kolm öösel. Rohkem [VIII köites](/et/08-parast-entroopiat).
 
+## Laadi alla
+
+Raamatu uusim versioon on allkirjastatud väljalaskefailides.
+Iga väljalase sisaldab PDF-i, EPUB-i ja SHA-256 manifesti.
+
+- [PDF (eesti)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-et.pdf) ·
+  [EPUB (eesti)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-et.epub)
+- [Kõik väljalasked ja teised keeled](https://github.com/sapsan14/pki-zen/releases/latest)
+
 ## Lähtekood
 
 [`github.com/sapsan14/pki-zen`](https://github.com/sapsan14/pki-zen) ·

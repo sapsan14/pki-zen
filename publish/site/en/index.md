@@ -35,6 +35,15 @@ $$
 
 Short like a line of YAML. Incomplete like any good thought at 3 a.m. More in [Book VIII](/en/08-life-after-entropy).
 
+## Download
+
+The latest build of the book lives in the signed release assets.
+Every release ships PDF, EPUB, and a SHA-256 manifest.
+
+- [PDF (English)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-en.pdf) ·
+  [EPUB (English)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-en.epub)
+- [All releases and other languages](https://github.com/sapsan14/pki-zen/releases/latest)
+
 ## Source
 
 [`github.com/sapsan14/pki-zen`](https://github.com/sapsan14/pki-zen) ·

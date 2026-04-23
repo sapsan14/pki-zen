@@ -52,6 +52,12 @@ const BOOKS_ET = [
   { text: 'Kolofon',                 link: '/et/99-colophon' },
 ];
 
+// Single source of truth for the "latest GitHub Release" page. Each
+// locale's nav gets a localised label pointing here; the home-page
+// download sections link directly to the assets with the same base URL.
+const RELEASES = 'https://github.com/sapsan14/pki-zen/releases/latest';
+const DL = 'https://github.com/sapsan14/pki-zen/releases/latest/download';
+
 // Base-path: defaults to "/" (subdomain deployment: pki-zen.h2oatlas.ee).
 // Override with PKI_ZEN_BASE=/pki-zen/ env var if deploying under a subpath
 // (e.g. h2oatlas.ee/pki-zen/). Must start and end with a slash.
@@ -102,6 +108,7 @@ export default defineConfig({
         sidebar: { '/ru/': [{ text: 'Тома', items: BOOKS_RU }] },
         nav: [
           { text: 'Оракул', link: '/oracle' },
+          { text: 'Скачать', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],
         outline: { label: 'На этой странице', level: [2, 3] },
@@ -122,6 +129,7 @@ export default defineConfig({
         sidebar: { '/en/': [{ text: 'Books', items: BOOKS_EN }] },
         nav: [
           { text: 'Oracle', link: '/oracle' },
+          { text: 'Download', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],
         outline: { label: 'On this page', level: [2, 3] },
@@ -135,6 +143,7 @@ export default defineConfig({
         sidebar: { '/et/': [{ text: 'Köited', items: BOOKS_ET }] },
         nav: [
           { text: 'Oraakel', link: '/oracle' },
+          { text: 'Laadi alla', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],
         outline: { label: 'Sellel lehel', level: [2, 3] },
