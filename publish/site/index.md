@@ -35,6 +35,15 @@ $$
 
 Короткая, как «строка в YAML». Неполная, как любая хорошая мысль в три часа ночи. Подробнее — в [Томе VIII](/ru/08-zhizn-posle-entropii).
 
+## Скачать
+
+Последняя версия книги — в подписанных файлах релиза.
+Каждый релиз включает PDF, EPUB и SHA-256-манифест.
+
+- [PDF (русский)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-ru.pdf) ·
+  [EPUB (русский)](https://github.com/sapsan14/pki-zen/releases/latest/download/pki-zen-ru.epub)
+- [Все релизы и другие языки](https://github.com/sapsan14/pki-zen/releases/latest)
+
 ## Исходник
 
 [`github.com/sapsan14/pki-zen`](https://github.com/sapsan14/pki-zen) ·
