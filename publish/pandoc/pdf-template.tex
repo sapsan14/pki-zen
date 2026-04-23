@@ -12,7 +12,13 @@
 \setdefaultlanguage{$babel-lang$}
 \setotherlanguages{russian,estonian,english}
 
-\setmainfont{Noto Serif}[Ligatures={TeX,Common}]
+% Match the web/EPUB edition's typography: a humanist sans for body
+% and headings. Noto Sans covers Latin, Cyrillic, and the Estonian
+% extended set in a single family, which lets us avoid font-substitution
+% shimmer between scripts. DejaVu Sans Mono stays as the code face —
+% it's installed in the build image by default and reads cleanly next
+% to Noto Sans.
+\setmainfont{Noto Sans}[Ligatures={TeX,Common}]
 \setsansfont{Noto Sans}
 \setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
@@ -42,14 +48,21 @@
 % ----- Paragraph rhythm ------------------------------------------------
 % The book reads better with flush-left paragraphs (no first-line
 % indent) and a small skip between them. Matches the EPUB rendering.
+% The generous `plus 1\baselineskip` stretch lets \flushbottom (below)
+% distribute extra glue *between* verses on partially-filled pages,
+% so the body block ends up vertically balanced on the page instead of
+% collapsing to the top with a yawning gap underneath.
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.5\baselineskip plus 0.1\baselineskip}
+\setlength{\parskip}{0.5\baselineskip plus 1\baselineskip}
 
 % Never orphan the first line of a paragraph at the bottom of a page,
 % never widow the last line at the top of the next page.
 \clubpenalty=10000
 \widowpenalty=10000
-\raggedbottom
+% \flushbottom keeps the body text vertically balanced on every page
+% by stretching the parskip glue between verses, instead of leaving a
+% large empty band at the bottom of partially-filled pages.
+\flushbottom
 
 % ----- Code blocks -----------------------------------------------------
 \usepackage{fvextra}
@@ -130,7 +143,9 @@
 % inter-chapter gap, and zero \parskip locally inside \tableofcontents,
 % so the whole TOC fits on one page harmoniously.
 \usepackage{tocloft}
-\setlength{\cftbeforechapskip}{2pt}
+% 7pt of space before each chapter line gives the entries room to
+% breathe while still fitting all 13 of them on a single page.
+\setlength{\cftbeforechapskip}{7pt}
 \let\oldtableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
   \begingroup
