@@ -21,11 +21,20 @@
 \IfFontExistsTF{Inter}{%
   \setmainfont{Inter}[Ligatures={TeX,Common}]%
   \setsansfont{Inter}%
+  % Polyglossia does not auto-detect Cyrillic coverage in Inter's
+  % OpenType tables and errors out with "current latin roman font
+  % does not contain the Cyrillic script". Declare the family
+  % explicitly so polyglossia uses Inter for Russian too.
+  \newfontfamily\cyrillicfont{Inter}%
+  \newfontfamily\cyrillicfontsf{Inter}%
 }{%
   \setmainfont{Noto Sans}[Ligatures={TeX,Common}]%
   \setsansfont{Noto Sans}%
+  \newfontfamily\cyrillicfont{Noto Sans}%
+  \newfontfamily\cyrillicfontsf{Noto Sans}%
 }
 \setmonofont{DejaVu Sans Mono}[Scale=0.88]
+\newfontfamily\cyrillicfonttt{DejaVu Sans Mono}[Scale=0.88]
 
 % Noto Serif does not contain every Unicode glyph — in particular ∞
 % (U+221E), which we use as the "closing verse" probability marker. Map
