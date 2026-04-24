@@ -107,7 +107,7 @@ export default defineConfig({
       themeConfig: {
         sidebar: { '/ru/': [{ text: 'Тома', items: BOOKS_RU }] },
         nav: [
-          { text: 'Оракул', link: '/oracle' },
+          { text: 'Оракул', link: '/ru/oracle' },
           { text: 'Скачать', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],
@@ -128,7 +128,7 @@ export default defineConfig({
       themeConfig: {
         sidebar: { '/en/': [{ text: 'Books', items: BOOKS_EN }] },
         nav: [
-          { text: 'Oracle', link: '/oracle' },
+          { text: 'Oracle', link: '/en/oracle' },
           { text: 'Download', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],
@@ -142,7 +142,7 @@ export default defineConfig({
       themeConfig: {
         sidebar: { '/et/': [{ text: 'Köited', items: BOOKS_ET }] },
         nav: [
-          { text: 'Oraakel', link: '/oracle' },
+          { text: 'Oraakel', link: '/et/oracle' },
           { text: 'Laadi alla', link: RELEASES },
           { text: 'GitHub', link: 'https://github.com/sapsan14/pki-zen' },
         ],

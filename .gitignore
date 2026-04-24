@@ -28,6 +28,8 @@ publish/site/en/[0-9]*-*.md
 publish/site/et/[0-9]*-*.md
 publish/site/en/99-*.md
 publish/site/et/99-*.md
+publish/site/en/oracle.md
+publish/site/et/oracle.md
 
 # npm lockfile lives in publish/site/ — track if desired for reproducible
 # builds; untracked today.

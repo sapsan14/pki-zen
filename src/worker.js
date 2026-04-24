@@ -52,11 +52,15 @@ const REDIRECTS = (() => {
     if (b.en !== b.et) map.set(`/et/${b.en}`,    `/et/${b.et}`);
     if (b.en !== b.et) map.set(`/en/${b.et}`,    `/en/${b.en}`);
   }
-  // The Oracle page is a single document at /oracle, but readers (and
-  // some external links) sometimes prepend the locale prefix. Send
-  // /en/oracle and /et/oracle to the canonical /oracle URL.
-  map.set('/en/oracle', '/oracle');
-  map.set('/et/oracle', '/oracle');
+  // Oracle is now a per-locale page (/ru/oracle, /en/oracle, /et/oracle).
+  // Map the language-switcher URLs VitePress emits when the slug is the
+  // same across locales but the source page uses the root /ru/ prefix.
+  map.set('/en/ru/oracle', '/en/oracle');
+  map.set('/et/ru/oracle', '/et/oracle');
+  // Backwards compat: the page used to live at /oracle (single trilingual
+  // document). Keep external links working by sending /oracle to the root
+  // locale's copy.
+  map.set('/oracle', '/ru/oracle');
   return map;
 })();
 

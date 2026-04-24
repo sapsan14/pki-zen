@@ -18,12 +18,26 @@ on:
       - 'books/**'
       - 'publish/**'
       - 'scripts/**'
+      - 'src/**'
+      - 'wrangler.jsonc'
+      - '.github/workflows/deploy-site.yml'
+  # Run the build + smoke-test on every PR so routing regressions (like
+  # the 404s that kept slipping through) are caught before merge. The
+  # deploy step is gated below on github.event_name == 'push'.
+  pull_request:
+    paths:
+      - 'books/**'
+      - 'publish/**'
+      - 'scripts/**'
+      - 'src/**'
       - 'wrangler.jsonc'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
 
 concurrency:
-  group: deploy-cloudflare
+  # One in-flight run per ref: main deploys serialise on main; each PR
+  # has its own group so open PRs don't cancel each other.
+  group: deploy-cloudflare-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -53,7 +67,16 @@ jobs:
           ls -la publish/site/.vitepress/dist | head
           test -f publish/site/.vitepress/dist/index.html
 
+      # Route-level smoke test: boot `wrangler dev` against the built
+      # site and hit every URL family that's previously broken in prod
+      # (language-switcher rewrites, Oracle per-locale pages, legacy
+      # /oracle). If any assertion fails, DO NOT deploy — the PR/push
+      # is gated on this passing.
+      - name: Smoke-test routes with wrangler dev
+        run: bash scripts/smoke-test-site.sh
+
       - name: Deploy to Cloudflare Workers
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         env:
           # Raw secret — wrapped in another name so we can normalise below
           # without echoing the value.
@@ -80,6 +103,7 @@ jobs:
           npx --yes wrangler@latest deploy
 
       - name: Post-deploy summary
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: |
           echo "### 🪷 Deployed" >> $GITHUB_STEP_SUMMARY
           echo "Worker: **pki-zen** · https://pki-zen.sokolovmeister.workers.dev" >> $GITHUB_STEP_SUMMARY
