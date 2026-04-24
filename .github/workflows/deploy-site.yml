@@ -101,6 +101,28 @@ jobs:
           npx --yes wrangler@latest --version
           npx --yes wrangler@latest whoami
           npx --yes wrangler@latest deploy
+          # Print what actually got deployed (worker name, version,
+          # routes). If the route is attached to a DIFFERENT worker in
+          # the CF dashboard, production stays on the old code even
+          # though this deploy succeeded. The deployments list makes
+          # that mismatch visible.
+          echo "::group::Deployed worker info"
+          npx --yes wrangler@latest deployments list --name pki-zen || true
+          echo "::endgroup::"
+
+      # After the deploy call returns "success", hit the real domain and
+      # confirm the redirects actually fire. Previously the pipeline
+      # claimed success while production still served 404s — that's the
+      # exact failure mode this step exists to catch. Give the CF edge a
+      # few seconds to propagate, then run the prod smoke test. If it
+      # fails the run goes red, so we SEE the mismatch instead of
+      # trusting the deploy's exit code.
+      - name: Verify production after deploy
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Waiting 15s for edge propagation…"
+          sleep 15
+          bash scripts/smoke-test-prod.sh https://pki-zen.h2oatlas.ee
 
       - name: Post-deploy summary
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
