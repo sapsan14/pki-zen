@@ -12,7 +12,14 @@
   "assets": {
     "directory": "./publish/site/.vitepress/dist",
     "not_found_handling": "404-page",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // Run the Worker BEFORE the asset handler. Required because
+    // `not_found_handling: "404-page"` otherwise short-circuits with
+    // the 404 page before our redirect logic in src/worker.js gets to
+    // look at the path. With `run_worker_first: true` the Worker sees
+    // every request, decides whether to redirect, and delegates to
+    // env.ASSETS.fetch() for everything else.
+    "run_worker_first": true
   },
   "routes": [
     { "pattern": "pki-zen.h2oatlas.ee", "custom_domain": true }
