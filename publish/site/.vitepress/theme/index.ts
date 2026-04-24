@@ -4,36 +4,33 @@ import type { Theme } from 'vitepress';
 import './custom.css';
 
 // VitePress's language switcher rewrites locale prefixes based on the
-// current path. For our trilingual sūtra it can produce URLs the SPA
-// doesn't know about but the Worker (src/worker.js) redirects to the
-// real page. VitePress's SPA router then catches the click, can't
-// resolve the route, and renders its built-in 404 page entirely in the
-// browser — no HTTP request is made, so the Worker redirect never
-// fires. Refresh fixes it because that triggers a real GET.
+// current path. For our trilingual sūtra with translated slugs that
+// produces URLs the SPA doesn't know about but the Worker
+// (src/worker.js) knows how to redirect. Without intervention VitePress
+// catches the click, fails to resolve the route, and renders its
+// built-in 404 page entirely client-side — no HTTP request, so the
+// Worker's redirect never fires. (Refresh works because THAT triggers
+// a real GET.)
 //
-// There are three URL shapes the switcher can emit that the SPA 404s on:
+// Instead of re-deriving "which paths need server routing" by regex
+// (which kept missing cases as we uncovered them), ask VitePress's
+// own route map: __VP_HASH_MAP__ is a window global populated at boot
+// with every page the site ships, keyed as e.g. `en_00-prologue.md`.
+// If the target URL doesn't map to a known key, VitePress would 404
+// on it — so we hand the navigation to window.location and let the
+// Worker redirect decide what to do.
 //
-//   1. Double locale prefix — from a /ru/<slug> page, clicking EN or ET:
-//      /en/ru/<ru-slug>   /et/ru/<ru-slug>   /en/et/<slug>   /et/en/<slug>
-//   2. Single-segment, no locale — from /en/ or /et/ pages, clicking
-//      Русский (root locale's link is `/`):
-//      /<en-slug>   /<et-slug>   /oracle
-//   3. Cross-locale slug — from /en/<en> clicking ET, /et/<et> clicking EN:
-//      /et/<en-slug>   /en/<et-slug>   (already double-prefix form but
-//      with locale-vs-locale instead of ru-as-source)
-//
-// The rule: if the target path is anything other than a canonical
-// /(ru|en|et)/... page, the bare landing, or an asset URL with an
-// extension, hand the navigation to window.location so the Worker can
-// redirect it.
-function needsFullNav(pathname: string): boolean {
-  // Case 1 + 3: double locale prefix of any form.
-  if (/^\/(en|et)\/(en|et|ru)\//.test(pathname)) return true;
-  // Case 2: single segment with no dot (rules out /favicon.svg etc)
-  // and not the landing, not a locale root.
-  if (/^\/[^/.]+$/.test(pathname)
-      && !/^\/(ru|en|et)$/.test(pathname)) return true;
-  return false;
+// Paths with a file extension (/favicon.svg, /sitemap.xml, /og.png …)
+// are left alone because those are asset fetches, not SPA navigations.
+
+function pathToPageKey(pathname: string): string {
+  // "/"            → "index.md"
+  // "/en/"         → "en_index.md"
+  // "/en/00-prologue" → "en_00-prologue.md"
+  // "/oracle"      → "oracle.md"
+  let p = pathname.replace(/^\//, '');
+  if (p === '' || p.endsWith('/')) p += 'index';
+  return p.replace(/\//g, '_') + '.md';
 }
 
 export default {
@@ -43,12 +40,25 @@ export default {
     const prev = router.onBeforeRouteChange;
     router.onBeforeRouteChange = (to) => {
       const pathname = to.split(/[?#]/)[0];
-      if (needsFullNav(pathname)) {
+
+      // Asset URL (has a file extension) — not an SPA navigation target.
+      if (/\.[a-z0-9]+$/i.test(pathname)) {
+        return prev ? prev(to) : undefined;
+      }
+
+      const hashMap = (globalThis as any).__VP_HASH_MAP__ as
+        | Record<string, unknown>
+        | undefined;
+      // If the hash map isn't populated (shouldn't happen in prod),
+      // fall back to letting the SPA try — the original behaviour.
+      if (!hashMap) return prev ? prev(to) : undefined;
+
+      if (!(pathToPageKey(pathname) in hashMap)) {
+        // SPA would 404 here; let the Worker redirect take over.
         window.location.href = to;
-        // Cancel the SPA route change; the full navigation above
-        // replaces it.
         return false;
       }
+
       return prev ? prev(to) : undefined;
     };
   },
