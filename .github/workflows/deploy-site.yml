@@ -54,7 +54,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Verify parallel structure
         run: python3 scripts/verify-parallel.py
