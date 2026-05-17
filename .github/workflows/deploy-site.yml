@@ -129,4 +129,4 @@ jobs:
         run: |
           echo "### 🪷 Deployed" >> $GITHUB_STEP_SUMMARY
           echo "Worker: **pki-zen** · https://pki-zen.sokolovmeister.workers.dev" >> $GITHUB_STEP_SUMMARY
-          echo "Custom domain (once set): https://pki-zen.h2oatlas.ee" >> $GITHUB_STEP_SUMMARY
+          echo "Custom domain (once set): https://pki-zen.tyche.institute" >> $GITHUB_STEP_SUMMARY

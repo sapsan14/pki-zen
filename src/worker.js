@@ -64,9 +64,17 @@ const REDIRECTS = (() => {
   return map;
 })();
 
+const CANONICAL_HOST = 'pki-zen.tyche.institute';
+const LEGACY_HOSTS = new Set(['pki-zen.h2oatlas.ee']);
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (LEGACY_HOSTS.has(url.hostname)) {
+      url.hostname = CANONICAL_HOST;
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Trim a single trailing slash so /en/ru/00-prolog/ matches the
     // map key /en/ru/00-prolog. Don't touch the bare "/" landing page.
     const key = url.pathname.length > 1

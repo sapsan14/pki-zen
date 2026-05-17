@@ -15,7 +15,7 @@
   <a href="LICENSE"><img alt="Text: CC BY-SA 4.0" src="https://img.shields.io/badge/text-CC--BY--SA--4.0-5b8a72?style=flat-square&labelColor=2a2a2a"></a>
   <a href="LICENSE"><img alt="Code: MIT" src="https://img.shields.io/badge/code-MIT-5b8a72?style=flat-square&labelColor=2a2a2a"></a>
   <a href="https://github.com/sapsan14/pki-zen/actions/workflows/deploy-site.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/sapsan14/pki-zen/deploy-site.yml?branch=main&style=flat-square&labelColor=2a2a2a&label=deploy"></a>
-  <a href="https://pki-zen.h2oatlas.ee/"><img alt="Site" src="https://img.shields.io/website?url=https%3A%2F%2Fpki-zen.h2oatlas.ee%2F&style=flat-square&labelColor=2a2a2a&label=site&up_message=live&up_color=5b8a72&down_message=down&down_color=c0392b"></a>
+  <a href="https://pki-zen.tyche.institute/"><img alt="Site" src="https://img.shields.io/website?url=https%3A%2F%2Fpki-zen.tyche.institute%2F&style=flat-square&labelColor=2a2a2a&label=site&up_message=live&up_color=5b8a72&down_message=down&down_color=c0392b"></a>
   <a href="https://github.com/sapsan14/pki-zen/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/sapsan14/pki-zen?display_name=tag&style=flat-square&labelColor=2a2a2a&color=a88454&label=release&include_prereleases"></a>
   <a href="CITATION.cff"><img alt="Citable" src="https://img.shields.io/badge/cite-CITATION.cff-a88454?style=flat-square&labelColor=2a2a2a"></a>
 </p>
@@ -48,7 +48,7 @@
 </p>
 
 <p align="center">
-  <b>🪷 <a href="https://pki-zen.h2oatlas.ee/">pki-zen.h2oatlas.ee</a></b> &nbsp;·&nbsp;
+  <b>🪷 <a href="https://pki-zen.tyche.institute/">pki-zen.tyche.institute</a></b> &nbsp;·&nbsp;
   <a href="https://pki-zen.pages.dev/">pages.dev mirror</a> &nbsp;·&nbsp;
   <a href="https://github.com/sapsan14/pki-zen/releases/latest">⇩ EPUB / PDF</a> &nbsp;·&nbsp;
   <a href="oracle/">🔮 Oracle bundle</a>
@@ -86,7 +86,7 @@
 
 ## Форматы / Formats / Formaadid
 
-- 🌐 **Web** — [pki-zen.h2oatlas.ee](https://pki-zen.h2oatlas.ee/) · VitePress, trilingual, searchable, dark mode, mobile-friendly.
+- 🌐 **Web** — [pki-zen.tyche.institute](https://pki-zen.tyche.institute/) · VitePress, trilingual, searchable, dark mode, mobile-friendly.
 - 📖 **EPUB** — three editions on the [latest Release](https://github.com/sapsan14/pki-zen/releases/latest).
 - 📄 **PDF** — XeLaTeX, Cyrillic & Estonian diacritics safe.
 - 🔮 **LLM Oracle** — [`oracle/`](oracle/) · system prompt + 324-row JSONL corpus. Drop into any Claude / GPT call and *ask the sūtra*.

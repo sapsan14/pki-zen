@@ -58,7 +58,7 @@ const BOOKS_ET = [
 const RELEASES = 'https://github.com/sapsan14/pki-zen/releases/latest';
 const DL = 'https://github.com/sapsan14/pki-zen/releases/latest/download';
 
-// Base-path: defaults to "/" (subdomain deployment: pki-zen.h2oatlas.ee).
+// Base-path: defaults to "/" (subdomain deployment: pki-zen.tyche.institute).
 // Override with PKI_ZEN_BASE=/pki-zen/ env var if deploying under a subpath
 // (e.g. h2oatlas.ee/pki-zen/). Must start and end with a slash.
 const BASE = process.env.PKI_ZEN_BASE ?? '/';
@@ -75,7 +75,7 @@ export default defineConfig({
   srcDir: '.',
   ignoreDeadLinks: true,
   sitemap: {
-    hostname: 'https://pki-zen.h2oatlas.ee',
+    hostname: 'https://pki-zen.tyche.institute',
   },
   markdown: {
     // Render $...$  and  $$...$$  via MathJax 3 (SVG output).
@@ -91,12 +91,12 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'book' }],
     ['meta', { property: 'og:title', content: 'PKI-ZEN — A Sūtra of Certificates, YAML, and Almost-Enlightenment' }],
     ['meta', { property: 'og:description', content: 'Ten small books. Three languages. One breath between two CRL updates.' }],
-    ['meta', { property: 'og:image', content: `https://pki-zen.h2oatlas.ee/og.png?${ASSET_VERSION}` }],
+    ['meta', { property: 'og:image', content: `https://pki-zen.tyche.institute/og.png?${ASSET_VERSION}` }],
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
-    ['meta', { property: 'og:url', content: 'https://pki-zen.h2oatlas.ee/' }],
+    ['meta', { property: 'og:url', content: 'https://pki-zen.tyche.institute/' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: `https://pki-zen.h2oatlas.ee/og.png?${ASSET_VERSION}` }],
+    ['meta', { name: 'twitter:image', content: `https://pki-zen.tyche.institute/og.png?${ASSET_VERSION}` }],
   ],
 
   locales: {

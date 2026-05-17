@@ -3,7 +3,7 @@
 Everything needed to put PKI-ZEN on the open web, into ebook stores, and into
 the hands of a reader who has never opened a terminal.
 
-Recommended primary: **`pki-zen.h2oatlas.ee`** on Cloudflare Pages.
+Recommended primary: **`pki-zen.tyche.institute`** on Cloudflare Pages.
 Free mirror: **`pki-zen.pages.dev`** (auto-created by CF Pages).
 
 ---
@@ -12,13 +12,14 @@ Free mirror: **`pki-zen.pages.dev`** (auto-created by CF Pages).
 
 | Option | Cost | Verdict |
 |---|---|---|
-| `pki-zen.h2oatlas.ee` (subdomain on your own Estonian TLD) | **€0** (already own the domain) | ⭐ **Recommended.** Estonian TLD matches the Estonian edition. Clean Cloudflare DNS. No base-path gymnastics. |
-| `h2oatlas.ee/pki-zen` (subpath on the Atlas site) | €0 | Possible via CF Worker or Transform Rule, but requires `base: '/pki-zen/'` in VitePress and every internal link works under a prefix. Extra friction. Skip unless you want the Atlas umbrella. |
+| `pki-zen.tyche.institute` (subdomain under the Tyche Institute umbrella) | **€0** (already own the domain) | ⭐ **Recommended.** Clean Cloudflare DNS, strong institutional umbrella, no base-path gymnastics. |
+| `pki-zen.h2oatlas.ee` (legacy H2O Atlas subdomain) | €0 | Keep as a 301 redirect to the Tyche canonical URL so old links continue to work. |
+| `tyche.institute/pki-zen` (subpath on the Tyche site) | €0 | Possible via CF Worker or Transform Rule, but requires `base: '/pki-zen/'` in VitePress and every internal link works under a prefix. Extra friction. Skip unless you explicitly want a subpath. |
 | `pki-zen.pages.dev` (CF Pages default) | €0 | Automatic. Keep as a preview mirror. |
 | `pkizen.org` / `pki-zen.dev` | €10–15/yr | Clean, memorable. Defer until the book is getting traffic. |
 | `sapsan14.github.io/pki-zen` | €0 | Works, but CF Pages is faster and has edge caching. Skip. |
 
-**Decision:** `pki-zen.h2oatlas.ee` primary, `pki-zen.pages.dev` preview.
+**Decision:** `pki-zen.tyche.institute` primary, `pki-zen.pages.dev` preview.
 
 ---
 
@@ -34,7 +35,7 @@ All the build happens in a full Ubuntu runner on GitHub (fat tooling, readable l
 2. GitHub: repo → **Settings → Secrets and variables → Actions → New repository secret**. Name: `CLOUDFLARE_API_TOKEN`. Value: paste the token.
 3. **Disable the CF Workers Builds pipeline** (otherwise it and the GH Action fight on every push). In CF dashboard → `pki-zen` → **Settings → Build → Disconnect** (or pause it). The empty Worker stays; GA deploys into it.
 4. Push anything to `main` (or trigger `.github/workflows/deploy-site.yml` manually from **Actions → Run workflow**). The job reads the secret, builds the site, runs `wrangler deploy` and publishes.
-5. Custom domain: CF dashboard → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.h2oatlas.ee`**. `h2oatlas.ee` should already be on Cloudflare DNS; if not, point a `CNAME` at the `*.workers.dev` URL.
+5. Custom domain: CF dashboard → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.tyche.institute`**. `tyche.institute` should already be on Cloudflare DNS; if not, add the zone first or point a proxied `CNAME` at the Worker route target.
 
 ### Path A — Cloudflare Workers Builds (CF runs the build)
 
@@ -44,7 +45,7 @@ If you keep the Workers Builds pipeline enabled instead of Path ⭐:
 2. **Build command:** `bash publish/build-site-only.sh`
 3. **Deploy command:** `npx wrangler deploy`
 4. Click **Deploy**. First deploy takes ~2 min. You get `pki-zen.<account>.workers.dev`.
-5. Custom domain: Workers → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.h2oatlas.ee`**.
+5. Custom domain: Workers → `pki-zen` → **Settings → Domains & Routes → Add Custom Domain → `pki-zen.tyche.institute`**.
 
 The CF build image is minimal (no rsync, no apt). The repo is already adapted (`cp -R` instead of rsync), but any future tooling you add must also be build-image-safe. Prefer Path ⭐.
 
@@ -57,7 +58,7 @@ If you click **Back** from Workers and pick **Pages → Connect to Git**:
 3. **Build output directory:** `publish/site/.vitepress/dist`
 4. **Environment variables:** `NODE_VERSION=20`
 5. **Save and Deploy.** You get `pki-zen.pages.dev`.
-6. Add custom domain `pki-zen.h2oatlas.ee` under **Custom domains**.
+6. Add custom domain `pki-zen.tyche.institute` under **Custom domains**.
 
 Pages is friendly but slowly being folded into Workers. For a new project, Path ⭐ ages best.
 
@@ -129,7 +130,7 @@ Most likely causes and fixes:
 ## 5. After the first tag
 
 - Pin the Release as **Latest**.
-- Update `README.md` `pki-zen.h2oatlas.ee` badge colour to green if you want a green-means-live vibe. The current palette is already book-like, so this is cosmetic.
+- Update `README.md` `pki-zen.tyche.institute` badge colour to green if you want a green-means-live vibe. The current palette is already book-like, so this is cosmetic.
 - (Optional) Submit to **Hacker News** as *"PKI-ZEN: a trilingual Buddhist-style zine about cryptography and YAML"* — Saturday morning, don't ask for upvotes. The arXiv reference gives it a reason to exist; the Codex Zero gives it a reason for non-engineers to stay.
 
 ---
@@ -151,7 +152,7 @@ python3 scripts/build-corpus.py && \
 git add -A && git commit -m "Release v1.0.0" && git push && \
 git tag -a v1.0.0 -m "PKI-ZEN v1.0.0 — the complete trilingual sūtra" && \
 git push origin v1.0.0
-# Then: Cloudflare Pages rebuilds pki-zen.h2oatlas.ee automatically.
+# Then: Cloudflare Pages rebuilds pki-zen.tyche.institute automatically.
 ```
 
 May your CI be green, your rollback automatic, and your on-call kind. — *v1.5*
