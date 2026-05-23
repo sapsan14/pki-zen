@@ -64,8 +64,8 @@ const REDIRECTS = (() => {
   return map;
 })();
 
-const CANONICAL_HOST = 'pki-zen.tyche.institute';
-const LEGACY_HOSTS = new Set(['pki-zen.h2oatlas.ee']);
+const CANONICAL_HOST = 'zen.tyche.institute';
+const LEGACY_HOSTS = new Set(['pki-zen.h2oatlas.ee', 'pki-zen.tyche.institute']);
 
 export default {
   async fetch(request, env) {

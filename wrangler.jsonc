@@ -22,6 +22,7 @@
     "run_worker_first": true
   },
   "routes": [
+    { "pattern": "zen.tyche.institute", "custom_domain": true },
     { "pattern": "pki-zen.tyche.institute", "custom_domain": true },
     { "pattern": "pki-zen.h2oatlas.ee", "custom_domain": true }
   ],

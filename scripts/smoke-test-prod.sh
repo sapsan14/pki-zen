@@ -10,10 +10,10 @@
 # local test and claiming victory.
 #
 # Usage: bash scripts/smoke-test-prod.sh [base_url]
-#   base_url default: https://pki-zen.h2oatlas.ee
+#   base_url default: https://zen.tyche.institute
 
 set -euo pipefail
-BASE="${1:-https://pki-zen.h2oatlas.ee}"
+BASE="${1:-https://zen.tyche.institute}"
 echo "Probing $BASE"
 
 fails=0

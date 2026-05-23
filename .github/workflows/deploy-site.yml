@@ -122,11 +122,11 @@ jobs:
         run: |
           echo "Waiting 15s for edge propagation…"
           sleep 15
-          bash scripts/smoke-test-prod.sh https://pki-zen.tyche.institute
+          bash scripts/smoke-test-prod.sh https://zen.tyche.institute
 
       - name: Post-deploy summary
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: |
           echo "### 🪷 Deployed" >> $GITHUB_STEP_SUMMARY
           echo "Worker: **pki-zen** · https://pki-zen.sokolovmeister.workers.dev" >> $GITHUB_STEP_SUMMARY
-          echo "Custom domain (once set): https://pki-zen.tyche.institute" >> $GITHUB_STEP_SUMMARY
+          echo "Custom domain (once set): https://zen.tyche.institute" >> $GITHUB_STEP_SUMMARY
