@@ -12,7 +12,7 @@ identifier:
   - scheme: "ISBN"
     text: "978-9916-4-3988-3"
   - scheme: "URL"
-    text: "https://github.com/sapsan14/pki-zen"
+    text: "https://zen.tyche.institute"
 cover-image: publish/covers/cover.svg
 mainfont: "Noto Serif"
 sansfont: "Noto Sans"

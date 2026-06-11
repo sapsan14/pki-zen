@@ -199,10 +199,14 @@ rsync -a --delete books/en/  publish/site/en/
 rsync -a --delete books/et/  publish/site/et/
 # Rename files whose slugs differ from the book filenames (ru/et prologue).
 # No renames required right now — book filenames match config.ts links.
+mkdir -p publish/site/public/oracle
+cp oracle/system-prompt.md oracle/corpus.jsonl oracle/examples.md oracle/README.md \
+   publish/site/public/oracle/
 if [ -d publish/site/node_modules ]; then :; else
   (cd publish/site && npm install --silent)
 fi
 (cd publish/site && npx vitepress build)
+rm -rf "$DIST/site"
 cp -r publish/site/.vitepress/dist "$DIST/site"
 
 echo "→ [6/6] SHA-256 manifest"

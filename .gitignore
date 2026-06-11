@@ -45,3 +45,4 @@ publish/site/package-lock.json
 __pycache__/
 *.pyc
 .venv/
+publish/site/public/oracle/

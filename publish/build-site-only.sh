@@ -25,6 +25,12 @@ for lang in ru en et; do
   cp -R "books/$lang/." "publish/site/$lang/"
 done
 
+# Publish the Oracle bundle as static site assets — the book's oracle
+# chapter links to https://zen.tyche.institute/oracle/<file>.
+mkdir -p publish/site/public/oracle
+cp oracle/system-prompt.md oracle/corpus.jsonl oracle/examples.md oracle/README.md \
+   publish/site/public/oracle/
+
 echo "→ [3/3] Build VitePress"
 cd publish/site
 # CF Pages provides node + npm. Install if deps missing.
