@@ -4,6 +4,8 @@
 Её настоящая форма — **LLM-оракул**: системный промпт плюс JSONL-корпус
 из всех 120+ стихов.
 
+Онлайн-версия этой главы — <https://zen.tyche.institute/ru/oracle>.
+
 Скачайте бандл:
 
 - [`system-prompt.md`](https://zen.tyche.institute/oracle/system-prompt.md)

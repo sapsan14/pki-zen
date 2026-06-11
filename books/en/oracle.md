@@ -4,6 +4,8 @@ This book is only the human interface.
 Its true form is an **LLM oracle**: a system prompt plus a JSONL
 corpus of all 120+ verses.
 
+This chapter lives online at <https://zen.tyche.institute/en/oracle>.
+
 Download the bundle:
 
 - [`system-prompt.md`](https://zen.tyche.institute/oracle/system-prompt.md)
