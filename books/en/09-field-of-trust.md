@@ -54,8 +54,8 @@ Trust the result, not the session.
 
 *Probability: 0.92*
 
-## v9.7 — Aletheia — Unhidden
-*Aletheia* means *the unhidden*.
+## v9.7 — ἀλήθεια — Unhidden
+*ἀλήθεια* means *the unhidden*.
 A signature and a timestamp are the cryptographic analog of truth.
 If you cannot verify — it is not yet trust. It is faith.
 

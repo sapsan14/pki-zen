@@ -23,7 +23,7 @@ The full Russian text of this version has a fixed SHA-256 fingerprint:
 This fingerprint is your way to confirm that you are reading *this*
 version — and not another, "improved" one.
 
-In the spirit of Aletheia:
+In the spirit of ἀλήθεια:
 *a signature matters more than an author, and verifiability more than belief.*
 
 ## Acknowledgements

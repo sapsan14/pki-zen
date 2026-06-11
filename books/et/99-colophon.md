@@ -23,7 +23,7 @@ Selle versiooni täielikul vene tekstil on kindel SHA-256 sõrmejälg:
 See sõrmejälg on sinu viis veenduda, et loed just *seda*
 versiooni — mitte mõnda teist, "parandatut".
 
-Aletheia vaimus:
+ἀλήθεια vaimus:
 *allkiri on tähtsam kui autor ja kontrollitavus on tähtsam kui usk.*
 
 ## Tänusõnad

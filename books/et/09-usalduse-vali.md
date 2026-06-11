@@ -54,8 +54,8 @@ Usalda tulemust, mitte seanssi.
 
 *Tõenäosus: 0.92*
 
-## v9.7 — Aletheia — peidust väljas
-*Aletheia* tähendab *peidust väljas*.
+## v9.7 — ἀλήθεια — peidust väljas
+*ἀλήθεια* tähendab *peidust väljas*.
 Allkiri ja ajatempel on tõe krüptograafiline analoog.
 Kui sa ei saa kontrollida — siis pole see veel usaldus. See on usk.
 
