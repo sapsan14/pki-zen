@@ -181,6 +181,11 @@
 % inter-chapter gap, and zero \parskip locally inside \tableofcontents,
 % so the whole TOC fits on one page harmoniously.
 \usepackage{tocloft}
+% Long chapter titles (Book V) were running into the page-number column
+% and pushing the number past the text block. A stretchable right margin
+% makes overlong titles wrap onto a second, hanging-indented line before
+% they reach the number.
+\cftsetrmarg{3.5em plus1fil}
 % 7pt of space before each chapter line gives the entries room to
 % breathe while still fitting all 13 of them on a single page.
 \setlength{\cftbeforechapskip}{7pt}
