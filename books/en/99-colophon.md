@@ -29,11 +29,11 @@ In the spirit of ἀλήθεια:
 ## Acknowledgements
 
 - To the paper *Verbalized Sampling* (arXiv:2510.01171) — for the method.
-- To mother, father, and the younger brother — for their honest readout of
-  which lines made sense and which did not.
+- To Mom, Dad, and my younger brother — for the honest verdict, still to
+  come, on which lines make sense and which do not.
 - To everyone who has ever been on call at three in the morning.
 
-## The last verse
+## The Last Verse
 
 > *The book closes. Monitoring continues to run.*
 > *And this, perhaps, is the only thing truly needed.*

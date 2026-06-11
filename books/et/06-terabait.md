@@ -1,4 +1,4 @@
-# VI köide. Üks terabait ja jumala tunne
+# VI köide. Üks terabait ja Jumala tunne
 
 > *Ehk kuidas mõista, et entroopia oled sina ise.*
 
@@ -25,7 +25,7 @@ Alles ühe terabaidi juhuslike baitide juures saad teada, kes sa oled —
 
 ## v6.4 — Jumalik DevOps
 Et tunda võimu aine üle.
-Ühe käsuga loob sa kaose,
+Ühe käsuga lood sa kaose,
 teisega kustutad selle igaveseks.
 See on jumalik DevOps.
 
@@ -45,7 +45,7 @@ siin ta on, digitaalne leek.
 
 *Tõenäosus: 0.77*
 
-## v6.7 — „let there be bytes”
+## v6.7 — "let there be bytes"
 Et tõestada, et sa suudad.
 Keegi ei küsinud, milleks.
 Sa vaatasid lihtsalt terminali ja ütlesid: *"let there be bytes."*

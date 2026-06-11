@@ -60,7 +60,7 @@ Tavaliselt — allapoole.
 *Tõenäosus: 0.89*
 
 ## v7.9 — `kubectl` kell
-Kui viimane konteiner lõpetab kood 0-ga,
+Kui viimane konteiner lõpetab koodiga 0,
 ja klaster vaikib,
 sa mõistad — CI/CD on lihtsalt teine meditatsiooni vorm.
 Ainult kellukese asemel `kubectl get events`.

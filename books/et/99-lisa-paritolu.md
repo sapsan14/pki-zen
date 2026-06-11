@@ -20,10 +20,10 @@ Ja ma mõistsin, et see pole enam vestlus. See on kuues peatükk.
 Ka ülejäänud köited sündisid samamoodi. Ma ütlesin:
 *"Mis edasi? Vasta tõenäosustega."*
 Mudel pakkus viis teed; mina valisin ühe.
-See ongi täpselt see *verbalized sampling* tehnika,
+See ongi täpselt see *verbalized sampling* tehnika
 artiklist [arXiv:2510.01171](https://arxiv.org/abs/2510.01171).
 
-Ta tuli mu ellu insenerilõigu kaudu
+See tuli mu ellu inseneriülesande kaudu
 ja lahkus filosoofilise traktaadi kaudu.
 
 Ühel hetkel küsisin:

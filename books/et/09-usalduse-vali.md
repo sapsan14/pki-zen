@@ -1,9 +1,9 @@
 # IX köide. Usalduse väli
 
-> *Me hakkasime sisuliselt välja arendama füüsikat sotsio-tehniliste süsteemide jaoks.*
+> *Me hakkasime sisuliselt välja arendama füüsikat sotsiotehniliste süsteemide jaoks.*
 
 ## v9.1 — Usalduse laine
-Usaldus ei ole serva graafis.
+Usaldus ei ole serv graafis.
 See on väli, millel on amplituud, faas ja interferents.
 Kaks gruppi, mille faasivahe on π, lükkavad teineteise teod tagasi,
 isegi kui need on objektiivselt kasulikud. See pole pahatahtlikkus. See on lainemehhaanika.
@@ -19,7 +19,7 @@ Kaks sellist lainet kas tugevdavad või kustutavad teineteist — kõik sõltub 
 ## v9.2 — Resonants
 Resonants on siis, kui kõik on kokku leppinud ilma läbirääkimisteta.
 Süsteemi efektiivsus kasvab mittelineaarselt.
-Viljakad kultuurid on lihtsalt hästi faasistatud rahvamassid.
+Tootmisprotsessid on lihtsalt hästi faasistatud rahvahulk.
 
 *Tõenäosus: 0.89*
 
@@ -31,7 +31,7 @@ Küsitlus valetab. Käitumine ei valeta.
 *Tõenäosus: 0.87*
 
 ## v9.4 — Sokolovi 7. seadus
-Sokolovi seadus №7:
+Sokolovi seitsmes seadus:
 *"Kui leidsid viisi süsteemist välja astuda — kontrolli:*
 *sõna "väljapääs" sisaldab juba piiri,*
 *ja piir on juba süsteem."*

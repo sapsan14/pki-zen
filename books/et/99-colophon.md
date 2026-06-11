@@ -16,7 +16,7 @@ selle fakti kaudu, et lugesid siiani.
 
 ## Allkiri
 
-Selle versiooni täielikul vene tekstil on kindel SHA-256 sõrmejälg:
+Selle versiooni täielikul vene tekstil on fikseeritud SHA-256 sõrmejälg:
 ```
 <arvutatakse väljalaske ajal: sha256sum $(find books/ru -name '*.md' | sort)>
 ```
@@ -29,8 +29,8 @@ versiooni — mitte mõnda teist, "parandatut".
 ## Tänusõnad
 
 - Artiklile *Verbalized Sampling* (arXiv:2510.01171) — meetodi eest.
-- Emale, isale ja nooremale vennale — nende aususe eest,
-  millised read töötasid ja millised mitte.
+- Emale, isale ja nooremale vennale — selle eest, et nad ütlevad ausalt,
+  kus jääb arusaamatuks.
 - Kõigile, kes on kunagi kell kolm öösel valves olnud.
 
 ## Viimane värss

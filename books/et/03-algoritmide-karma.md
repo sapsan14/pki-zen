@@ -12,7 +12,7 @@ Saatusel on oma seeme, ja see oli pandud enne sind.
 ## v3.2 — Võtme superpositsioon
 Kui sa ei tea, kus on privaatvõti —
 siis on ta juba superpositsioonis "lekkinud" ja "varukoopias" vahel.
-Vaatlemine sulgeb oleku, aga tavaliselt halvima poole.
+Vaatlemine kollapseerib oleku, aga halvima poole.
 
 $$
 \lvert\psi_{\text{võti}}\rangle = \alpha\,\lvert\text{lekkinud}\rangle + \beta\,\lvert\text{varukoopias}\rangle,\; |\alpha|^2 + |\beta|^2 = 1
@@ -30,7 +30,7 @@ Just seepärast on allkirjastatud dokumendid pühad. Vähemalt tehniliselt.
 ## v3.4 — PEM, DER, PKCS#12
 Tõeline valgustumine algab siis, kui sa mõistad PEM-i, DER-i ja PKCS#12 erinevust —
 ilma Google-ita.
-Enne seda oled sa lihtsalt OpenSSL-i templi algaja.
+Enne seda oled sa lihtsalt praktikant OpenSSL-i templis.
 
 *Tõenäosus: 0.91*
 
@@ -44,7 +44,7 @@ Just see valu, mitte Buddha, on esimene üllas tõde.
 ## v3.6 — SHA kui mälu
 SHA on mälu:
 ta jahvatab kõik olnu lühikeseks sõrmejäljeks,
-ja sõrmejälge pole võimalik algteksti tagasi pöörata.
+ja sõrmejälge pole võimalik algtekstiks tagasi pöörata.
 Selline on ka minevik: pöördumatu, kuid üheselt sind määratlev.
 
 *Tõenäosus: 0.94*

@@ -2,7 +2,7 @@
 
 > *Usaldus on arhitektuur, mitte tunne.*
 
-## v2.1 — Juur­tühistus
+## v2.1 — Juurtühistus
 Elu on nagu PKI:
 kõik on hästi, kuni keegi tühistab sinu juursertifikaadi.
 Ja tavaliselt ei tühista seda vaenlane. Tühistab see, kes välja andis.
@@ -11,7 +11,7 @@ Ja tavaliselt ei tühista seda vaenlane. Tühistab see, kes välja andis.
 
 ## v2.2 — Südame privaatvõti
 Süda on nagu privaatvõti.
-Ära jaga seda ka sellega, kes ütleb, et tahab lihtsalt "sinu armastust allkirjastada".
+Ära jaga seda isegi sellega, kes ütleb, et tahab lihtsalt "sinu armastust allkirjastada".
 Tõeline armastus näitab kõigepealt oma sertifikaadiahelat.
 
 *Tõenäosus: 0.94*
@@ -20,7 +20,7 @@ Tõeline armastus näitab kõigepealt oma sertifikaadiahelat.
 Tõelist usaldust ei saa importida.
 See luuakse käsitsi ja hoitakse hinge HSM-is —
 samas, millega sinagi ühendud PIN-koodi kaudu
-ja mille vahel sa selle unustad.
+ja mille sa vahel unustad.
 
 *Tõenäosus: 0.96*
 
@@ -39,7 +39,7 @@ See ei vasta *valid* ega *revoked*, vaid *oota, kontrollin*.
 *Tõenäosus: 0.92*
 
 ## v2.6 — Vaikne root CA
-Tõeline juur-CA ei karju oma võimu pärast.
+Tõeline juur-CA ei karju oma võimust.
 Ta lihtsalt allkirjastab, ja kõik allkirjastatu elab.
 Ole nagu juur-CA. Aga palun tee varukoopia.
 

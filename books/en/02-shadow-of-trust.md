@@ -20,7 +20,7 @@ Real love will first present its certificate chain.
 True trust cannot be imported.
 It is created manually and stored in the HSM of the soul —
 the one even you connect to by PIN,
-and which, from time to time, you forget.
+and whose PIN, from time to time, you forget.
 
 *Probability: 0.96*
 

@@ -16,7 +16,7 @@ A digital document proving that a website is in fact that website.
 *Like a safety-deposit box for the soul. The key is inside, but you can't take it out — you can only ask the box to sign things for you.*
 
 ## v10.4 — CRL
-**Certificate Revocation List.** A list of certificates that have been invalidated early.
+**Certificate Revocation List.** A list of certificates that have been revoked — cancelled before their time.
 *Like a blacklist of ex-partners. Once you're on it, no one trusts you — even if you've changed.*
 
 ## v10.5 — OCSP
@@ -61,7 +61,7 @@ A system that counts what is happening on your servers, and draws graphs.
 
 ## v10.15 — `systemctl restart`
 The "turn it off and on again" command for server programs.
-*Works in 73 % of cases. In the remaining 27 %, things get worse — but beautifully.*
+*Works in 73% of cases. In the remaining 27%, things get worse — but beautifully.*
 
 ## v10.16 — Entropy
 The amount of true randomness available. The more, the safer the encryption.

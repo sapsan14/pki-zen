@@ -40,7 +40,7 @@ monitoring is dead. Possibly long dead.
 
 ## v6.6 — Digital Flame
 To warm up the server in winter.
-CPU at 100 %, the fans howling, and you feel it —
+CPU at 100%, the fans howling, and you feel it —
 here it is, the digital flame.
 
 *Probability: 0.77*

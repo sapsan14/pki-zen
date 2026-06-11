@@ -30,7 +30,7 @@ nagu jõgi voolab üle kivi, manifesti kivilt küsimata.
 *Tõenäosus: 0.93*
 
 ## v1.5 — DevOps-palve
-Issand, anna mulle jõud leppida sellega, mis ei tohi prod-i minna,
+Issand, anna mulle jõudu leppida sellega, mis ei tohi prod-i minna,
 julgust tagasi pöörata seda, mis on juba prod-is,
 ja tarkust eristada `staging`-ut `production`-ist domeeninime järgi.
 

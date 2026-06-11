@@ -12,7 +12,7 @@ Saṃsāra ratas pöörleb Jenkins-is.
 ## v4.2 — Hinge kaks tühikut
 YAML on hinge peegel:
 üks lisatühik, ja kõik variseb kokku.
-Keegi pole süüdi. Hingel on lihtsalt range kahe-tühiku-taanne.
+Keegi pole süüdi. Hingel on lihtsalt range kahe tühiku taane.
 
 *Tõenäosus: 0.97*
 
@@ -45,7 +45,7 @@ Need on eri hirmud. Üks on eksistentsiaalne, teine operatsiooniline.
 
 ## v4.7 — IaC — teadlik karma
 *Infrastructure as Code* tähendab:
-sinu vead on nüüd versioonid, üle vaadatud ja korratavad.
+sinu vead on nüüd versioneeritud, üle vaadatud ja korratavad.
 Palju õnne — oled jõudnud teadliku karma staadiumisse.
 
 *Tõenäosus: 0.90*
@@ -58,7 +58,7 @@ kus füüsikaseadused on pisut erinevad.
 *Tõenäosus: 0.89*
 
 ## v4.9 — Süütu postmortem
-Süüdistusteta post-mortem
+Süüdistusteta postmortem
 on kõrgeim DevOps-armastuse vorm.
 Armastus ilma süüdistusteta. Nii raske leida väljaspool `.github/` kausta.
 

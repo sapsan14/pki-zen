@@ -26,7 +26,7 @@ Selle lausega vajutas ta teadmatult `Deploy` valgustumisele.
 
 *Tõenäosus: 0.92*
 
-## v0.4 — Juur­nali
+## v0.4 — Juurnali
 Nii sündis esimene köide.
 Selle taha, nagu esimese sertifikaadi järele, tekkis ahel —
 ja mitte keegi ei saanud seda juurnalja enam tühistada.

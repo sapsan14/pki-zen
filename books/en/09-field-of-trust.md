@@ -5,7 +5,7 @@
 ## v9.1 — The Wave of Trust
 Trust is not an edge in a graph.
 It is a field with amplitude, phase, and interference.
-Two groups with phase difference of π will reject each other's actions,
+Two groups with a phase difference of π will reject each other's actions,
 even objectively useful ones. That is not malice. That is wave mechanics.
 
 $$
@@ -19,7 +19,7 @@ Two such waves either amplify or cancel — all a matter of phase.
 ## v9.2 — Resonance
 Resonance is when everyone has agreed without negotiating.
 The efficiency of the system grows non-linearly.
-Productive cultures are simply well-phased crowds.
+Production processes are simply a well-phased crowd.
 
 *Probability: 0.89*
 
@@ -31,7 +31,7 @@ A survey lies. Behavior does not.
 *Probability: 0.87*
 
 ## v9.4 — Sokolov's 7th Law
-Sokolov's Law №7:
+Sokolov's 7th Law:
 *"If you have found a way to exit the system — check:*
 *the word 'exit' already contains a boundary,*
 *and a boundary is already a system."*

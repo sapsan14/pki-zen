@@ -58,7 +58,7 @@ where the laws of physics are slightly different.
 *Probability: 0.89*
 
 ## v4.9 — Blameless Postmortem
-A blameless post-mortem
+A blameless postmortem
 is the highest form of DevOps love.
 Love without blame. So hard to find outside of `.github/`.
 

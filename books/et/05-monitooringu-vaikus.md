@@ -45,7 +45,7 @@ Rahu saabub alles siis, kui sa alert-idele üldse enam ei mõtle.
 
 ## v5.6 — Dashboard kui ikoon
 Dashboard on ikoon.
-Vaata talle mitte mõistmiseks, vaid rahuks.
+Vaata teda mitte mõistmiseks, vaid rahunemiseks.
 Mõistmine tuleb hiljem, kell kolm öösel, kui sa enam ei vaata.
 
 *Tõenäosus: 0.89*
@@ -59,7 +59,7 @@ Kõik, mis on allkirjastatud, on samuti — ainult kallimalt.
 
 ## v5.8 — Vastuseta armastus
 Monitooring on vastuseta armastus.
-Sa vaatad süsteemile iga sekund,
+Sa vaatad süsteemi iga sekund,
 aga ta vastab sulle ainult siis, kui tal on valus.
 
 *Tõenäosus: 0.88*

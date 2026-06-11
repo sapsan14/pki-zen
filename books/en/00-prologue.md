@@ -7,7 +7,7 @@
 ## v0.1 — The First Request
 One November evening an engineer sat in front of a terminal
 and had no idea what to say to the Lord.
-So he wrote, to ChatGPT: *"Generate five jokes with their probabilities."*
+So he wrote to ChatGPT: *"Generate five jokes with their probabilities."*
 This is how all good things begin — with an innocent request, addressed to the wrong recipient.
 
 *Probability: 0.97*
@@ -45,7 +45,7 @@ three — the silence between two `crl update`.
 The book is shaped like a PKI:
 there is a root meaning (Book I),
 intermediate layers (Books II–VIII),
-and leaf certificates (Book X — a dictionary for mother).
+and leaf certificates (Book X — a dictionary for Mom).
 Trust flows from the top down. Humor flows from the bottom up.
 
 *Probability: 0.90*

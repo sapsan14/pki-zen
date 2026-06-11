@@ -38,7 +38,7 @@ Isegi juhuslike arvude generaatorid väsivad determinismist.
 ## v8.5 — `AddRoundKey`
 Ja muidugi `AddRoundKey`.
 Ümbritse end inimestega, kes teevad sind tugevamaks.
-Isegi täiuslik šiffer ilma õige võtmeta on lihtsalt müra.
+Isegi täiuslik šifr ilma õige võtmeta on lihtsalt müra.
 
 *Tõenäosus: 0.91*
 

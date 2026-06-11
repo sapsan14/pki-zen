@@ -8,7 +8,7 @@
 *Nagu passibüroo veebisaitide jaoks — ilma järjekordadeta ja templite asemel matemaatikaga.*
 
 ## v10.2 — Sertifikaat
-Digitaalne dokument, mis tõendab, et veebisait on tõesti see veebisait.
+**Certificate.** Digitaalne dokument, mis tõendab, et veebisait on tõesti see veebisait.
 *Nagu isikutunnistus, aga kehtivusajaga, mis mingil põhjusel alati lõppeb laupäeval.*
 
 ## v10.3 — HSM
@@ -61,7 +61,7 @@ Süsteem, mis loendab, mis serveritel toimub, ja joonistab graafikuid.
 
 ## v10.15 — `systemctl restart`
 "Lülita välja ja uuesti sisse" käsk serveriprogrammidele.
-*Töötab 73% juhtudest. Ülejäänud 27% läheb asi hullemaks — aga ilusasti.*
+*Töötab 73% juhtudest. Ülejäänud 27% puhul läheb asi hullemaks — aga ilusasti.*
 
 ## v10.16 — Entroopia
 Ehtsa juhuslikkuse hulk. Mida rohkem, seda turvalisem on krüpteerimine.
@@ -73,4 +73,4 @@ Eraldi nimeruum, et erinevad asjad omavahel ei seguneks.
 
 ## v10.18 — `openssl rand -hex 32`
 Käsk, mis annab 32 juhuslikku baiti kuueteistkümnendtekstina.
-*See on sūtra sümboolne lõpp — uue epohhi hingetõmme. Proovi terminalis. Siis pane tuli kustu.*
+*See on sūtra sümboolne lõpp — uue epohhi hingetõmme. Proovi terminalis. Ära unusta tuld kustutamast.*

@@ -7,7 +7,7 @@ I only wanted to know what the command
 openssl rand -hex 2147483647
 ```
 actually does — because the last joke of the previous chat had hinged on it.
-The answer: at values that large, the 32-bit signed integer range overflows.
+The answer: at values that large, you overflow the 32-bit signed integer range.
 OpenSSL says *no*, and that, too, has its own zen.
 
 So I asked the model:
@@ -30,8 +30,8 @@ At one point I asked:
 *"How to live on, and how to make a lot of money?"*
 That is how Book VIII was born — the only one with an equation:
 $$\text{wealth} = (\text{entropy} + \text{focus}) \times \text{time}$$
-The equation does not work on short distances.
-On long distances, nothing else does.
+The equation does not work over short distances.
+Over long distances, nothing else does.
 
 The whole process took one evening in November
 and one April for editing.
