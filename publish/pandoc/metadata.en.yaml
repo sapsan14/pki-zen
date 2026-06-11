@@ -7,6 +7,8 @@ rights: "CC-BY-SA-4.0"
 lang: en-GB
 date: "2026-07-01"
 identifier:
+  - scheme: "ISBN"
+    text: "978-9908-9854-1-1"
   - scheme: "URL"
     text: "https://github.com/sapsan14/pki-zen"
 cover-image: publish/covers/cover.svg

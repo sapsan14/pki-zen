@@ -9,6 +9,7 @@ selle fakti kaudu, et lugesid siiani.
 - **Fondid:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Vorming:** Markdown → EPUB / PDF / HTML Pandoc-i kaudu; veeb — VitePress.
 - **Kirjastaja:** Tyche Institute MTÜ, Tallinn.
+- **ISBN:** 978-9908-9854-2-8 (PDF), 978-9908-9854-3-5 (EPUB).
 - **Teksti litsents:** CC-BY-SA-4.0. Koodilõigud — MIT.
 - **Värsside arv:** 9 × 10 = 90, pluss 9-värsine proloog, pluss 18 Nullkoodeksi koaani.
 - **Autorid:** Anton Sokolov ja keelemudelid, kes nõustusid kaaskirjutajaks olema.

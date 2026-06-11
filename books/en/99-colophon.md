@@ -9,6 +9,7 @@ by the fact that you read it this far.
 - **Fonts:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Format:** Markdown → EPUB / PDF / HTML via Pandoc; web — VitePress.
 - **Publisher:** Tyche Institute MTÜ, Tallinn.
+- **ISBN:** 978-9908-9854-0-4 (PDF), 978-9908-9854-1-1 (EPUB).
 - **Text license:** CC-BY-SA-4.0. Code snippets — MIT.
 - **Verse count:** 9 × 10 = 90, plus a 9-verse prologue, plus 18 Codex koans.
 - **Authors:** Anton Sokolov and the language models that agreed to be co-scribes.
