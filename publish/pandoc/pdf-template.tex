@@ -245,6 +245,20 @@ $if(title)$
 \maketitle
 $endif$
 
+% ----- Imprint (title verso): publisher, ISBNs, licence ---------------
+$if(isbn-pdf)$
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushleft}\small
+$if(publisher)$$publisher$\\$endif$
+ISBN $isbn-pdf$ (PDF)\\
+$if(isbn-epub)$ISBN $isbn-epub$ (EPUB)\\$endif$
+Text: CC BY-SA 4.0 \textperiodcentered{} Code: MIT\\
+\texttt{zen.tyche.institute}
+\end{flushleft}
+\clearpage
+$endif$
+
 $if(toc)$
 \tableofcontents
 \clearpage

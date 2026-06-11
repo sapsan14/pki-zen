@@ -115,6 +115,18 @@ import pathlib, re
 
 DIST = pathlib.Path('dist/books-stamped')
 
+# --- 0. Strip emoji from headings (PDF only): Noto Serif has no
+#        emoji glyphs, so 🔮 etc. render as tofu in XeLaTeX. The web
+#        and EPUB builds (already done from this tree) keep them.
+import sys
+for md in sorted(DIST.glob('*/*.md')):
+    src = md.read_text(encoding='utf-8')
+    out = ''.join(ch for ch in src if ord(ch) < 0x1F000 and ord(ch) != 0xFE0F)
+    out = re.sub(r'(?m)^(#{1,6})  +', r'\1 ', out)
+    if out != src:
+        md.write_text(out, encoding='utf-8')
+        print(f'   ✓ emoji stripped → {md.relative_to(DIST.parent.parent)}')
+
 # --- 1. \newpage before "At one point I asked" (appendix) ---
 MARKERS = [
     ('ru', r'(?m)^(В какой-то момент я спросил:)$'),

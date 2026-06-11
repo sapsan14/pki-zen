@@ -6,6 +6,8 @@ publisher: "Tyche Institute, Tallinn"
 rights: "CC-BY-SA-4.0"
 lang: ru-RU
 date: "2026-07-01"
+isbn-pdf: "978-9916-4-3987-6"
+isbn-epub: "978-9916-4-3988-3"
 identifier:
   - scheme: "ISBN"
     text: "978-9916-4-3988-3"
