@@ -78,7 +78,7 @@
   <!-- final small blocks: site, ISBN, license -->
   <g font-family="ui-monospace, 'JetBrains Mono', monospace"
      font-size="26" letter-spacing="2" fill="#4a3b2a" text-anchor="middle">
-    <text x="900" y="2180">pki&#8209;zen.h2oatlas.ee</text>
+    <text x="900" y="2180">zen.tyche.institute</text>
   </g>
 
   <!-- left footer: license + format -->
@@ -94,57 +94,8 @@
   <g font-family="ui-monospace, 'JetBrains Mono', monospace"
      font-size="20" fill="#6a5a3a" letter-spacing="1"
      text-anchor="end">
-    <text x="1620" y="2460">ISBN: 978-9949-00-0000-0</text>
+    <text x="1620" y="2460">Tyche Institute</text>
     <text x="1620" y="2495">Tallinn · 2026</text>
     <text x="1620" y="2530">First edition</text>
-  </g>
-  <!-- barcode placeholder block (print cover will have a real EAN-13) -->
-  <g transform="translate(1290,2540)">
-    <rect width="330" height="90" fill="#ffffff" stroke="#4a3b2a" stroke-width="1"/>
-    <g fill="#1a1a1a">
-      <rect x="12"  y="8" width="2"  height="62"/>
-      <rect x="18"  y="8" width="1"  height="62"/>
-      <rect x="22"  y="8" width="3"  height="62"/>
-      <rect x="30"  y="8" width="2"  height="62"/>
-      <rect x="35"  y="8" width="1"  height="62"/>
-      <rect x="40"  y="8" width="2"  height="62"/>
-      <rect x="46"  y="8" width="3"  height="62"/>
-      <rect x="55"  y="8" width="2"  height="62"/>
-      <rect x="61"  y="8" width="1"  height="62"/>
-      <rect x="66"  y="8" width="2"  height="62"/>
-      <rect x="72"  y="8" width="2"  height="62"/>
-      <rect x="78"  y="8" width="3"  height="62"/>
-      <rect x="86"  y="8" width="1"  height="62"/>
-      <rect x="92"  y="8" width="2"  height="62"/>
-      <rect x="98"  y="8" width="2"  height="62"/>
-      <rect x="106" y="8" width="1"  height="62"/>
-      <rect x="112" y="8" width="3"  height="62"/>
-      <rect x="120" y="8" width="2"  height="62"/>
-      <rect x="126" y="8" width="1"  height="62"/>
-      <rect x="132" y="8" width="2"  height="62"/>
-      <rect x="139" y="8" width="2"  height="62"/>
-      <rect x="146" y="8" width="3"  height="62"/>
-      <rect x="156" y="8" width="1"  height="62"/>
-      <rect x="161" y="8" width="2"  height="62"/>
-      <rect x="167" y="8" width="2"  height="62"/>
-      <rect x="174" y="8" width="1"  height="62"/>
-      <rect x="181" y="8" width="3"  height="62"/>
-      <rect x="188" y="8" width="2"  height="62"/>
-      <rect x="196" y="8" width="1"  height="62"/>
-      <rect x="201" y="8" width="2"  height="62"/>
-      <rect x="208" y="8" width="2"  height="62"/>
-      <rect x="214" y="8" width="3"  height="62"/>
-      <rect x="222" y="8" width="1"  height="62"/>
-      <rect x="228" y="8" width="2"  height="62"/>
-      <rect x="234" y="8" width="2"  height="62"/>
-      <rect x="241" y="8" width="1"  height="62"/>
-      <rect x="247" y="8" width="3"  height="62"/>
-      <rect x="256" y="8" width="2"  height="62"/>
-      <rect x="262" y="8" width="1"  height="62"/>
-      <rect x="268" y="8" width="2"  height="62"/>
-    </g>
-    <text x="165" y="82" text-anchor="middle"
-          font-family="ui-monospace, monospace" font-size="11"
-          fill="#4a3b2a">9 789949 000000</text>
   </g>
 </svg>

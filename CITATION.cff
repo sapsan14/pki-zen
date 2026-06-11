@@ -24,6 +24,13 @@ keywords:
   - humor
   - Estonian
   - Russian
+identifiers:
+  - type: other
+    value: "ISBN 978-9916-4-3987-6"
+    description: "PDF edition (Tyche Institute, Tallinn)"
+  - type: other
+    value: "ISBN 978-9916-4-3988-3"
+    description: "EPUB edition (Tyche Institute, Tallinn)"
 license: CC-BY-SA-4.0
-version: "1.0.0"
-date-released: "2026-04-17"
+version: "1.1.0"
+date-released: "2026-07-01"

@@ -2,11 +2,13 @@
 title: "PKI-ДЗЕН"
 subtitle: "Сутра о сертификатах, YAML и почти-просветлении"
 author: "Антон Соколов и языковые модели-соавторы"
-publisher: "Self-published, Tallinn"
+publisher: "Tyche Institute, Tallinn"
 rights: "CC-BY-SA-4.0"
 lang: ru-RU
-date: "2026-04-17"
+date: "2026-07-01"
 identifier:
+  - scheme: "ISBN"
+    text: "978-9916-4-3988-3"
   - scheme: "URL"
     text: "https://github.com/sapsan14/pki-zen"
 cover-image: publish/covers/cover.svg

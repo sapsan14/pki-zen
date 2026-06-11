@@ -2,10 +2,10 @@
 title: "PKI-ZEN"
 subtitle: "A Sūtra of Certificates, YAML, and Almost-Enlightenment"
 author: "Anton Sokolov and co-scribe language models"
-publisher: "Self-published, Tallinn"
+publisher: "Tyche Institute, Tallinn"
 rights: "CC-BY-SA-4.0"
 lang: en-GB
-date: "2026-04-17"
+date: "2026-07-01"
 identifier:
   - scheme: "URL"
     text: "https://github.com/sapsan14/pki-zen"

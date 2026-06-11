@@ -1,6 +1,6 @@
 # Site — VitePress
 
-This folder builds the PKI-ZEN website at [pki-zen.h2oatlas.ee](https://pki-zen.h2oatlas.ee/).
+This folder builds the PKI-ZEN website at [zen.tyche.institute](https://zen.tyche.institute/).
 
 ## Local development
 

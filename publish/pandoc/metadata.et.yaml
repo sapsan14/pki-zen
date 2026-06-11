@@ -2,10 +2,10 @@
 title: "PKI-ZEN"
 subtitle: "Sertifikaatide, YAML-i ja peaaegu-valgustumise suutra"
 author: "Anton Sokolov ja kaaskirjutajad-keelemudelid"
-publisher: "Self-published, Tallinn"
+publisher: "Tyche Institute, Tallinn"
 rights: "CC-BY-SA-4.0"
 lang: et-EE
-date: "2026-04-17"
+date: "2026-07-01"
 identifier:
   - scheme: "URL"
     text: "https://github.com/sapsan14/pki-zen"

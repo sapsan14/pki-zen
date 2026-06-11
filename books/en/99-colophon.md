@@ -3,11 +3,12 @@
 This book is signed not by us, but by you —
 by the fact that you read it this far.
 
-- **Version:** 1.0.0
-- **Release date:** 2026-04-17
+- **Version:** 1.1.0
+- **Release date:** 2026-07-01
 - **Languages:** Russian (canonical), English, Estonian.
 - **Fonts:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Format:** Markdown → EPUB / PDF / HTML via Pandoc; web — VitePress.
+- **Publisher:** Tyche Institute MTÜ, Tallinn.
 - **Text license:** CC-BY-SA-4.0. Code snippets — MIT.
 - **Verse count:** 9 × 10 = 90, plus a 9-verse prologue, plus 18 Codex koans.
 - **Authors:** Anton Sokolov and the language models that agreed to be co-scribes.

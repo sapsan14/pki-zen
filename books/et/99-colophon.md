@@ -3,11 +3,12 @@
 Selle raamatu on allkirjastanud mitte meie, vaid sina —
 selle fakti kaudu, et lugesid siiani.
 
-- **Versioon:** 1.0.0
-- **Väljalaske kuupäev:** 2026-04-17
+- **Versioon:** 1.1.0
+- **Väljalaske kuupäev:** 2026-07-01
 - **Keeled:** vene (kanooniline), inglise, eesti.
 - **Fondid:** Linux Libertine, Linux Biolinum, Space Grotesk, Onest, JetBrains Mono, DejaVu Sans Mono.
 - **Vorming:** Markdown → EPUB / PDF / HTML Pandoc-i kaudu; veeb — VitePress.
+- **Kirjastaja:** Tyche Institute MTÜ, Tallinn.
 - **Teksti litsents:** CC-BY-SA-4.0. Koodilõigud — MIT.
 - **Värsside arv:** 9 × 10 = 90, pluss 9-värsine proloog, pluss 18 Nullkoodeksi koaani.
 - **Autorid:** Anton Sokolov ja keelemudelid, kes nõustusid kaaskirjutajaks olema.
